@@ -96,3 +96,43 @@ stats.forEach(stat => {
 });
 
 console.log("✅ WealthAria V1.0 Loaded");
+
+/* ==========================================
+   SIP Calculator
+========================================== */
+
+function calculateSIP() {
+
+    const amount = Number(document.getElementById("sipAmount").value);
+    const years = Number(document.getElementById("sipYears").value);
+    const rate = Number(document.getElementById("sipRate").value);
+
+    if (!amount || !years || !rate) {
+        document.getElementById("sipResult").innerHTML =
+            "Please enter all values.";
+        return;
+    }
+
+    const monthlyRate = rate / 12 / 100;
+    const months = years * 12;
+
+    const maturity =
+        amount *
+        (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
+            (1 + monthlyRate));
+
+    const invested = amount * months;
+    const gains = maturity - invested;
+
+    document.getElementById("sipResult").innerHTML =
+
+        "<strong>Total Invested:</strong> ₹ " +
+        invested.toLocaleString("en-IN") +
+
+        "<br><br><strong>Estimated Returns:</strong> ₹ " +
+        gains.toLocaleString("en-IN", { maximumFractionDigits: 0 }) +
+
+        "<br><br><strong>Maturity Value:</strong> ₹ " +
+        maturity.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+
+}
