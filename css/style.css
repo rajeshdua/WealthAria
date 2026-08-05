@@ -1,4 +1,7 @@
-/* WealthAria V1 */
+/* ======================================================
+   WealthAria V1.0
+   Premium FinTech UI
+====================================================== */
 
 *{
     margin:0;
@@ -6,133 +9,253 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f8fafc;
-    color:#0f172a;
-    line-height:1.6;
+    background:#F8FAFC;
+    color:#0F172A;
+    line-height:1.7;
 }
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:#ffffff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-}
+/* Links */
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#16A34A;
-}
-
-.nav{
-    display:flex;
-    gap:25px;
-}
-
-.nav a{
+a{
     text-decoration:none;
-    color:#0f172a;
-    font-weight:600;
+    transition:.3s;
 }
 
-.nav a:hover{
-    color:#16A34A;
+/* Images */
+
+img{
+    max-width:100%;
+    display:block;
 }
 
-.cta-btn{
-    background:#16A34A;
-    color:white;
-    padding:12px 24px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
+/* Sections */
+
+section{
+    padding:80px 8%;
 }
 
-.hero{
-    text-align:center;
-    padding:90px 20px;
-    background:linear-gradient(135deg,#16A34A,#0F172A);
-    color:white;
-}
+/* Headings */
 
-.hero h1{
-    font-size:52px;
+h1{
+    font-size:56px;
+    line-height:1.2;
     margin-bottom:20px;
 }
 
+h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+h3{
+    font-size:24px;
+}
+
+p{
+    color:#475569;
+    font-size:18px;
+}
+
+/* ======================================================
+   Header
+====================================================== */
+
+.header{
+
+    position:sticky;
+    top:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:white;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    font-size:30px;
+    font-weight:bold;
+    color:#16A34A;
+
+}
+
+.nav{
+
+    display:flex;
+    gap:28px;
+
+}
+
+.nav a{
+
+    color:#0F172A;
+    font-weight:600;
+
+}
+
+.nav a:hover{
+
+    color:#16A34A;
+
+}
+
+.cta-btn{
+
+    background:#16A34A;
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.cta-btn:hover{
+
+    background:#15803D;
+
+}
+
+/* ======================================================
+   Hero
+====================================================== */
+
+.hero{
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#16A34A,#0F172A);
+
+    color:white;
+
+    padding:120px 10%;
+
+}
+
 .hero p{
-    font-size:20px;
-    max-width:700px;
+
+    color:white;
+
+    max-width:800px;
+
     margin:auto;
+
+    font-size:20px;
+
 }
 
 .buttons{
-    margin-top:40px;
-}
 
-.btn,.btn2{
-    display:inline-block;
-    margin:10px;
-    padding:15px 30px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:bold;
+    margin-top:45px;
+
 }
 
 .btn{
+
+    display:inline-block;
+
     background:white;
+
     color:#16A34A;
+
+    padding:16px 34px;
+
+    border-radius:12px;
+
+    margin:10px;
+
+    font-weight:bold;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
 }
 
 .btn2{
+
+    display:inline-block;
+
     border:2px solid white;
+
     color:white;
+
+    padding:16px 34px;
+
+    border-radius:12px;
+
+    margin:10px;
+
+    font-weight:bold;
+
 }
 
+.btn2:hover{
+
+    background:white;
+
+    color:#16A34A;
+
+}
+
+/* ======================================================
+   Statistics
+====================================================== */
+
 .stats{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    padding:60px 8%;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
 }
 
 .stat{
+
     background:white;
-    padding:30px;
-    border-radius:15px;
+
+    padding:35px;
+
+    border-radius:18px;
+
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-8px);
+
 }
 
 .stat h2{
+
     color:#16A34A;
-    font-size:36px;
-}
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    padding:70px 8%;
-}
+    font-size:42px;
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-footer{
-    background:#0F172A;
-    color:white;
-    text-align:center;
-    padding:40px;
 }
