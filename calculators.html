@@ -2,62 +2,158 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WealthAria | SIP Calculator</title>
+
+    <title>WealthAria | Financial Calculators</title>
+
+    <meta name="description"
+          content="Free financial calculators including SIP, EMI, FD, RD, PPF, Retirement and more by WealthAria.">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <meta name="theme-color" content="#16A34A">
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
 <header class="header">
 
-    <div class="logo">WealthAria</div>
+    <div class="logo">
+        <a href="index.html">WealthAria</a>
+    </div>
 
     <nav class="nav">
+
         <a href="index.html">Home</a>
         <a href="learn.html">Learn</a>
         <a href="calculators.html">Calculators</a>
         <a href="blog.html">Blog</a>
+        <a href="ai.html">AI</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+
     </nav>
+
+    <div class="header-actions">
+
+        <button class="search-btn" aria-label="Search">
+            🔍
+        </button>
+
+        <button class="theme-btn" aria-label="Toggle Dark Mode">
+            🌙
+        </button>
+
+        <a href="learn.html" class="cta-btn">
+            Get Started
+        </a>
+
+    </div>
 
 </header>
 
 <section class="hero">
 
-    <h1>SIP Calculator</h1>
+    <h1>Financial Calculators</h1>
 
-    <p>Calculate the future value of your monthly SIP investment.</p>
+    <p>
+        Use our free financial calculators to plan your investments,
+        loans, retirement, taxes and long-term wealth creation.
+    </p>
+
+</section>
+
+<section class="features">
+
+    <div class="card">
+        <h3>💰 SIP Calculator</h3>
+        <p>Calculate your SIP maturity value.</p>
+    </div>
+
+    <div class="card">
+        <h3>🏠 EMI Calculator</h3>
+        <p>Estimate your monthly loan EMI.</p>
+    </div>
+
+    <div class="card">
+        <h3>🏦 FD Calculator</h3>
+        <p>Estimate your Fixed Deposit returns.</p>
+    </div>
+
+    <div class="card">
+        <h3>💳 RD Calculator</h3>
+        <p>Calculate recurring deposit maturity.</p>
+    </div>
+
+    <div class="card">
+        <h3>🏛 PPF Calculator</h3>
+        <p>Estimate long-term PPF wealth.</p>
+    </div>
+
+    <div class="card">
+        <h3>📈 CAGR Calculator</h3>
+        <p>Measure annualized investment growth.</p>
+    </div>
+
+    <div class="card">
+        <h3>💵 Lumpsum Calculator</h3>
+        <p>Estimate future value of one-time investments.</p>
+    </div>
+
+    <div class="card">
+        <h3>👴 Retirement Planner</h3>
+        <p>Plan your retirement corpus confidently.</p>
+    </div>
 
 </section>
 
 <section>
 
-    <div class="card">
+    <div class="card calculator-card">
 
-        <h2>Monthly SIP (₹)</h2>
+        <h2>💰 SIP Calculator</h2>
 
-        <input type="number" id="sipAmount" placeholder="5000">
+        <br>
 
-        <br><br>
+        <label>Monthly SIP Amount (₹)</label>
 
-        <h2>Investment Period (Years)</h2>
-
-        <input type="number" id="sipYears" placeholder="20">
-
-        <br><br>
-
-        <h2>Expected Return (%)</h2>
-
-        <input type="number" id="sipRate" placeholder="12">
+        <input
+            type="number"
+            id="sipAmount"
+            placeholder="5000">
 
         <br><br>
 
-        <button class="btn" onclick="calculateSIP()">
+        <label>Investment Period (Years)</label>
+
+        <input
+            type="number"
+            id="sipYears"
+            placeholder="20">
+
+        <br><br>
+
+        <label>Expected Annual Return (%)</label>
+
+        <input
+            type="number"
+            id="sipRate"
+            placeholder="12">
+
+        <br><br>
+
+        <button
+            class="btn"
+            onclick="calculateSIP()">
+
             Calculate SIP
+
         </button>
 
         <br><br>
@@ -81,4 +177,5 @@
 <script src="js/script.js"></script>
 
 </body>
+
 </html>
