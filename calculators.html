@@ -1,26 +1,84 @@
-function calculateSIP(){
+<!DOCTYPE html>
+<html lang="en">
 
-const P =
-parseFloat(document.getElementById("sipAmount").value);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthAria | SIP Calculator</title>
 
-const Y =
-parseFloat(document.getElementById("sipYears").value);
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-const R =
-parseFloat(document.getElementById("sipRate").value);
+<body>
 
-const i = R/12/100;
+<header class="header">
 
-const n = Y*12;
+    <div class="logo">WealthAria</div>
 
-const maturity =
-P*((Math.pow(1+i,n)-1)/i)*(1+i);
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-document.getElementById("sipResult").innerHTML=
+</header>
 
-"Estimated Wealth : ₹ "+
-maturity.toLocaleString("en-IN",{
-maximumFractionDigits:0
-});
+<section class="hero">
 
-}
+    <h1>SIP Calculator</h1>
+
+    <p>Calculate the future value of your monthly SIP investment.</p>
+
+</section>
+
+<section>
+
+    <div class="card">
+
+        <h2>Monthly SIP (₹)</h2>
+
+        <input type="number" id="sipAmount" placeholder="5000">
+
+        <br><br>
+
+        <h2>Investment Period (Years)</h2>
+
+        <input type="number" id="sipYears" placeholder="20">
+
+        <br><br>
+
+        <h2>Expected Return (%)</h2>
+
+        <input type="number" id="sipRate" placeholder="12">
+
+        <br><br>
+
+        <button class="btn" onclick="calculateSIP()">
+            Calculate SIP
+        </button>
+
+        <br><br>
+
+        <h2 id="sipResult"></h2>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>WealthAria</h3>
+
+    <p>Build Wealth. Simply. Intelligently.</p>
+
+    <p>© 2026–2027 WealthAria. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
