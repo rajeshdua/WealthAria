@@ -1,3 +1,5 @@
+/* WealthAria V1 */
+
 *{
     margin:0;
     padding:0;
@@ -6,134 +8,131 @@
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#071B2A;
-    color:white;
+    background:#f8fafc;
+    color:#0f172a;
     line-height:1.6;
 }
 
-header{
+.header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 40px;
-    background:#0D2438;
+    padding:20px 8%;
+    background:#ffffff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo{
     font-size:28px;
     font-weight:bold;
-    color:#2ED3A0;
+    color:#16A34A;
 }
 
-nav a{
-    color:white;
+.nav{
+    display:flex;
+    gap:25px;
+}
+
+.nav a{
     text-decoration:none;
-    margin-left:20px;
+    color:#0f172a;
     font-weight:600;
 }
 
-nav a:hover{
-    color:#2ED3A0;
+.nav a:hover{
+    color:#16A34A;
+}
+
+.cta-btn{
+    background:#16A34A;
+    color:white;
+    padding:12px 24px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .hero{
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px;
+    background:linear-gradient(135deg,#16A34A,#0F172A);
+    color:white;
 }
 
 .hero h1{
-    font-size:48px;
-    color:#2ED3A0;
+    font-size:52px;
     margin-bottom:20px;
 }
 
 .hero p{
-    font-size:24px;
-    margin-bottom:10px;
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
 }
 
-.hero h3{
-    color:#CCCCCC;
-    font-weight:normal;
-    margin-bottom:30px;
+.buttons{
+    margin-top:40px;
 }
 
 .btn,.btn2{
     display:inline-block;
-    padding:14px 28px;
     margin:10px;
-    border-radius:8px;
+    padding:15px 30px;
+    border-radius:12px;
     text-decoration:none;
     font-weight:bold;
 }
 
 .btn{
-    background:#2ED3A0;
-    color:#071B2A;
+    background:white;
+    color:#16A34A;
 }
 
 .btn2{
-    border:2px solid #2ED3A0;
-    color:#2ED3A0;
+    border:2px solid white;
+    color:white;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    padding:60px 8%;
+}
+
+.stat{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.stat h2{
+    color:#16A34A;
+    font-size:36px;
 }
 
 .features{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    padding:60px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:70px 8%;
 }
 
 .card{
-    background:#10263A;
-    width:300px;
-    margin:15px;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
-}
-
-.card h2{
-    margin-bottom:15px;
-}
-
-.vision{
-    text-align:center;
-    padding:60px 20px;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 footer{
-    background:#06131F;
+    background:#0F172A;
+    color:white;
     text-align:center;
-    padding:30px;
-    color:#BBBBBB;
-}
-
-@media(max-width:768px){
-
-header{
-    flex-direction:column;
-}
-
-nav{
-    margin-top:15px;
-}
-
-nav a{
-    display:block;
-    margin:10px 0;
-}
-
-.hero h1{
-    font-size:34px;
-}
-
-.hero p{
-    font-size:20px;
-}
-
-.card{
-    width:90%;
-}
-
+    padding:40px;
 }
