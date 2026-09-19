@@ -1,181 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WealthAria | Financial Calculators</title>
+<meta name="description" content="WealthAria financial calculators for SIP, EMI, Lumpsum, CAGR, FD, RD, PPF and retirement planning.">
+<style>
+:root{--g:#16ad78;--g2:#0a8f63;--dark:#063d32;--ink:#0b3028;--muted:#667b75;--mint:#eaf8f3;--line:#dceae5;--card:#fff;--bg:#f5faf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}button{cursor:pointer}
+.header{height:82px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 3.5%;position:sticky;top:0;z-index:50}.brand{display:flex;align-items:center;gap:12px;font-size:29px;font-weight:800}.mark{width:48px;height:48px;border-radius:15px;background:var(--dark);display:grid;place-items:center;color:#19b47d;font-weight:900;font-size:30px}.brand span:last-child b{color:#20ad78}.nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}.nav a{text-decoration:none;color:#31544c}.nav .active{color:var(--g);border-bottom:2px solid var(--g);padding-bottom:4px}.hamb{display:none;font-size:31px}.mobile{display:none;position:fixed;top:82px;left:0;right:0;background:#fff;z-index:49;padding:8px 6%;box-shadow:0 12px 30px #063d3215}.mobile a{display:block;padding:13px 0;text-decoration:none;color:var(--ink);font-weight:700}
+.hero{padding:0 3.5% 14px;background:#fff}.heroBox{max-width:1250px;margin:auto;min-height:320px;border-radius:0 0 24px 24px;overflow:hidden;background:linear-gradient(100deg,#edf9f5,#e1f4eb);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:32px 3.5%;position:relative}.heroCopy{position:relative;z-index:2}.eyebrow{letter-spacing:4px;font-size:12px;font-weight:800;color:#348a70}.hero h1{font-size:clamp(44px,5.2vw,69px);line-height:.99;letter-spacing:-3px;margin:15px 0}.hero h1 span{color:var(--g)}.hero p{font-size:17px;color:#607570;line-height:1.5;margin:0}.art{height:280px;position:relative}.jar{position:absolute;right:23%;bottom:24px;width:145px;height:180px;border:4px solid #a58b52;border-radius:22px 22px 42px 42px;background:#d4b25b24;box-shadow:inset 10px 0 20px #fff5}.jar:before{content:"";position:absolute;top:-13px;left:3px;width:131px;height:23px;border:4px solid #a58b52;border-radius:50%;background:#ddc67a55}.stem{position:absolute;right:34%;bottom:173px;width:6px;height:145px;border-radius:8px;background:#318e62;transform:rotate(5deg)}.leaf{position:absolute;width:68px;height:34px;background:#48a968;border-radius:70% 0 70% 0}.l1{right:38%;bottom:265px;transform:rotate(25deg)}.l2{right:29%;bottom:246px;transform:rotate(-27deg)}.l3{right:39%;bottom:221px;transform:rotate(35deg)}.l4{right:27%;bottom:201px;transform:rotate(-34deg)}.coin{position:absolute;border-radius:50%;background:#d0aa55;border:2px solid #9b7934}.coin1{width:34px;height:34px;right:46%;bottom:27px}.coin2{width:28px;height:28px;right:39%;bottom:36px}.coin3{width:32px;height:32px;right:32%;bottom:57px}.stack{position:absolute;right:52%;bottom:24px;width:65px;height:23px;border-radius:50%;background:#caa75a;border:2px solid #9b7934}.stack:before,.stack:after{content:"";position:absolute;left:-2px;width:65px;height:23px;border-radius:50%;background:#caa75a;border:2px solid #9b7934}.stack:before{top:-14px}.stack:after{top:-28px}.arrow{position:absolute;right:4%;top:70px;width:125px;height:95px;border-top:7px solid #21c889;border-radius:50%;transform:rotate(-19deg)}.arrow:after{content:"↗";position:absolute;right:-7px;top:-38px;color:#21c889;font-size:62px;font-weight:900}.scribble{position:absolute;right:46%;bottom:88px;font:20px cursive;color:#176651;transform:rotate(-7deg)}.sticky{position:absolute;right:0;bottom:31px;background:#fff4a5;padding:13px 15px;transform:rotate(4deg);font-weight:800;line-height:1.25;box-shadow:0 7px 16px #7b682020}
+.tabs{background:#fff;padding:14px 3.5% 7px}.tabGrid{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;min-width:0}.tab{min-width:0;border:1px solid var(--line);background:#fff;border-radius:17px;padding:13px 6px 8px;box-shadow:0 4px 13px #063d3210;color:var(--ink)}.tab .ico{display:block;font-size:25px;height:32px}.tab small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;font-size:12px}.tab.active{background:linear-gradient(#24bc85,#0da36d);color:#fff;border-color:var(--g);transform:translateY(-2px)}.triangle{display:none;margin:8px auto 0;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:10px solid #eaf8f3}.tab.active .triangle{display:block}
+.panel{display:none;background:#fff;padding:15px 3.5% 32px}.panel.active{display:block}.box{max-width:1250px;margin:auto;border:1px solid var(--line);border-radius:23px;background:#fff;box-shadow:0 8px 28px #063d3210;overflow:hidden}.top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px;padding:24px;min-width:0}.top>div{min-width:0}.heading{display:flex;align-items:center;gap:12px;margin-bottom:20px}.hIcon{width:48px;height:48px;border-radius:14px;background:#e5f8f0;display:grid;place-items:center;font-size:26px}.heading h2{margin:0;font-size:29px}.heading p{margin:5px 0 0;color:var(--muted);font-size:14px}.field{margin:0 0 15px}.field label{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;font-size:12px;font-weight:800;color:#60756f;margin-bottom:7px}.field label output{white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:right;color:#60756f}.field input{display:block;width:100%;max-width:100%;height:43px;border:1px solid #d7e4e0;border-radius:10px;padding:9px 12px;color:#163c34;outline:none}.field input:focus{border-color:var(--g)}.range{appearance:none;width:100%!important;height:7px!important;padding:0!important;border:0!important;background:#e2ebe8!important;border-radius:99px}.range::-webkit-slider-thumb{appearance:none;width:21px;height:21px;border-radius:50%;background:var(--g);box-shadow:0 2px 6px #063d3230}.range::-moz-range-thumb{width:21px;height:21px;border:0;border-radius:50%;background:var(--g)}.limits{display:flex;justify-content:space-between;color:#82928d;font-size:9px;margin-top:5px}.buttons{display:flex;gap:9px;min-width:0}.buttons .btn{min-width:0}.btn{flex:1;border:0;border-radius:10px;padding:13px;font-weight:800}.calc{background:#099b6a;color:#fff}.reset{background:#fff;color:#098f63;border:1px solid #15a978}
+.output{min-width:0;overflow:hidden;background:linear-gradient(145deg,#f1faf7,#e8f6f1);border-radius:18px;padding:19px}.label{font-size:11px;color:#637872;font-weight:800}.big{font-size:clamp(26px,4vw,33px);line-height:1.08;overflow-wrap:anywhere;font-weight:900;color:#099b6a;margin:5px 0 13px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#fff;border-radius:12px;padding:12px}.stat small{display:block;font-size:9px;color:#758780;font-weight:800}.stat strong{display:block;font-size:18px;margin-top:5px}.graph{background:#fff;border-radius:13px;padding:12px;margin-top:11px}.graphTitle{font-size:11px;font-weight:800;margin-bottom:7px}.bars{height:126px;display:flex;align-items:end;gap:4px}.bars i{flex:1;min-height:3px;background:linear-gradient(#31c48e,#0b9868);border-radius:4px 4px 0 0}.legend{display:flex;justify-content:space-between;color:#84938f;font-size:9px;margin-top:6px}.insight{margin:0 24px 23px;background:#effaf6;border:1px solid #d9eee6;border-radius:15px;padding:12px 15px;font-size:12px;line-height:1.5}.insight b{color:#078d62}.formula{font-size:10px;color:#7c8d88;line-height:1.5;margin-top:9px}
+.hbars{display:grid;gap:10px;padding-top:5px}.hrow{display:grid;grid-template-columns:72px 1fr 80px;gap:7px;align-items:center;font-size:9px;color:#627670}.track{height:9px;background:#e1ece8;border-radius:99px;overflow:hidden}.fill{height:100%;background:#16ad78;border-radius:99px}
+.disclaimer{padding:25px 6%;text-align:center;background:#fff;color:#788883;font-size:10px;line-height:1.6}.cta{margin:30px 3.5% 42px;background:#e2f5ed;border-radius:22px}.ctaIn{max-width:1250px;margin:auto;padding:29px 4%;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0;font-size:29px}.cta p{margin:7px 0 0;color:var(--muted)}.learn{background:var(--g);color:#fff;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}footer{background:#06372d;color:#d6e9e3;text-align:center;padding:29px}footer strong{color:#fff;font-size:20px}footer p{font-size:11px;color:#a4c1b9}
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>WealthAria | Financial Calculators</title>
-
-    <meta name="description"
-          content="Free financial calculators including SIP, EMI, FD, RD, PPF, Retirement and more by WealthAria.">
-
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-    <meta name="theme-color" content="#16A34A">
-
-    <link rel="stylesheet" href="css/style.css">
-
+@media(max-width:900px){.top{grid-template-columns:minmax(0,1fr);overflow:hidden}.output{width:100%}.field label{gap:8px}.field label output{font-size:11px}.header{height:76px;padding:0 5%}.nav{display:none}.hamb{display:block}.hero{padding:0 0 10px}.heroBox{grid-template-columns:1fr;padding:29px 5% 12px;min-height:0}.hero h1{font-size:47px}.heroArt{height:220px}.jar{transform:scale(.8);transform-origin:bottom right;right:15%}.stem{transform:scale(.78);transform-origin:bottom;right:32%}.l1{right:35%}.l2{right:26%}.l3{right:36%}.l4{right:23%}.arrow{transform:scale(.75) rotate(-19deg);right:0;top:35px}.scribble{right:44%;bottom:55px;font-size:16px}.sticky{right:1%;bottom:12px;transform:scale(.8) rotate(4deg);transform-origin:bottom right}.tabs{padding:10px 4% 5px}.tabGrid{display:flex;overflow-x:auto;overflow-y:hidden;gap:8px;scrollbar-width:none;padding-right:2px}.tabGrid::-webkit-scrollbar{display:none}.tab{flex:0 0 78px;min-width:78px;border-radius:15px;padding:10px 5px 7px}.tab .ico{font-size:22px;height:28px}.tab small{font-size:10px}.panel{padding:9px 4% 27px}.top{grid-template-columns:1fr;padding:17px}.heading h2{font-size:25px}.output{padding:16px}.big{font-size:29px}.insight{margin:0 17px 18px}.cta{margin:27px 4%}.ctaIn{display:block}.cta .learn{display:inline-block;margin-top:14px}}
+@media(max-width:560px){.brand{font-size:25px}.mark{width:45px;height:45px}.hero h1{font-size:44px}.hero p{font-size:15px}.heroArt{height:205px}.tab{min-width:76px}.stats{grid-template-columns:1fr 1fr}.buttons{gap:7px}}
+</style>
 </head>
-
 <body>
-
 <header class="header">
-
-    <div class="logo">
-        <a href="index.html">WealthAria</a>
-    </div>
-
-    <nav class="nav">
-
-        <a href="index.html">Home</a>
-        <a href="learn.html">Learn</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="blog.html">Blog</a>
-        <a href="ai.html">AI</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-
-    </nav>
-
-    <div class="header-actions">
-
-        <button class="search-btn" aria-label="Search">
-            🔍
-        </button>
-
-        <button class="theme-btn" aria-label="Toggle Dark Mode">
-            🌙
-        </button>
-
-        <a href="learn.html" class="cta-btn">
-            Get Started
-        </a>
-
-    </div>
-
+<a class="brand" href="index.html"><span class="mark">W</span><span>Wealth <b>Aria</b></span></a>
+<nav class="nav"><a href="index.html">Home</a><a href="learn.html">Learn</a><a class="active" href="calculators.html">Calculators</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<div class="hamb" onclick="toggleMenu()">☰</div>
 </header>
+<nav id="mobile" class="mobile"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
 
-<section class="hero">
+<section class="hero"><div class="heroBox"><div class="heroCopy"><div class="eyebrow">CALCULATORS</div><h1>Plan Today.<br>A Brighter<br><span>Tomorrow.</span></h1><p>Simple tools. Real numbers. Smarter financial decisions.</p></div>
+<div class="art"><div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div><div class="stack"></div><div class="jar"></div><i class="coin coin1"></i><i class="coin coin2"></i><i class="coin coin3"></i><div class="arrow"></div><div class="scribble">Small<br>Steps<br><b>Big Dreams</b></div><div class="sticky">INVEST<br>PLAN<br>GROW<br>☺</div></div></div></section>
 
-    <h1>Financial Calculators</h1>
+<section class="tabs"><div class="tabGrid">
+<button class="tab active" data-tool="sip"><span class="ico">🌱</span><small>SIP</small><i class="triangle"></i></button>
+<button class="tab" data-tool="emi"><span class="ico">⌂</span><small>EMI</small><i class="triangle"></i></button>
+<button class="tab" data-tool="lumpsum"><span class="ico">₹</span><small>Lumpsum</small><i class="triangle"></i></button>
+<button class="tab" data-tool="cagr"><span class="ico">▮▮▮</span><small>CAGR</small><i class="triangle"></i></button>
+<button class="tab" data-tool="fd"><span class="ico">◎</span><small>FD</small><i class="triangle"></i></button>
+<button class="tab" data-tool="rd"><span class="ico">▣</span><small>RD</small><i class="triangle"></i></button>
+<button class="tab" data-tool="ppf"><span class="ico">◇</span><small>PPF</small><i class="triangle"></i></button>
+<button class="tab" data-tool="retirement"><span class="ico">♙</span><small>Retirement</small><i class="triangle"></i></button>
+</div></section>
 
-    <p>
-        Use our free financial calculators to plan your investments,
-        loans, retirement, taxes and long-term wealth creation.
-    </p>
+<!-- SIP -->
+<section class="panel active" id="panel-sip"><div class="box"><div class="top">
+<div><div class="heading"><div class="hIcon">🌱</div><div><h2>SIP Calculator</h2><p>Start small. Grow big.</p></div></div>
+<div class="field"><label>Monthly Investment (₹)<output id="sipAmtO">10,000</output></label><input class="range" id="sipAmt" type="range" min="500" max="500000" step="500" value="10000"><div class="limits"><span>Min ₹500</span><span>Max ₹5,00,000</span></div></div>
+<div class="field"><label>Investment Period (Years)<output id="sipYrsO">15</output></label><input class="range" id="sipYrs" type="range" min="1" max="50" value="15"><div class="limits"><span>Min 1</span><span>Max 50</span></div></div>
+<div class="field"><label>Expected Return (% p.a.)<output id="sipRateO">12%</output></label><input class="range" id="sipRate" type="range" min="0" max="30" step=".1" value="12"><div class="limits"><span>0%</span><span>Max 30%</span></div></div>
+<div class="buttons"><button class="btn calc" onclick="calcSIP()">Calculate Growth</button><button class="btn reset" onclick="resetSIP()">↻ Reset</button></div></div>
+<div class="output"><div class="label">FUTURE VALUE</div><div class="big" id="sipFV">₹50,45,760</div><div class="stats"><div class="stat"><small>TOTAL INVESTED</small><strong id="sipInv">₹18,00,000</strong></div><div class="stat"><small>ESTIMATED GROWTH</small><strong id="sipGain">₹32,45,760</strong></div></div><div class="graph"><div class="graphTitle">Investment Growth (Estimated)</div><div class="bars" id="sipGraph"></div><div class="legend"><span>₹0</span><span>₹20L</span><span>₹40L</span><span>₹60L</span></div></div></div></div><div class="insight">💡 <b id="sipInsight">A monthly SIP of ₹10,000 at 12% can grow to about ₹50.46 lakhs in 15 years.</b><br>The earlier you start, the more powerful your compounding can become.</div></div></section>
 
-</section>
+<!-- EMI -->
+<section class="panel" id="panel-emi"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">⌂</div><div><h2>EMI Calculator</h2><p>Know your monthly loan cost.</p></div></div>
+<div class="field"><label>Loan Amount (₹)</label><input id="emiP" type="number" value="1000000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="emiR" type="number" value="8.35" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="emiY" type="number" value="10" min=".01" step=".1"></div><button class="btn calc" onclick="calcEMI()">Calculate EMI</button></div>
+<div class="output"><div class="label">MONTHLY EMI</div><div class="big" id="emiOut">₹12,318</div><div class="stats"><div class="stat"><small>PRINCIPAL</small><strong id="emiPrincipal">₹10,00,000</strong></div><div class="stat"><small>TOTAL INTEREST</small><strong id="emiInt">₹4,78,219</strong></div><div class="stat"><small>TOTAL PAYMENT</small><strong id="emiTotal">₹14,78,219</strong></div></div><div class="graph"><div class="graphTitle">Principal vs Interest</div><div class="bars" id="emiGraph"></div></div></div></div><div class="insight">🏠 <b>Reducing-balance EMI.</b> EMI = P×r×(1+r)ⁿ / [(1+r)ⁿ−1], where r is the monthly interest rate.</div></div></section>
 
-<section class="features">
+<!-- LUMPSUM -->
+<section class="panel" id="panel-lumpsum"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">₹</div><div><h2>Lumpsum Calculator</h2><p>See one-time investment growth.</p></div></div>
+<div class="field"><label>Investment (₹)</label><input id="lumpP" type="number" value="500000" min="0"></div><div class="field"><label>Expected Return (% p.a.)</label><input id="lumpR" type="number" value="12" min="0" step=".1"></div><div class="field"><label>Period (Years)</label><input id="lumpY" type="number" value="10" min="0" step=".1"></div><button class="btn calc" onclick="calcLump()">Calculate Growth</button></div>
+<div class="output"><div class="label">FUTURE VALUE</div><div class="big" id="lumpFV">₹15,52,924</div><div class="stats"><div class="stat"><small>INVESTED</small><strong id="lumpInv">₹5,00,000</strong></div><div class="stat"><small>ESTIMATED GROWTH</small><strong id="lumpGain">₹10,52,924</strong></div></div><div class="graph"><div class="graphTitle">Value Growth</div><div class="bars" id="lumpGraph"></div></div></div></div><div class="insight">📈 <b>Compound growth is time-sensitive.</b> Formula: FV = P×(1+r)ᵗ.</div></div></section>
 
-    <div class="card">
-        <h3>💰 SIP Calculator</h3>
-        <p>Calculate your SIP maturity value.</p>
-    </div>
+<!-- CAGR -->
+<section class="panel" id="panel-cagr"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">▮▮▮</div><div><h2>CAGR Calculator</h2><p>Measure annualized growth.</p></div></div>
+<div class="field"><label>Starting Value (₹)</label><input id="cagrS" type="number" value="100000" min="0"></div><div class="field"><label>Ending Value (₹)</label><input id="cagrE" type="number" value="200000" min="0"></div><div class="field"><label>Period (Years)</label><input id="cagrY" type="number" value="5" min=".0001" step=".1"></div><button class="btn calc" onclick="calcCAGR()">Calculate CAGR</button></div>
+<div class="output"><div class="label">CAGR</div><div class="big" id="cagrOut">14.87%</div><div class="stats"><div class="stat"><small>ABSOLUTE GROWTH</small><strong id="cagrGain">₹1,00,000</strong></div><div class="stat"><small>GROWTH MULTIPLE</small><strong id="cagrMultiple">2.00×</strong></div></div><div class="graph"><div class="graphTitle">Value Path</div><div class="bars" id="cagrGraph"></div></div></div></div><div class="insight">📊 <b>CAGR = (Ending Value ÷ Starting Value)^(1 ÷ Years) − 1.</b></div></div></section>
 
-    <div class="card">
-        <h3>🏠 EMI Calculator</h3>
-        <p>Estimate your monthly loan EMI.</p>
-    </div>
+<!-- FD -->
+<section class="panel" id="panel-fd"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">◎</div><div><h2>FD Calculator</h2><p>Estimate fixed-deposit maturity.</p></div></div>
+<div class="field"><label>Principal (₹)</label><input id="fdP" type="number" value="500000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="fdR" type="number" value="7" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="fdY" type="number" value="5" min="0" step=".1"></div><button class="btn calc" onclick="calcFD()">Calculate Maturity</button></div>
+<div class="output"><div class="label">MATURITY VALUE</div><div class="big" id="fdFV">₹7,07,389</div><div class="stats"><div class="stat"><small>PRINCIPAL</small><strong id="fdPrincipal">₹5,00,000</strong></div><div class="stat"><small>INTEREST</small><strong id="fdInt">₹2,07,389</strong></div></div><div class="graph"><div class="graphTitle">Projected Maturity</div><div class="bars" id="fdGraph"></div></div></div></div><div class="insight">🏦 <b>Quarterly-compounding model.</b> A = P×(1+r/4)⁴ᵗ. Actual FD products can use different conventions.</div></div></section>
 
-    <div class="card">
-        <h3>🏦 FD Calculator</h3>
-        <p>Estimate your Fixed Deposit returns.</p>
-    </div>
+<!-- RD -->
+<section class="panel" id="panel-rd"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">▣</div><div><h2>RD Calculator</h2><p>Project recurring savings.</p></div></div>
+<div class="field"><label>Monthly Deposit (₹)</label><input id="rdP" type="number" value="10000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="rdR" type="number" value="7" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="rdY" type="number" value="5" min=".25" step=".25"></div><button class="btn calc" onclick="calcRD()">Calculate Maturity</button></div>
+<div class="output"><div class="label">MATURITY VALUE</div><div class="big" id="rdFV">₹7,19,328</div><div class="stats"><div class="stat"><small>TOTAL DEPOSITED</small><strong id="rdInv">₹6,00,000</strong></div><div class="stat"><small>INTEREST</small><strong id="rdInt">₹1,19,328</strong></div></div><div class="graph"><div class="graphTitle">Projected Value</div><div class="bars" id="rdGraph"></div></div></div></div><div class="insight">🏦 <b>Standard RD approximation.</b> Uses quarterly rate with monthly installments and the commonly used RD maturity formula. Bank-specific installment timing may differ.</div></div></section>
 
-    <div class="card">
-        <h3>💳 RD Calculator</h3>
-        <p>Calculate recurring deposit maturity.</p>
-    </div>
+<!-- PPF -->
+<section class="panel" id="panel-ppf"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">◇</div><div><h2>PPF Calculator</h2><p>Explore long-term compounding.</p></div></div>
+<div class="field"><label>Annual Contribution (₹)</label><input id="ppfP" type="number" value="150000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="ppfR" type="number" value="7.1" min="0" step=".1"></div><div class="field"><label>Period (Years)</label><input id="ppfY" type="number" value="15" min="1"></div><button class="btn calc" onclick="calcPPF()">Calculate PPF</button></div>
+<div class="output"><div class="label">PROJECTED VALUE</div><div class="big" id="ppfFV">₹40,68,209</div><div class="stats"><div class="stat"><small>CONTRIBUTED</small><strong id="ppfInv">₹22,50,000</strong></div><div class="stat"><small>ESTIMATED INTEREST</small><strong id="ppfInt">₹18,18,209</strong></div></div><div class="graph"><div class="graphTitle">Projected Balance</div><div class="bars" id="ppfGraph"></div></div></div></div><div class="insight">🏛️ <b>Beginning-of-year contribution model.</b> Each annual contribution is added before that year's compounding; the entered rate is assumed constant. Actual PPF interest follows applicable government rules and monthly-balance conventions. Actual PPF interest is governed by applicable government rules.</div></div></section>
 
-    <div class="card">
-        <h3>🏛 PPF Calculator</h3>
-        <p>Estimate long-term PPF wealth.</p>
-    </div>
+<!-- RETIREMENT -->
+<section class="panel" id="panel-retirement"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">♙</div><div><h2>Retirement Planner</h2><p>Turn a future goal into a number.</p></div></div>
+<div class="field"><label>Current Monthly Expense (₹)</label><input id="retExp" type="number" value="50000" min="0"></div><div class="field"><label>Years to Retirement</label><input id="retY" type="number" value="15" min="1"></div><div class="field"><label>Inflation (% p.a.)</label><input id="retInf" type="number" value="6" min="0" step=".1"></div><div class="field"><label>Return Before Retirement (% p.a.)</label><input id="retPre" type="number" value="12" min="0" step=".1"></div><div class="field"><label>Return During Retirement (% p.a.)</label><input id="retPost" type="number" value="7" min="0" step=".1"></div><div class="field"><label>Retirement Period (Years)</label><input id="retYears" type="number" value="25" min="1"></div><button class="btn calc" onclick="calcRet()">Calculate Plan</button></div>
+<div class="output"><div class="label">TARGET CORPUS</div><div class="big" id="retCorpus">₹0</div><div class="stats"><div class="stat"><small>EXPENSE AT RETIREMENT</small><strong id="retFuture">₹0</strong></div><div class="stat"><small>MONTHLY SIP NEEDED</small><strong id="retSIP">₹0</strong></div></div><div class="graph"><div class="graphTitle">Target Corpus vs SIP Contributions</div><div class="hbars"><div class="hrow"><span>Target</span><div class="track"><div class="fill" id="retCorpusBar"></div></div><b id="retCorpusLbl">₹0</b></div><div class="hrow"><span>SIP invested</span><div class="track"><div class="fill" id="retInvestBar"></div></div><b id="retInvestLbl">₹0</b></div></div></div></div></div><div class="insight">💡 <b>Planning estimate.</b> Future expenses are inflation-adjusted and the corpus is based on monthly withdrawals over the retirement period. Taxes, pensions, existing assets and other income are not included.</div></div></section>
 
-    <div class="card">
-        <h3>📈 CAGR Calculator</h3>
-        <p>Measure annualized investment growth.</p>
-    </div>
+<div class="disclaimer">WealthAria calculators are educational tools. Results depend on the assumptions and conventions displayed for each calculator. Actual market returns, bank products, government rates, taxes, fees and individual circumstances can change the outcome. This page is not investment, tax or financial advice.</div>
+<section class="cta"><div class="ctaIn"><div><h2>Good decisions start with good numbers.</h2><p>Learn the ideas behind the calculations with WealthAria.</p></div><a class="learn" href="learn.html">Learn More →</a></div></section>
+<footer><strong>WealthAria</strong><p>Build Wealth. Simply. Intelligently.</p><p>Educational content only • Not financial advice</p></footer>
 
-    <div class="card">
-        <h3>💵 Lumpsum Calculator</h3>
-        <p>Estimate future value of one-time investments.</p>
-    </div>
+<script>
+const $=id=>document.getElementById(id);
+const rupee=n=>"₹"+Math.round(Number(n)||0).toLocaleString("en-IN");
+const n=id=>Math.max(0,Number($(id).value)||0);
+function set(id,v){$(id).textContent=v}
+function makeBars(id,values){const el=$(id);el.innerHTML="";const max=Math.max(...values,1);values.forEach(v=>{const b=document.createElement("i");b.style.height=Math.max(3,v/max*100)+"%";el.appendChild(b)})}
+function toggleMenu(){const e=$("mobile");e.style.display=e.style.display==="block"?"none":"block"}
+function activate(tool){
+ document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tool===tool));
+ document.querySelectorAll(".panel").forEach(x=>x.classList.toggle("active",x.id==="panel-"+tool));
+ window.scrollTo({top:document.querySelector(".tabs").offsetTop-8,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(x=>x.addEventListener("click",()=>activate(x.dataset.tool)));
 
-    <div class="card">
-        <h3>👴 Retirement Planner</h3>
-        <p>Plan your retirement corpus confidently.</p>
-    </div>
-
-</section>
-
-<section>
-
-    <div class="card calculator-card">
-
-        <h2>💰 SIP Calculator</h2>
-
-        <br>
-
-        <label>Monthly SIP Amount (₹)</label>
-
-        <input
-            type="number"
-            id="sipAmount"
-            placeholder="5000">
-
-        <br><br>
-
-        <label>Investment Period (Years)</label>
-
-        <input
-            type="number"
-            id="sipYears"
-            placeholder="20">
-
-        <br><br>
-
-        <label>Expected Annual Return (%)</label>
-
-        <input
-            type="number"
-            id="sipRate"
-            placeholder="12">
-
-        <br><br>
-
-        <button
-            class="btn"
-            onclick="calculateSIP()">
-
-            Calculate SIP
-
-        </button>
-
-        <br><br>
-
-        <h2 id="sipResult"></h2>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <h3>WealthAria</h3>
-
-    <p>Build Wealth. Simply. Intelligently.</p>
-
-    <p>© 2026–2027 WealthAria. All Rights Reserved.</p>
-
-</footer>
-
-<script src="js/script.js"></script>
-
+function calcSIP(){
+ const P=n("sipAmt"), y=Math.max(1,n("sipYrs")), annual=n("sipRate"), r=annual/1200, months=Math.round(y*12);
+ const fv=r===0?P*months:P*((Math.pow(1+r,months)-1)/r)*(1+r), inv=P*months;
+ set("sipAmtO",P.toLocaleString("en-IN"));set("sipYrsO",y);set("sipRateO",annual+"%");
+ set("sipFV",rupee(fv));set("sipInv",rupee(inv));set("sipGain",rupee(fv-inv));
+ set("sipInsight",`A monthly SIP of ${rupee(P)} at ${annual}% can grow to about ₹${(fv/100000).toFixed(2)} lakhs in ${y} years.`);
+ const vals=[];for(let yr=1;yr<=Math.min(15,Math.ceil(y));yr++){const m=yr*12;vals.push(r===0?P*m:P*((Math.pow(1+r,m)-1)/r)*(1+r))}makeBars("sipGraph",vals)
+}
+function resetSIP(){$("sipAmt").value=10000;$("sipYrs").value=15;$("sipRate").value=12;calcSIP()}
+function calcEMI(){
+ const P=n("emiP"), annual=n("emiR"), r=annual/1200, months=Math.max(1,Math.round(n("emiY")*12));
+ const emi=r===0?P/months:P*r*Math.pow(1+r,months)/(Math.pow(1+r,months)-1), total=emi*months, interest=Math.max(0,total-P);
+ set("emiOut",rupee(emi));set("emiPrincipal",rupee(P));set("emiInt",rupee(interest));set("emiTotal",rupee(total));makeBars("emiGraph",[P,interest])
+}
+function calcLump(){
+ const P=n("lumpP"),r=n("lumpR")/100,y=n("lumpY"),fv=P*Math.pow(1+r,y);
+ set("lumpFV",rupee(fv));set("lumpInv",rupee(P));set("lumpGain",rupee(fv-P));
+ const v=[];for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(P*Math.pow(1+r,i));makeBars("lumpGraph",v)
+}
+function calcCAGR(){
+ const s=n("cagrS"),e=n("cagrE"),y=Math.max(.000001,n("cagrY"));let c=0;
+ if(s>0&&e>0)c=(Math.pow(e/s,1/y)-1)*100;
+ set("cagrOut",c.toFixed(2)+"%");set("cagrGain",rupee(e-s));set("cagrMultiple",(s>0?e/s:0).toFixed(2)+"×");
+ const v=[];if(s>0&&e>0)for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(s*Math.pow(e/s,i/y));makeBars("cagrGraph",v.length?v:[1])
+}
+function calcFD(){
+ const P=n("fdP"),annual=n("fdR")/100,y=n("fdY"),m=4,fv=P*Math.pow(1+annual/m,m*y);
+ set("fdFV",rupee(fv));set("fdPrincipal",rupee(P));set("fdInt",rupee(fv-P));
+ const v=[];for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(P*Math.pow(1+annual/m,m*i));makeBars("fdGraph",v)
+}
+function calcRD(){
+ const monthly=n("rdP"), annual=n("rdR")/100, months=Math.max(1,Math.round(n("rdY")*12));
+ // Approximate the common Indian RD convention: each monthly instalment earns
+ // quarterly-compounded interest for the remaining time to maturity.
+ // A month-by-month cash-flow model is used so the timing assumption is explicit.
+ const qRate=annual/4;
+ let fv=0;
+ for(let k=1;k<=months;k++){
+   const remainingMonths=months-k+1;
+   const quarters=remainingMonths/3;
+   fv += monthly*Math.pow(1+qRate,quarters);
+ }
+ const deposited=monthly*months, interest=Math.max(0,fv-deposited);
+ set("rdFV",rupee(fv));set("rdInv",rupee(deposited));set("rdInt",rupee(interest));
+ const v=[];const step=Math.max(1,Math.floor(months/10));
+ for(let m=step;m<=months;m+=step){
+   let x=0;for(let k=1;k<=m;k++)x+=monthly*Math.pow(1+qRate,(m-k+1)/3);
+   v.push(x)
+ }
+ if(!v.length||v[v.length-1]!==fv)v.push(fv);
+ makeBars("rdGraph",v)
+}
+function calcPPF(){
+ const A=n("ppfP"),r=n("ppfR")/100,y=Math.max(1,Math.round(n("ppfY")));let bal=0,v=[];
+ for(let k=1;k<=y;k++){bal=(bal+A)*(1+r);v.push(bal)}
+ const inv=A*y;set("ppfFV",rupee(bal));set("ppfInv",rupee(inv));set("ppfInt",rupee(bal-inv));makeBars("ppfGraph",v.slice(0,15))
+}
+function calcRet(){
+ const expense=n("retExp"),years=Math.max(1,n("retY")),infl=n("retInf")/100,pre=n("retPre")/100,post=n("retPost")/100,retY=Math.max(1,n("retYears"));
+ const future=expense*Math.pow(1+infl,years);
+ const g=Math.pow(1+infl,1/12)-1, r=Math.pow(1+post,1/12)-1, months=Math.round(retY*12);
+ let corpus;
+ if(Math.abs(r-g)<1e-12) corpus=future*months;
+ else corpus=future*(1-Math.pow((1+g)/(1+r),months))/(r-g);
+ const sr=Math.pow(1+pre,1/12)-1, preMonths=Math.round(years*12);
+ const sip=sr===0?corpus/preMonths:corpus*sr/(Math.pow(1+sr,preMonths)-1), invested=sip*preMonths,max=Math.max(corpus,invested,1);
+ set("retCorpus",rupee(corpus));set("retFuture",rupee(future));set("retSIP",rupee(sip));set("retCorpusLbl",rupee(corpus));set("retInvestLbl",rupee(invested));
+ $("retCorpusBar").style.width=(corpus/max*100)+"%";$("retInvestBar").style.width=(invested/max*100)+"%"
+}
+calcSIP();calcEMI();calcLump();calcCAGR();calcFD();calcRD();calcPPF();calcRet();
+["sipAmt","sipYrs","sipRate"].forEach(id=>$(id).addEventListener("input",calcSIP));
+</script>
 </body>
-
 </html>
