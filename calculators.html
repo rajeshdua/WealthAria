@@ -18,13 +18,50 @@
 
 @media(max-width:900px){.top{grid-template-columns:minmax(0,1fr);overflow:hidden}.output{width:100%}.field label{gap:8px}.field label output{font-size:11px}.header{height:76px;padding:0 5%}.nav{display:none}.hamb{display:block}.hero{padding:0 0 10px}.heroBox{grid-template-columns:1fr;padding:29px 5% 12px;min-height:0}.hero h1{font-size:47px}.heroArt{height:220px}.jar{transform:scale(.8);transform-origin:bottom right;right:15%}.stem{transform:scale(.78);transform-origin:bottom;right:32%}.l1{right:35%}.l2{right:26%}.l3{right:36%}.l4{right:23%}.arrow{transform:scale(.75) rotate(-19deg);right:0;top:35px}.scribble{right:44%;bottom:55px;font-size:16px}.sticky{right:1%;bottom:12px;transform:scale(.8) rotate(4deg);transform-origin:bottom right}.tabs{padding:10px 4% 5px}.tabGrid{display:flex;overflow-x:auto;overflow-y:hidden;gap:8px;scrollbar-width:none;padding-right:2px}.tabGrid::-webkit-scrollbar{display:none}.tab{flex:0 0 78px;min-width:78px;border-radius:15px;padding:10px 5px 7px}.tab .ico{font-size:22px;height:28px}.tab small{font-size:10px}.panel{padding:9px 4% 27px}.top{grid-template-columns:1fr;padding:17px}.heading h2{font-size:25px}.output{padding:16px}.big{font-size:29px}.insight{margin:0 17px 18px}.cta{margin:27px 4%}.ctaIn{display:block}.cta .learn{display:inline-block;margin-top:14px}}
 @media(max-width:560px){.brand{font-size:25px}.mark{width:45px;height:45px}.hero h1{font-size:44px}.hero p{font-size:15px}.heroArt{height:205px}.tab{min-width:76px}.stats{grid-template-columns:1fr 1fr}.buttons{gap:7px}}
+
+/* Unified WealthAria header/footer */
+.site-header{height:76px!important;background:rgba(255,255,255,.94)!important;border-bottom:1px solid #dceae5!important;display:block!important;padding:0!important;position:sticky!important;top:0;z-index:50;backdrop-filter:blur(14px)}
+.site-header .nav-wrap{width:min(1200px,94%);height:100%;margin:auto;display:flex;align-items:center;gap:28px}
+.site-header .brand{display:flex;align-items:center;gap:9px;font:800 22px Manrope,Arial,sans-serif;letter-spacing:-.8px;white-space:nowrap;text-decoration:none}
+.site-header .brand:link,.site-header .brand:visited,.site-header .brand:hover,.site-header .brand:active{text-decoration:none;color:#0b3028}
+.site-header .brand>span:last-child{color:#0b3028}.site-header .brand>span:last-child>span{color:#16ad78}
+.site-header .mark{width:35px;height:35px;border-radius:10px;background:#063d32;color:#5ee0a0;display:grid;place-items:center;font:800 17px Manrope,Arial}
+.site-header nav{display:flex;align-items:center;gap:21px;margin-left:auto;font-size:13px}
+.site-header nav a{font-size:13px;font-weight:600;color:#5c6d66;text-decoration:none}
+.site-header nav a.active,.site-header nav a:hover{color:#0b3028}
+.site-header .header-btn{background:#063d32;color:#fff;text-decoration:none;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:700}
+.site-header + .hero{padding-top:0}
+.site-header + .hero .heroBox{border-radius:0 0 24px 24px}
+footer{background:#063d32!important;color:#fff!important;padding:50px 0 18px!important}
+footer .container{width:min(1160px,92%);margin:auto}
+footer .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:35px}
+footer .brand{display:flex;align-items:center;gap:9px;font:800 22px Manrope,Arial;letter-spacing:-.8px;color:#fff;text-decoration:none}
+footer .brand .mark{width:35px;height:35px;border-radius:10px;background:#10261f;color:#5ee0a0;display:grid;place-items:center}
+footer .brand>span:last-child{color:#fff}footer .brand>span:last-child>span{color:#5ee0a0}
+footer .footer-grid p,footer .footer-grid a{font-size:11px;color:#8fa39b;text-decoration:none}
+footer .footer-grid>div:not(:first-child){display:grid;gap:8px;align-content:start}
+footer .footer-grid b{font-size:11px;color:#d2ddd8;margin-bottom:4px}
+footer .footer-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;font-size:9px;color:#70847d}
+@media(max-width:950px){.site-header nav{display:none}.site-header{height:68px!important}.site-header .header-btn{margin-left:auto}.site-header .nav-wrap{gap:12px}.site-header .brand{font-size:20px}.site-header .mark{width:34px;height:34px;font-size:16px}footer .footer-grid{grid-template-columns:1fr 1fr}footer .footer-grid>div:first-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
-<header class="header">
-<a class="brand" href="index.html"><span class="mark">W</span><span>Wealth <b>Aria</b></span></a>
-<nav class="nav"><a href="index.html">Home</a><a href="learn.html">Learn</a><a class="active" href="calculators.html">Calculators</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-<div class="hamb" onclick="toggleMenu()">☰</div>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="WealthAria">
+      <span class="mark">W</span><span>Wealth<span>Aria</span></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a class="active" href="calculators.html">Calculators</a>
+      <a href="ai.html">AI Tools</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="header-btn" href="learn.html">Start Learning</a>
+  </div>
 </header>
 <nav id="mobile" class="mobile"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
 
@@ -88,7 +125,20 @@
 
 <div class="disclaimer">WealthAria calculators are educational tools. Results depend on the assumptions and conventions displayed for each calculator. Actual market returns, bank products, government rates, taxes, fees and individual circumstances can change the outcome. This page is not investment, tax or financial advice.</div>
 <section class="cta"><div class="ctaIn"><div><h2>Good decisions start with good numbers.</h2><p>Learn the ideas behind the calculations with WealthAria.</p></div><a class="learn" href="learn.html">Learn More →</a></div></section>
-<footer><strong>WealthAria</strong><p>Build Wealth. Simply. Intelligently.</p><p>Educational content only • Not financial advice</p></footer>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html" aria-label="WealthAria">
+        <span class="mark">W</span><span>Wealth<span>Aria</span></span>
+      </a>
+      <p>Build Wealth. Simply. Intelligently.</p>
+    </div>
+    <div><b>Explore</b><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
+    <div><b>Company</b><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+    <div><b>Legal</b><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="container footer-bottom">© 2026 WealthAria. Educational platform. Not financial advice.</div>
+</footer>
 
 <script>
 const $=id=>document.getElementById(id);

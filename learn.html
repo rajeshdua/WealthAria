@@ -127,24 +127,30 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
   .social{margin-top:18px}
   .footer-bottom{line-height:1.7}
 }
+
+/* Unified WealthAria header */
+.site-header{height:76px;background:rgba(255,255,255,.94);border-bottom:1px solid #e0e9e4;position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
+.nav-wrap{width:min(1200px,94%);height:100%;margin:auto;display:flex;align-items:center;gap:28px}.site-header .brand{display:flex;align-items:center;gap:9px;font:800 22px Manrope,Arial;letter-spacing:-.8px;white-space:nowrap}.site-header .mark{width:35px;height:35px;border-radius:10px;background:#10261f;color:#5ee0a0;display:grid;place-items:center;font:800 17px Manrope,Arial}.site-header .brand>span:last-child{color:#10261f}.site-header .brand>span:last-child>span{color:#22a96b}.site-header nav{display:flex;gap:21px;margin-left:auto}.site-header nav a{font-size:13px;font-weight:600;color:#5c6d66;text-decoration:none}.site-header nav a.active,.site-header nav a:hover{color:#10261f}.site-header .header-btn{background:#10261f;color:#fff;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none}
+@media(max-width:950px){.site-header nav{display:none}.site-header{height:68px}.site-header .header-btn{margin-left:auto}.site-header .nav-wrap{gap:12px}.site-header .brand{font-size:20px}.site-header .mark{width:34px;height:34px;font-size:16px}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <a class="logo" href="index.html"><span class="logo-mark">W</span>Wealth<span>Aria</span></a>
-    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
-    <nav class="navlinks">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="WealthAria">
+      <span class="mark">W</span><span>Wealth<span>Aria</span></span>
+    </a>
+    <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="learn.html" class="active">Learn</a>
+      <a class="active" href="learn.html">Learn</a>
       <a href="calculators.html">Calculators</a>
       <a href="ai.html">AI Tools</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="learn.html#topics" class="nav-cta">Start Learning →</a>
     </nav>
+    <a class="header-btn" href="learn.html">Start Learning</a>
   </div>
 </header>
 
@@ -244,19 +250,18 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="index.html"><span class="logo-mark">W</span>Wealth<span>Aria</span></a>
-        <div style="color:#71847e;font-size:13px;margin-top:6px">Build Wealth. Simply. Intelligently.</div>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-      </div>
-      <div class="social"><span>in</span><span>𝕏</span><span>▶</span><span>◎</span></div>
+  <div class="container footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html" aria-label="WealthAria">
+        <span class="mark">W</span><span>Wealth<span>Aria</span></span>
+      </a>
+      <p>Build Wealth. Simply. Intelligently.</p>
     </div>
-    <div class="footer-bottom"><span>© 2026 WealthAria. All rights reserved.</span><span>Education-first. Practical. For Indian investors.</span></div>
+    <div><b>Explore</b><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
+    <div><b>Company</b><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+    <div><b>Legal</b><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
   </div>
+  <div class="container footer-bottom">© 2026 WealthAria. Educational platform. Not financial advice.</div>
 </footer>
 
 <script>
