@@ -1,118 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Investing | WealthAria</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WealthAria Learn — simple, practical financial education for Indian investors.">
+<title>Learn Investing | WealthAria</title>
+<style>
+:root{
+  --ink:#0d3029; --muted:#62736f; --green:#13a66f; --green2:#25b77b;
+  --pale:#f1faf6; --line:#dce8e3; --white:#fff; --dark:#082d25;
+  --shadow:0 14px 40px rgba(9,48,41,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
+header{height:76px;background:rgba(255,255,255,.96);border-bottom:1px solid #edf2f0;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:800;letter-spacing:-.8px}
+.logo-mark{width:38px;height:38px;border-radius:9px;background:var(--dark);color:#fff;display:grid;place-items:center;font-weight:800}
+.logo span{color:var(--green)}
+.navlinks{display:flex;gap:29px;align-items:center;font-size:14px}
+.navlinks a{color:#183b34;position:relative}
+.navlinks a.active{font-weight:700}
+.navlinks a.active:after{content:"";position:absolute;height:2px;background:var(--green);left:0;right:0;bottom:-25px}
+.nav-cta{background:var(--dark);color:#fff!important;padding:11px 18px;border-radius:9px;font-weight:700}
+.menu{display:none;border:0;background:none;font-size:28px;color:var(--ink)}
 
-    <meta name="description"
-        content="Learn investing, mutual funds, stocks, taxation, insurance and personal finance with WealthAria.">
+.hero{background:linear-gradient(115deg,#f2fbf7 0%,#f8fcfa 100%);padding:42px 0 54px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:55px;align-items:center}
+.eyebrow,.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:800;color:#287d68}
+h1{font-size:58px;line-height:1.02;letter-spacing:-2.8px;margin:14px 0 18px;max-width:590px}
+.accent{color:var(--green)}
+.hero-copy{font-size:17px;color:var(--muted);max-width:530px}
+.actions{display:flex;gap:13px;margin:24px 0 20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:9px;border:1px solid #b9ccc6;font-weight:750;font-size:14px}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn.secondary{background:#fff}
+.hero-points{display:flex;gap:24px;flex-wrap:wrap;color:#58716a;font-size:13px}
+.hero-points b{color:var(--ink)}
+.hero-photo{height:430px;border-radius:18px;background:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85") center/cover;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,37,30,.10),transparent 55%)}
+.photo-card{position:absolute;right:24px;top:23px;z-index:2;background:rgba(255,255,255,.94);padding:23px;border-radius:17px;width:185px;box-shadow:0 14px 35px rgba(0,0,0,.12)}
+.photo-card .round{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#d9f7e9;color:var(--green);margin-bottom:13px}
+.photo-card strong{display:block;font-size:16px;line-height:1.35}
+.photo-card small{display:block;color:var(--muted);margin-top:7px}
 
-    <link rel="stylesheet" href="css/style.css">
+.topics{padding:70px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
+h2{font-size:39px;line-height:1.08;letter-spacing:-1.6px;margin-top:7px}
+.section-head p{max-width:350px;color:var(--muted);font-size:15px}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.topic{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;transition:.2s;box-shadow:0 3px 15px rgba(10,50,42,.03)}
+.topic:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.topic-img{height:175px;background-size:cover;background-position:center}
+.topic-body{padding:20px}
+.topic-title{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800}
+.icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#eff9f5;font-size:20px;flex:none}
+.topic-body p{color:var(--muted);font-size:14px;margin:9px 0 12px;line-height:1.5}
+.learn-more{color:#069b67;font-size:13px;font-weight:800}
+
+.why{background:var(--pale);padding:68px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.why-copy p{color:var(--muted);max-width:520px;margin-top:16px}
+.benefits{display:grid;gap:20px}
+.benefit{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+.benefit .icon{width:48px;height:48px;background:#d8f5e7}
+.benefit h3{font-size:16px}
+.benefit p{color:var(--muted);font-size:13px;margin-top:2px}
+
+.cta{padding:54px 0}
+.cta-box{background:var(--dark);border-radius:18px;color:#fff;padding:36px 42px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta-box h2{font-size:31px}
+.cta-box p{color:#b7d0c9;margin-top:6px}
+.cta .btn{background:#fff;border-color:#fff;color:var(--ink);white-space:nowrap}
+
+footer{border-top:1px solid #e8efec;padding:30px 0 25px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-links{display:flex;gap:22px;font-size:13px;color:#49645d;flex-wrap:wrap}
+.footer-bottom{margin-top:18px;display:flex;justify-content:space-between;color:#80918d;font-size:12px}
+.social{display:flex;gap:16px;color:#49645d}
+
+@media(max-width:900px){
+  .container{width:min(100% - 32px,680px)}
+  header,.nav{height:68px}
+  .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 20px;flex-direction:column;align-items:flex-start;gap:17px;box-shadow:0 12px 25px rgba(0,0,0,.08)}
+  .navlinks.open{display:flex}
+  .navlinks a.active:after{display:none}
+  .nav-cta{width:100%;text-align:center}
+  .menu{display:block}
+  .hero{padding:30px 0 42px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  h1{font-size:45px;letter-spacing:-2px}
+  .hero-photo{height:320px}
+  .topic-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}
+  .logo{font-size:21px}
+  .logo-mark{width:34px;height:34px}
+  .hero{padding-top:25px}
+  h1{font-size:38px;line-height:1.04}
+  .hero-copy{font-size:15px}
+  .hero-photo{height:275px;border-radius:15px}
+  .photo-card{right:13px;top:13px;width:145px;padding:15px}
+  .photo-card strong{font-size:14px}
+  .photo-card small{font-size:11px}
+  .actions .btn{width:100%}
+  .hero-points{gap:10px 17px;font-size:12px}
+  .topics{padding:48px 0}
+  .section-head{display:block}
+  h2{font-size:32px}
+  .section-head p{margin-top:10px}
+  .topic-grid{grid-template-columns:1fr;gap:15px}
+  .topic-img{height:190px}
+  .topic-body{padding:17px}
+  .why{padding:48px 0}
+  .cta{padding:35px 0}
+  .cta-box{padding:28px 23px;display:block}
+  .cta-box h2{font-size:27px}
+  .cta-box .btn{margin-top:18px;width:100%}
+  .footer-grid,.footer-bottom{display:block}
+  .footer-links{margin-top:18px;gap:14px}
+  .social{margin-top:18px}
+  .footer-bottom{line-height:1.7}
+}
+</style>
 </head>
-
 <body>
 
-<header class="header">
-
-    <div class="logo">
-        <a href="index.html">WealthAria</a>
-    </div>
-
-    <nav class="nav">
-
-        <a href="index.html">Home</a>
-        <a href="learn.html">Learn</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="blog.html">Blog</a>
-        <a href="ai.html">AI</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html"><span class="logo-mark">W</span>Wealth<span>Aria</span></a>
+    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="learn.html" class="active">Learn</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="ai.html">AI Tools</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="learn.html#topics" class="nav-cta">Start Learning →</a>
     </nav>
-
-    <div class="header-actions">
-
-        <button class="search-btn" aria-label="Search">
-            🔍
-        </button>
-
-        <button class="theme-btn" aria-label="Toggle dark mode">
-            🌙
-        </button>
-
-        <a href="learn.html" class="cta-btn">
-            Get Started
-        </a>
-
-    </div>
-
+  </div>
 </header>
 
+<main>
 <section class="hero">
-
-    <h1>Learn Investing</h1>
-
-    <p>
-        Simple, practical and easy-to-understand financial education for everyone.
-    </p>
-
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">LEARN • PLAN • GROW</div>
+      <h1>Learn Investing<br>for a Brighter <span class="accent">Tomorrow.</span></h1>
+      <p class="hero-copy">Simple, practical and easy-to-understand financial education for everyone. Build your knowledge, make better decisions and take control of your financial future.</p>
+      <div class="actions">
+        <a class="btn primary" href="#topics">Start Learning →</a>
+        <a class="btn secondary" href="#topics">Explore All Topics</a>
+      </div>
+      <div class="hero-points">
+        <span>🎓 <b>Practical</b> Knowledge</span>
+        <span>▮▮ <b>Easy</b> to Understand</span>
+        <span>👥 <b>For</b> Everyone</span>
+      </div>
+    </div>
+    <div class="hero-photo" aria-label="Financial education desk photograph">
+      <div class="photo-card">
+        <div class="round">↗</div>
+        <strong>Knowledge today, a wealthier tomorrow.</strong>
+        <small>Learn. Apply. Grow.</small>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section-title">
+<section class="topics" id="topics">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">EXPLORE OUR LEARNING TOPICS</div>
+        <h2>Choose a <span class="accent">Topic</span></h2>
+      </div>
+      <p>Start your journey towards financial freedom with structured, easy-to-follow guides and resources.</p>
+    </div>
 
-    <h2>Choose a Topic</h2>
-
-    <p>Start your journey towards financial freedom.</p>
-
+    <div class="topic-grid">
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">📊</span>Mutual Funds</div><p>Understand SIPs, NAV, returns, risk and asset allocation.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">📈</span>Stock Market</div><p>Learn investing, valuation and long-term wealth creation.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">💰</span>Personal Finance</div><p>Create budgets, save more and manage money wisely.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🏛️</span>Tax Planning</div><p>Learn about deductions, exemptions and tax-saving strategies.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🛡️</span>Insurance</div><p>Health, life and vehicle insurance explained simply.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🎯</span>Retirement Planning</div><p>Plan today for a financially secure retirement.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section class="features">
-
-    <div class="card">
-        <h2>📊 Mutual Funds</h2>
-        <p>Understand SIPs, NAV, returns, risk and asset allocation.</p>
+<section class="why">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <div class="section-label">WHY LEARN WITH WEALTHARIA?</div>
+      <h2>Knowledge creates <span class="accent">opportunities.</span></h2>
+      <p>The more you learn, the better your financial decisions become. WealthAria brings education and real-world insights together in one simple experience.</p>
     </div>
-
-    <div class="card">
-        <h2>📈 Stock Market</h2>
-        <p>Learn investing, valuation and long-term wealth creation.</p>
+    <div class="benefits">
+      <div class="benefit"><span class="icon">💡</span><div><h3>Clear and Simple</h3><p>Complex topics explained in easy language.</p></div></div>
+      <div class="benefit"><span class="icon">👥</span><div><h3>Practical and Relevant</h3><p>Real-life examples and actionable insights.</p></div></div>
+      <div class="benefit"><span class="icon">📈</span><div><h3>For Every Stage</h3><p>Whether you are a beginner or an experienced investor.</p></div></div>
     </div>
-
-    <div class="card">
-        <h2>💰 Personal Finance</h2>
-        <p>Create budgets, save more and manage money wisely.</p>
-    </div>
-
-    <div class="card">
-        <h2>🏛 Tax Planning</h2>
-        <p>Learn about deductions, exemptions and tax-saving strategies.</p>
-    </div>
-
-    <div class="card">
-        <h2>🛡 Insurance</h2>
-        <p>Health, life and vehicle insurance explained simply.</p>
-    </div>
-
-    <div class="card">
-        <h2>🎯 Retirement Planning</h2>
-        <p>Plan today for a financially secure retirement.</p>
-    </div>
-
+  </div>
 </section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <div class="section-label" style="color:#77d9b2">YOUR FINANCIAL JOURNEY</div>
+        <h2>Learn Today. <span class="accent">Build a Better Tomorrow.</span></h2>
+        <p>Explore our learning resources and take one more step towards your goals.</p>
+      </div>
+      <a class="btn" href="#topics">Start Learning →</a>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
-
-    <h3>WealthAria</h3>
-
-    <p>Build Wealth. Simply. Intelligently.</p>
-
-    <p>© 2026–2027 WealthAria. All Rights Reserved.</p>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="logo-mark">W</span>Wealth<span>Aria</span></a>
+        <div style="color:#71847e;font-size:13px;margin-top:6px">Build Wealth. Simply. Intelligently.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="social"><span>in</span><span>𝕏</span><span>▶</span><span>◎</span></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 WealthAria. All rights reserved.</span><span>Education-first. Practical. For Indian investors.</span></div>
+  </div>
 </footer>
 
-<script src="js/script.js"></script>
-
+<script>
+document.querySelectorAll('.navlinks a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open'));
+});
+</script>
 </body>
 </html>
