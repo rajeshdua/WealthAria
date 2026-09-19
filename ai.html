@@ -3,506 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="WealthAria AI Tools — simple educational explanations for money, investing and financial concepts.">
+<meta name="theme-color" content="#0b2f27">
 <title>AI Tools | WealthAria</title>
 <style>
-:root{
-  --ink:#082f29;
-  --ink2:#103b34;
-  --green:#20aa74;
-  --green2:#39c98a;
-  --pale:#effaf5;
-  --pale2:#e1f5ed;
-  --line:#d9e8e2;
-  --muted:#6a7c77;
-  --white:#fff;
-  --shadow:0 12px 32px rgba(8,47,41,.08);
-  --radius:28px;
-  --max:1200px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  color:var(--ink);
-  background:#fff;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-button,input,textarea{font:inherit}
-.site-header{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav-wrap{
-  width:min(var(--max),calc(100% - 48px));
-  margin:auto;
-  min-height:78px;
-  display:flex;align-items:center;gap:26px;
-}
-.brand{
-  display:inline-flex;align-items:center;gap:11px;
-  font-weight:850;font-size:24px;letter-spacing:-.8px;
-  white-space:nowrap;
-}
-.brand .mark{
-  width:40px;height:40px;border-radius:13px;
-  display:grid;place-items:center;
-  background:var(--ink);color:#59dfa5;
-  font-weight:900;font-size:22px;
-}
-.brand .aria{color:var(--green)}
-.nav{
-  margin-left:auto;
-  display:flex;align-items:center;gap:25px;
-  font-size:14px;
-}
-.nav a{opacity:.88}
-.nav a:hover,.nav a.active{color:var(--green);opacity:1}
-.header-btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--ink);color:#fff;
-  padding:13px 21px;border-radius:13px;
-  font-weight:800;font-size:14px;
-  white-space:nowrap;
-}
-.menu{
-  display:none;border:0;background:transparent;
-  font-size:29px;color:var(--ink);padding:4px 0;
-}
-.container{width:min(var(--max),calc(100% - 48px));margin:auto}
-.kicker{
-  color:#27986f;font-weight:850;
-  letter-spacing:4px;text-transform:uppercase;
-  font-size:12px;
-}
-h1,h2,h3,p{margin-top:0}
-.hero{
-  background:linear-gradient(90deg,#effaf5 0%,#effaf5 49%,#f8fcfa 100%);
-}
-.hero-grid{
-  min-height:475px;
-  display:grid;grid-template-columns:1fr 1.05fr;
-  align-items:center;
-}
-.hero-copy{padding:58px 0 58px}
-.hero h1{
-  font-size:58px;line-height:1.02;
-  letter-spacing:-3px;margin:13px 0 22px;
-  max-width:610px;
-}
-.hero h1 span{color:var(--green)}
-.hero p{
-  font-size:18px;line-height:1.55;
-  color:#29443e;max-width:560px;
-  margin-bottom:28px;
-}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:50px;padding:0 25px;border-radius:13px;
-  font-weight:800;border:1px solid transparent;
-}
-.btn-primary{background:var(--green);color:#fff}
-.btn-secondary{background:#fff;border-color:#cddbd6}
-.hero-photo{
-  height:475px;min-height:100%;
-  background:
-    linear-gradient(90deg,rgba(239,250,245,.15),rgba(239,250,245,0)),
-    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85")
-    center/cover;
-  position:relative;overflow:hidden;
-}
-.hero-photo:after{
-  content:"Knowledge\A grows\A Wealth";
-  white-space:pre;
-  position:absolute;right:9%;top:18%;
-  font-family:"Brush Script MT","Segoe Script",cursive;
-  font-size:27px;line-height:1.05;color:#183b34;
-  transform:rotate(-7deg);
-}
-.hero-photo:before{
-  content:"Ask\A Explore\A Learn\A Grow";
-  white-space:pre;
-  position:absolute;left:18%;bottom:22%;
-  width:210px;padding:25px 27px;
-  background:rgba(5,35,30,.88);color:#fff;
-  border-radius:8px;
-  font-size:23px;font-weight:800;line-height:1.15;
-  box-shadow:0 16px 35px rgba(0,0,0,.16);
-}
-.benefits{
-  position:absolute;left:0;bottom:24px;
-  width:100%;display:flex;gap:30px;padding:0 5%;
-}
-.benefit{display:flex;align-items:center;gap:10px;color:#173d35;font-size:13px;font-weight:750}
-.benefit-icon{
-  width:34px;height:34px;border-radius:10px;
-  display:grid;place-items:center;background:#d8f4e8;
-}
-.section{padding:62px 0}
-.section-head{
-  display:grid;grid-template-columns:1.1fr .9fr;
-  gap:40px;align-items:end;margin-bottom:28px;
-}
-.section h2{
-  font-size:35px;line-height:1.08;
-  letter-spacing:-1.7px;margin:9px 0 0;
-}
-.section-head p{color:var(--muted);margin:0;font-size:16px}
-.topic-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);
-  gap:14px;
-}
-.topic{
-  border:1px solid var(--line);
-  border-radius:16px;overflow:hidden;background:#fff;
-  box-shadow:var(--shadow);
-  display:flex;flex-direction:column;
-  min-width:0;
-}
-.topic-photo{
-  height:125px;
-  background-position:center;background-size:cover;
-}
-.topic:nth-child(1) .topic-photo{background-image:url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=700&q=80")}
-.topic:nth-child(2) .topic-photo{background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=700&q=80")}
-.topic:nth-child(3) .topic-photo{background-image:url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=700&q=80")}
-.topic:nth-child(4) .topic-photo{background-image:url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=700&q=80")}
-.topic:nth-child(5) .topic-photo{background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80")}
-.topic:nth-child(6) .topic-photo{background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80")}
-.topic-body{padding:16px 14px 18px;display:flex;flex-direction:column;flex:1}
-.topic-icon{font-size:23px;margin-bottom:9px}
-.topic h3{font-size:16px;line-height:1.15;margin-bottom:8px}
-.topic p{font-size:12px;color:var(--muted);line-height:1.45;margin-bottom:14px}
-.topic-link{margin-top:auto;color:#15956a;font-size:12px;font-weight:850}
-.ai-box{
-  margin-top:34px;padding:28px 32px;
-  border-radius:25px;background:var(--pale);
-  border:1px solid #d9eee6;
-}
-.ai-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.ai-icon{
-  width:48px;height:48px;border-radius:15px;
-  display:grid;place-items:center;background:#0d9f70;color:#fff;font-size:25px;
-}
-.ai-head h3{margin:0;font-size:23px}
-.ai-head p{margin:2px 0 0;color:#61736e;font-size:13px}
-.prompt-row{display:flex;gap:10px}
-.prompt-row input{
-  flex:1;min-width:0;height:48px;border:1px solid #d3e2dd;
-  border-radius:12px;padding:0 15px;background:#fff;outline:none;
-}
-.prompt-row input:focus{border-color:var(--green)}
-.prompt-row button{
-  border:0;border-radius:12px;padding:0 24px;
-  background:var(--green);color:#fff;font-weight:850;
-}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{
-  border:1px solid #cbded7;background:#fff;
-  border-radius:999px;padding:7px 13px;
-  font-size:12px;font-weight:750;color:#416d61;
-  cursor:pointer;
-}
-.photo-cta{
-  margin-top:26px;min-height:180px;border-radius:26px;
-  background:
-    linear-gradient(90deg,rgba(4,42,35,.92),rgba(4,42,35,.48)),
-    url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1500&q=85")
-    center/cover;
-  color:#fff;padding:30px;
-  display:flex;align-items:center;justify-content:space-between;gap:30px;
-}
-.photo-cta h2{font-size:27px;max-width:470px;margin:8px 0 0}
-.feature-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.feature{display:flex;gap:12px;align-items:flex-start}
-.feature-icon{font-size:27px}
-.feature h4{margin:0 0 3px;font-size:15px}
-.feature p{margin:0;font-size:12px;color:#d2e2dc}
-.disclaimer{
-  color:#7a8985;text-align:center;font-size:12px;
-  padding:22px 0 38px;
-}
-.site-footer{background:#063d33;color:#fff;padding:48px 0 24px}
-.footer-grid{
-  display:grid;grid-template-columns:1.4fr .8fr .8fr .7fr .7fr;
-  gap:28px;padding-bottom:35px;
-}
-.footer-brand{font-size:24px;font-weight:850;letter-spacing:-.8px}
-.footer-brand .aria{color:#4edc9f}
-.footer-tag{color:#a6bbb5;margin-top:10px;font-size:13px}
-.footer-col h4{margin:0 0 12px;font-size:13px}
-.footer-col a{display:block;color:#a6bbb5;font-size:13px;margin:8px 0}
-.footer-social{display:flex;gap:8px;justify-content:flex-end}
-.social{
-  width:30px;height:30px;border-radius:50%;
-  display:grid;place-items:center;background:#14785f;
-  color:#fff;font-size:12px;font-weight:800;
-}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.14);
-  padding-top:19px;color:#849d96;
-  display:flex;justify-content:space-between;gap:20px;font-size:12px;
-}
-.footer-bottom strong{color:#fff}
-@media(max-width:1000px){
-  .nav{gap:15px}
-  .topic-grid{grid-template-columns:repeat(3,1fr)}
-  .hero h1{font-size:48px}
-}
-@media(max-width:760px){
-  .nav-wrap,.container{width:min(100% - 32px,560px)}
-  .nav{display:none}
-  .header-btn{margin-left:auto}
-  .menu{display:block}
-  .hero-grid{display:block;min-height:0}
-  .hero-copy{padding:42px 0 25px}
-  .hero h1{font-size:44px;letter-spacing:-2.2px}
-  .hero p{font-size:17px}
-  .hero-photo{height:360px}
-  .hero-photo:before{left:8%;bottom:20%;width:175px;font-size:20px;padding:20px}
-  .hero-photo:after{right:8%;top:15%;font-size:22px}
-  .benefits{bottom:14px;gap:10px;padding:0 4%;justify-content:space-between}
-  .benefit{font-size:10px;gap:5px}
-  .benefit-icon{width:28px;height:28px;font-size:12px}
-  .section{padding:45px 0}
-  .section-head{display:block}
-  .section-head p{margin-top:15px}
-  .section h2{font-size:32px}
-  .topic-grid{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-  }
-  .topic-photo{height:110px}
-  .topic-body{padding:13px}
-  .topic h3{font-size:15px}
-  .topic p{font-size:11px}
-  .ai-box{padding:22px 16px}
-  .prompt-row{display:block}
-  .prompt-row input{width:100%;margin-bottom:9px}
-  .prompt-row button{width:100%;height:48px}
-  .photo-cta{padding:25px;display:block}
-  .photo-cta h2{font-size:25px}
-  .feature-row{grid-template-columns:repeat(2,1fr);margin-top:24px}
-  .footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:25px}
-  .footer-brand-col{grid-column:1/-1}
-  .footer-social{justify-content:flex-start}
-  .footer-bottom{display:block}
-  .footer-bottom span{display:block;margin-top:8px}
-}
-@media(max-width:430px){
-  .brand{font-size:21px}
-  .brand .mark{width:38px;height:38px}
-  .header-btn{padding:12px 15px;font-size:13px}
-  .hero h1{font-size:39px}
-  .topic-grid{grid-template-columns:1fr}
-  .topic-photo{height:155px}
-  .benefits{position:static;padding:0 0 20px}
-  .hero-photo{height:330px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand-col{grid-column:1/-1}
-}
+:root{--ink:#092d25;--green:#20a875;--green2:#35c58c;--mint:#eef9f5;--mint2:#dff3eb;--line:#d7e5e0;--muted:#687b76;--white:#fff;--dark:#082f27}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav-wrap{max-width:1180px;margin:auto;min-height:82px;padding:14px 28px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:-1.5px;white-space:nowrap}.brand .mark{width:54px;height:54px;border-radius:16px;background:var(--dark);color:#53e0a8;display:grid;place-items:center;font-size:31px}.brand>span:last-child span{color:var(--green)}.nav{display:flex;align-items:center;gap:20px;margin-left:auto;font-weight:700;color:#31524a}.nav a:hover{color:var(--green)}.header-btn{background:var(--dark);color:#fff;padding:15px 22px;border-radius:14px;font-weight:800;white-space:nowrap}.menu-btn{display:none;border:0;background:transparent;font-size:34px;color:var(--ink)}
+.container{max-width:1180px;margin:auto;padding:0 28px}
+.hero{background:var(--mint);min-height:640px;border-radius:0 0 44px 44px;padding:78px 0 64px;overflow:hidden}.eyebrow,.section-kicker{font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#318d71;font-size:15px}.hero h1{font-size:clamp(48px,7vw,86px);line-height:.98;letter-spacing:-4px;max-width:780px;margin:22px 0;color:var(--ink)}.hero h1 span{color:var(--green)}.hero p{font-size:22px;color:#647872;max-width:760px;margin:24px 0}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:17px 28px;border-radius:15px;font-weight:800;font-size:17px;border:1px solid var(--green)}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--ink);border-color:#ccdcd7}.hero-art{margin:54px auto 0;max-width:900px;height:330px;border:1px solid #d6e9e1;border-radius:36px;background:radial-gradient(circle at 50% 45%,#65d6a2 0 18%,#31b97d 19% 32%,#cdeee1 33% 52%,#e8f7f2 53%);position:relative;overflow:hidden;box-shadow:0 25px 60px rgba(8,47,39,.08)}.orb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:82px;color:#fff;font-weight:800}.bubble{position:absolute;background:#fff;border:1px solid var(--line);padding:13px 20px;border-radius:16px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.08)}.b1{left:8%;top:16%}.b2{right:8%;top:30%}.b3{left:12%;bottom:15%}.b4{right:12%;bottom:12%;background:var(--dark);color:#fff;border-color:var(--dark)}
+.section{padding:86px 0}.section h2{font-size:clamp(38px,5vw,62px);line-height:1.05;letter-spacing:-2.5px;margin:18px 0}.section-intro{font-size:20px;color:var(--muted);max-width:760px}.category{margin-top:42px}.category h3{font-size:27px;margin:0 0 18px}.chips{display:flex;flex-wrap:wrap;gap:12px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:13px 17px;font-weight:700;color:#356d5e;cursor:pointer;transition:.2s}.chip:hover,.chip.active{background:var(--mint2);border-color:#9fd9c5;color:var(--ink)}
+.ask-section{background:#f6fbf9;padding:86px 0}.ask-card{background:#fff;border:1px solid var(--line);border-radius:32px;padding:32px;box-shadow:0 20px 55px rgba(8,47,39,.06)}.ask-card h2{margin-top:0}.textarea{width:100%;min-height:170px;border:1px solid #cfdfda;border-radius:20px;padding:20px;font:inherit;font-size:18px;resize:vertical;color:var(--ink)}.textarea:focus{outline:3px solid rgba(32,168,117,.12);border-color:var(--green)}.ask-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:16px}.research-toggle{display:flex;align-items:center;gap:10px;font-weight:700;color:#466a61}.research-toggle input{width:20px;height:20px;accent-color:var(--green)}.helper{color:#80908c;font-size:14px;margin-top:12px}.answer-box{display:none;margin-top:25px;background:var(--mint);border:1px solid #cde8de;border-radius:22px;padding:24px}.answer-box.show{display:block}.answer-box h3{margin:0 0 10px}.sources{margin-top:20px;padding-top:16px;border-top:1px solid #cde8de}.sources a{color:#167f5b;font-weight:700;display:block;margin-top:7px}
+.research-info{margin-top:24px;padding:20px 22px;border-radius:20px;background:var(--dark);color:#d7eee6}.research-info strong{color:#62dfa9}.source-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.flow-step{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}.flow-step b{display:block;color:#61dca8;margin-bottom:5px}
+.cta{padding:80px 0}.cta-card{background:var(--dark);color:#fff;border-radius:34px;padding:54px}.cta-card h2{font-size:clamp(38px,5vw,60px);line-height:1.05;margin:0 0 20px;letter-spacing:-2px}.cta-card h2 span{color:#5ee1ab}.cta-card p{color:#b4cbc4;font-size:19px;max-width:700px}
+.disclaimer{font-size:13px;color:#7c8d88;text-align:center;max-width:850px;margin:0 auto 60px}
+
+.mf-research{margin-top:38px;padding:28px;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 14px 40px rgba(8,47,39,.05)}.mf-research h4{font-size:25px;margin:0 0 8px}.mf-research p{color:var(--muted);margin:8px 0 18px}.mf-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.mf-select{border:1px solid #cfdfda;border-radius:13px;padding:13px 15px;background:#fff;color:var(--ink);font:inherit}.mf-table-wrap{overflow-x:auto;margin-top:20px}.mf-table{width:100%;border-collapse:collapse;min-width:620px}.mf-table th,.mf-table td{padding:13px 12px;border-bottom:1px solid #e2ece8;text-align:left}.mf-table th{background:#f4faf7;color:#315f52;font-size:13px;text-transform:uppercase;letter-spacing:.4px}.mf-status{margin-top:15px;padding:15px 16px;border-radius:15px;background:var(--mint);color:#315f52;font-size:14px}.mf-source{margin-top:12px;font-size:13px}.mf-source a{color:#167f5b;font-weight:800}.mf-types-card{margin-top:20px;padding:22px;border:1px solid #d7e9e2;border-radius:22px;background:#f8fcfa}.mf-types-card h4{margin:0 0 8px;font-size:22px}.mf-types-card p{margin:0 0 16px;color:#647872}.mf-type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.mf-type-grid span{display:block;padding:14px;border:1px solid #dceae5;background:#fff;border-radius:15px;color:#46675f;font-size:14px}.mf-type-grid b{display:block;color:#092d25;margin-bottom:5px}
+
+.footer{background:var(--dark);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff;display:block}.footer-brand > span{color:#42c991}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0}.copyright{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:13px}
+@media(max-width:800px){.nav-wrap{padding:12px 20px;min-height:74px}.brand{font-size:27px;gap:11px}.brand .mark{width:50px;height:50px;font-size:28px;border-radius:15px}.nav,.header-btn{display:none}.menu-btn{display:block;margin-left:auto}.hero{padding:58px 0 30px;border-radius:0 0 34px 34px}.hero h1{font-size:50px;letter-spacing:-2.7px}.hero p{font-size:18px}.hero-art{height:285px;margin-top:35px}.bubble{font-size:13px;padding:10px 13px}.orb{font-size:58px}.container{padding:0 27px}.section,.ask-section{padding:64px 0}.section h2{font-size:42px}.chips{gap:9px}.chip{font-size:14px;padding:11px 13px}.ask-card{padding:22px;border-radius:26px}.source-flow{grid-template-columns:1fr 1fr}.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:480px){.brand>span:last-child{font-size:25px}.hero h1{font-size:45px}.actions .btn{width:100%}.source-flow{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="WealthAria home">
-      <span class="mark">W</span>
-      <span>Wealth<span class="aria">Aria</span></span>
+    <a class="brand" href="index.html" aria-label="WealthAria">
+      <span class="mark">W</span><span>Wealth<span>Aria</span></span>
     </a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="learn.html">Learn</a>
-      <a href="calculators.html">Calculators</a>
-      <a class="active" href="ai.html">AI Tools</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a>
+      <a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     </nav>
-    <a class="header-btn" href="learn.html">Start Learning →</a>
-    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <a class="header-btn" href="learn.html">Start Learning</a>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
   </div>
 </header>
 
-<div id="mobileMenu" style="display:none;background:#fff;border-bottom:1px solid #d9e8e2;">
-  <div class="container" style="padding:10px 0 18px;">
-    <a style="display:block;padding:9px 0;" href="index.html">Home</a>
-    <a style="display:block;padding:9px 0;" href="learn.html">Learn</a>
-    <a style="display:block;padding:9px 0;" href="calculators.html">Calculators</a>
-    <a style="display:block;padding:9px 0;color:#20aa74;font-weight:800;" href="ai.html">AI Tools</a>
-    <a style="display:block;padding:9px 0;" href="blog.html">Blog</a>
-    <a style="display:block;padding:9px 0;" href="about.html">About</a>
-    <a style="display:block;padding:9px 0;" href="contact.html">Contact</a>
-  </div>
-</div>
-
 <main>
 <section class="hero">
-  <div class="hero-grid container">
-    <div class="hero-copy">
-      <div class="kicker">AI Tools</div>
-      <h1>Smarter Questions.<br><span>Clearer Answers.</span></h1>
-      <p>Your AI-powered guide to money, investing and financial concepts — in simple, easy-to-understand language.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#ask">Ask WealthAria AI →</a>
-        <a class="btn btn-secondary" href="#topics">Explore Learning</a>
-      </div>
-    </div>
-    <div class="hero-photo" aria-label="Modern financial learning workspace">
-      <div class="benefits">
-        <div class="benefit"><span class="benefit-icon">▣</span><span>Learn<br>in simple language</span></div>
-        <div class="benefit"><span class="benefit-icon">✓</span><span>Educational<br>and unbiased</span></div>
-        <div class="benefit"><span class="benefit-icon">💡</span><span>Build confidence<br>before you act</span></div>
-      </div>
-    </div>
+<div class="container">
+  <div class="eyebrow">AI TOOLS</div>
+  <h1>Smarter questions.<br><span>Clearer answers.</span></h1>
+  <p>Understand money, investing and financial concepts in simple language — with an AI-ready research experience designed to help you learn before you act.</p>
+  <div class="actions">
+    <a class="btn primary" href="#ask">Ask WealthAria AI →</a>
+    <a class="btn secondary" href="#topics">Explore Questions</a>
   </div>
+  <div class="hero-art" aria-label="WealthAria AI visual">
+    <div class="bubble b1">Explain SIP simply</div>
+    <div class="bubble b2">What is CAGR?</div>
+    <div class="bubble b3">Plan for retirement</div>
+    <div class="bubble b4">WEALTHARIA AI<br><small>Learn • Research • Explain</small></div>
+    <div class="orb">AI</div>
+  </div>
+</div>
 </section>
 
 <section class="section" id="topics">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="kicker">Explore Topics</div>
-        <h2>Ask about what matters to you.</h2>
-      </div>
-      <p>Start with a topic below or type your own question. These tools are designed for education, not personalized investment advice.</p>
-    </div>
+<div class="container">
+  <div class="section-kicker">EXPLORE TOPICS</div>
+  <h2>Ask about what matters to you.</h2>
+  <p class="section-intro">Choose a question or write your own. The expanded question library covers investing, stocks, mutual funds, loans, tax and retirement.</p>
 
-    <div class="topic-grid">
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">🌱</div><h3>SIP &amp; Compounding</h3>
-          <p>Understand SIPs, compounding and how regular investments can grow.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain SIP and compounding simply">Ask about SIP →</a>
-        </div>
-      </article>
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">▥</div><h3>Mutual Funds</h3>
-          <p>Learn about fund categories, NAV, risk, diversification and long-term investing basics.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain mutual funds to a beginner">Ask about funds →</a>
-        </div>
-      </article>
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">📈</div><h3>Stock Market</h3>
-          <p>Explore shares, valuation concepts, volatility, diversification and market terminology.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain stock market basics">Ask about stocks →</a>
-        </div>
-      </article>
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">🏠</div><h3>Loans &amp; EMI</h3>
-          <p>Understand interest, EMI, tenure, amortisation and prepayment concepts.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain EMI and loan interest">Ask about loans →</a>
-        </div>
-      </article>
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">🧾</div><h3>Tax Basics</h3>
-          <p>Learn common tax concepts, deductions, exemptions and planning terminology.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain Indian tax basics simply">Ask about tax →</a>
-        </div>
-      </article>
-      <article class="topic">
-        <div class="topic-photo"></div><div class="topic-body">
-          <div class="topic-icon">🎯</div><h3>Retirement Goals</h3>
-          <p>Explore inflation, retirement corpus, withdrawal planning and long-term goal setting.</p>
-          <a class="topic-link" href="#ask" data-prompt="Explain retirement planning basics">Ask about retirement →</a>
-        </div>
-      </article>
+  <div class="category">
+    <h3>Investing & Compounding</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('What is SIP and how does it work?')">What is SIP?</button>
+      <button class="chip" onclick="setQuestion('SIP vs Lumpsum — how do they differ?')">SIP vs Lumpsum</button>
+      <button class="chip" onclick="setQuestion('How does compounding work in investing?')">How does compounding work?</button>
+      <button class="chip" onclick="setQuestion('What is CAGR? Explain with an example.')">What is CAGR?</button>
+      <button class="chip" onclick="setQuestion('What is XIRR and when is it useful?')">What is XIRR?</button>
+      <button class="chip" onclick="setQuestion('What is asset allocation?')">Asset allocation</button>
+      <button class="chip" onclick="setQuestion('How should an investor think about risk and return?')">Risk & return</button>
+      <button class="chip" onclick="setQuestion('What is diversification and why does it matter?')">Diversification</button>
     </div>
+  </div>
 
-    <div class="ai-box" id="ask">
-      <div class="ai-head">
-        <div class="ai-icon">◌</div>
-        <div><h3>Ask WealthAria AI</h3><p>Type your financial question in your own words.</p></div>
-      </div>
-      <div class="prompt-row">
-        <input id="question" type="text" placeholder="Example: Explain SIP to me like I am a beginner..." aria-label="Your financial question">
-        <button type="button" onclick="askAI()">Ask WealthAria AI →</button>
-      </div>
-      <div class="chips">
-        <button class="chip" data-prompt="Explain SIP">Explain SIP</button>
-        <button class="chip" data-prompt="What is CAGR?">What is CAGR?</button>
-        <button class="chip" data-prompt="EMI vs interest">EMI vs interest</button>
-        <button class="chip" data-prompt="Tax saving options">Tax saving options</button>
-        <button class="chip" data-prompt="Retirement basics">Retirement basics</button>
-      </div>
-      <div id="aiNote" style="display:none;margin-top:15px;padding:13px 15px;border-radius:12px;background:#fff;border:1px solid #d8e7e1;color:#55716a;font-size:13px;">
-        This interface is ready for live AI integration. For now, use WealthAria's learning pages and calculators for educational guidance.
-      </div>
-    </div>
-
-    <div class="photo-cta">
-      <div>
-        <div class="kicker" style="color:#55dca3">Why use WealthAria AI?</div>
-        <h2>Simple explanations. Less confusion. Better financial learning.</h2>
-      </div>
-      <div class="feature-row">
-        <div class="feature"><div class="feature-icon">📖</div><div><h4>Simple Explanations</h4><p>Complex concepts in easy language.</p></div></div>
-        <div class="feature"><div class="feature-icon">◷</div><div><h4>Save Time</h4><p>Quick, structured answers to common questions.</p></div></div>
-        <div class="feature"><div class="feature-icon">◉</div><div><h4>Learn at Your Pace</h4><p>Explore topics that matter to you.</p></div></div>
-        <div class="feature"><div class="feature-icon">✓</div><div><h4>Educational Only</h4><p>Not personalized investment advice.</p></div></div>
+  <div class="category">
+    <h3>Mutual Funds</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('What is a mutual fund?')">What is a mutual fund?</button>
+      <button class="chip" onclick="setQuestion('What are the types of mutual funds in India? Include Flexi Cap and explain each category.')">Type of Mutual Funds</button>
+      <button class="chip" onclick="setQuestion('Show top performing mutual funds category wise using Moneycontrol data, with SIP XIRR for 1 year, 3 years, 5 years and since inception/all years.')">Top Performing Mutual Funds</button>
+      <button class="chip" onclick="setQuestion('What is NAV?')">NAV explained</button>
+      <button class="chip" onclick="setQuestion('Large Cap vs Mid Cap vs Small Cap funds')">Large vs Mid vs Small Cap</button>
+      <button class="chip" onclick="setQuestion('Index Fund vs Active Fund — explain the difference.')">Index vs Active</button>
+      <button class="chip" onclick="setQuestion('ETF vs Mutual Fund — what is the difference?')">ETF vs Mutual Fund</button>
+      <button class="chip" onclick="setQuestion('What is expense ratio?')">Expense ratio</button>
+      <button class="chip" onclick="setQuestion('What are the risks in mutual funds?')">Mutual fund risks</button>
+      <button class="chip" onclick="setQuestion('Direct Plan vs Regular Plan')">Direct vs Regular</button>
+      <button class="chip" onclick="setQuestion('What is an exit load?')">Exit load</button>
+      <div class="mf-research">
+        <h4>Moneycontrol Mutual Fund Research</h4>
+        <p>Research the mutual-fund universe category-wise. The live research layer is designed to retrieve Moneycontrol data and show the return period separately rather than mixing CAGR and XIRR.</p>
+        <div class="mf-controls">
+          <select id="mfCategory" class="mf-select">
+            <option value="all">All categories</option>
+            <option value="equity">Equity</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="debt">Debt</option>
+            <option value="solution">Solution Oriented</option>
+            <option value="other">Other</option>
+          </select>
+          <button class="btn primary" type="button" onclick="researchMoneycontrol()">Research Moneycontrol →</button>
+          <a class="btn secondary" href="https://www.moneycontrol.com/mutual-funds/performance-tracker/" target="_blank" rel="noopener">Open Moneycontrol Tracker</a>
+        </div>
+        <div id="mfStatus" class="mf-status">Select a category and tap Research Moneycontrol. No return will be labelled XIRR unless the underlying dated SIP cash flows support an XIRR calculation.</div>
+        <div class="mf-table-wrap">
+          <table class="mf-table" aria-label="Mutual fund research return periods">
+            <thead><tr><th>Fund / Category</th><th>1Y XIRR*</th><th>3Y XIRR*</th><th>5Y XIRR*</th><th>All / Since inception*</th></tr></thead>
+            <tbody id="mfRows"><tr><td colspan="5">Live results will appear here when the secure research endpoint is connected.</td></tr></tbody>
+          </table>
+        </div>
+        <div class="mf-source"><strong>Data integrity:</strong> WealthAria will not manufacture a “top fund” ranking or convert CAGR into XIRR. When Moneycontrol exposes fund-level SIP cash-flow inputs, the backend can calculate and display verified XIRR. <br><br>*Moneycontrol's tracker distinguishes regular return/CAGR and SIP-return measures. Since-inception XIRR must be calculated from dated cash flows/NAV history; it should not be copied from a CAGR field. Source: <a href="https://m.moneycontrol.com/mutual-funds/performance_tracker.php" target="_blank" rel="noopener">Moneycontrol Performance Tracker</a>.</div>
+        <div class="mf-types-card" id="mfTypesCard">
+          <h4>Types of Mutual Funds — including Flexi Cap</h4>
+          <p>Explore the major Indian mutual-fund categories in simple terms. Equity categories include <strong>Flexi Cap</strong>, where the fund manager can invest across large-, mid- and small-cap companies subject to the scheme mandate.</p>
+          <div class="mf-type-grid">
+            <span><b>Equity</b> Multi Cap, Large Cap, Large &amp; Mid Cap, Mid Cap, Small Cap, <strong>Flexi Cap</strong>, ELSS, Focused, Value, Contra, Sectoral/Thematic, Dividend Yield, Index/ETF</span>
+            <span><b>Debt</b> Overnight, Liquid, Ultra Short, Money Market, Low/Short/Medium/Long Duration, Corporate Bond, Gilt, Credit Risk, Banking &amp; PSU</span>
+            <span><b>Hybrid</b> Aggressive Hybrid, Conservative Hybrid, Balanced Advantage, Multi Asset Allocation, Equity Savings, Arbitrage</span>
+            <span><b>Solution Oriented</b> Retirement and Children's funds</span>
+            <span><b>Other</b> Fund of Funds and other permitted scheme structures</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="category">
+    <h3>Stocks & Markets</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('What is P/E ratio?')">P/E ratio</button>
+      <button class="chip" onclick="setQuestion('What is ROE?')">ROE</button>
+      <button class="chip" onclick="setQuestion('What is market capitalisation?')">Market cap</button>
+      <button class="chip" onclick="setQuestion('How do I read a company balance sheet?')">Balance sheet</button>
+      <button class="chip" onclick="setQuestion('What is dividend yield?')">Dividend yield</button>
+      <button class="chip" onclick="setQuestion('What is a bull market and bear market?')">Bull vs Bear</button>
+      <button class="chip" onclick="setQuestion('What is stock market volatility?')">Volatility</button>
+      <button class="chip" onclick="setQuestion('What is an index fund?')">Index funds</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>Loans & EMI</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('How is EMI calculated?')">How is EMI calculated?</button>
+      <button class="chip" onclick="setQuestion('Explain principal vs interest in a home loan.')">Principal vs interest</button>
+      <button class="chip" onclick="setQuestion('How does home-loan prepayment work?')">Loan prepayment</button>
+      <button class="chip" onclick="setQuestion('Fixed vs floating interest rate')">Fixed vs floating</button>
+      <button class="chip" onclick="setQuestion('What happens to loans when interest rates change?')">Rate changes</button>
+      <button class="chip" onclick="setQuestion('What is loan amortisation?')">Amortisation</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>Tax</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('Old tax regime vs new tax regime')">Old vs New regime</button>
+      <button class="chip" onclick="setQuestion('Explain Section 80C.')">Section 80C</button>
+      <button class="chip" onclick="setQuestion('What is capital gains tax?')">Capital gains</button>
+      <button class="chip" onclick="setQuestion('STCG vs LTCG')">STCG vs LTCG</button>
+      <button class="chip" onclick="setQuestion('How are mutual funds taxed in India?')">MF taxation</button>
+      <button class="chip" onclick="setQuestion('How are shares taxed in India?')">Share taxation</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>Retirement & Goals</h3>
+    <div class="chips">
+      <button class="chip" onclick="setQuestion('How much retirement corpus might I need?')">Retirement corpus</button>
+      <button class="chip" onclick="setQuestion('How does inflation affect retirement planning?')">Inflation</button>
+      <button class="chip" onclick="setQuestion('What is SWP?')">SWP explained</button>
+      <button class="chip" onclick="setQuestion('How can I estimate retirement monthly income?')">Monthly retirement income</button>
+      <button class="chip" onclick="setQuestion('How do I plan a long-term financial goal?')">Goal planning</button>
+    </div>
+  </div>
+</div>
 </section>
 
-<div class="disclaimer container">
-  WealthAria AI Tools are educational tools. Information can change and should be checked against current official sources where relevant. This page does not provide investment, tax or financial advice.
-</div>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand-col">
-        <div class="footer-brand">Wealth<span class="aria">Aria</span></div>
-        <div class="footer-tag">Build Wealth. Simply. Intelligently.</div>
-      </div>
-      <div class="footer-col"><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-      <div class="footer-social"><span class="social">in</span><span class="social">▶</span><span class="social">X</span><span class="social">◎</span></div>
+<section class="ask-section" id="ask">
+<div class="container">
+  <div class="ask-card">
+    <div class="section-kicker">ASK WEALTHARIA AI</div>
+    <h2>What do you want to understand?</h2>
+    <p class="section-intro">Ask in your own words. For current facts, rates, rules, market information or changing data, use Research Mode so a future backend can retrieve and cite fresh sources.</p>
+    <textarea id="question" class="textarea" placeholder="Example: Explain SIP to me like I am a beginner..."></textarea>
+    <div class="ask-row">
+      <button class="btn primary" onclick="askAI()">Ask WealthAria AI →</button>
+      <label class="research-toggle"><input id="researchMode" type="checkbox"> Deep Web Research</label>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 WealthAria. Educational platform. Not financial advice.</span>
-      <span><strong>Plan Today. A Brighter Tomorrow.</strong></span>
+    <div class="helper">Educational use only • No personalized investment advice</div>
+
+    <div id="answer" class="answer-box">
+      <h3 id="answerTitle">WealthAria AI</h3>
+      <div id="answerText"></div>
+      <div id="sourceArea" class="sources"></div>
+    </div>
+
+    <div class="research-info">
+      <strong>How Deep Web Research will work</strong><br>
+      Question → trusted sources → cross-check → simple explanation → source links.
+      <div class="source-flow">
+        <div class="flow-step"><b>1. Search</b>Find current and relevant information.</div>
+        <div class="flow-step"><b>2. Verify</b>Prefer official and authoritative sources.</div>
+        <div class="flow-step"><b>3. Explain</b>Summarize in plain language.</div>
+        <div class="flow-step"><b>4. Cite</b>Show the sources used for the answer.</div>
+      </div>
     </div>
   </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+  <div class="cta-card">
+    <div class="section-kicker" style="color:#59dca8">BUILT FOR LEARNING</div>
+    <h2>AI should make money <span>easier to understand.</span></h2>
+    <p>WealthAria is designed as an educational starting point. When questions involve current rules, rates, markets or products, the research layer should show where the information came from.</p>
+    <a class="btn primary" href="learn.html">Continue Learning →</a>
+  </div>
+</div>
+</section>
+
+<p class="disclaimer">WealthAria provides educational information and tools, not investment, tax, legal or financial advice. Current information can change; users should verify important decisions against authoritative sources and consult an appropriately qualified professional where necessary.</p>
+</main>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">Wealth<span>Aria</span></div>
+  <p>Build Wealth. Simply. Intelligently.</p>
+  <div class="footer-grid">
+    <div></div>
+    <div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+    <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div>
+</div>
 </footer>
 
 <script>
-function toggleMenu(){
-  const m=document.getElementById('mobileMenu');
-  m.style.display=m.style.display==='none'?'block':'none';
+function setQuestion(q){
+  document.getElementById('question').value=q;
+  document.getElementById('ask').scrollIntoView({behavior:'smooth',block:'center'});
 }
-function setPrompt(value){
-  document.getElementById('question').value=value;
-  document.getElementById('question').focus();
-}
-document.querySelectorAll('[data-prompt]').forEach(el=>{
-  el.addEventListener('click',()=>{
-    setPrompt(el.getAttribute('data-prompt'));
-  });
-});
 function askAI(){
-  const input=document.getElementById('question');
-  const note=document.getElementById('aiNote');
-  if(!input.value.trim()){
-    input.focus();
-    input.placeholder='Type a question first — for example: What is a SIP?';
-    return;
+  const q=document.getElementById('question').value.trim();
+  const research=document.getElementById('researchMode').checked;
+  const box=document.getElementById('answer'), text=document.getElementById('answerText'), source=document.getElementById('sourceArea');
+  if(!q){ setQuestion(''); document.getElementById('question').focus(); return; }
+  box.classList.add('show');
+  if(research){
+    const isMF=/mutual fund|mf|xirr|moneycontrol|flexi cap|large cap|mid cap|small cap/i.test(q);
+    if(isMF){
+      text.innerHTML='<strong>Mutual Fund Research Mode</strong><br><br>For fund rankings, WealthAria should retrieve the current Moneycontrol category/fund data, keep 1Y, 3Y and 5Y annualised returns separate, and calculate <strong>SIP XIRR</strong> only from dated SIP cash flows. “All years” should be shown as <strong>Since Inception XIRR</strong> only when the underlying dated NAV/cash-flow history is available.';
+      source.innerHTML='<strong>Primary sources</strong><a href="https://m.moneycontrol.com/mutual-funds/performance_tracker.php" target="_blank" rel="noopener">Moneycontrol — Mutual Fund Performance Tracker</a><a href="https://www.sebi.gov.in/legal/circulars/feb-2026/categorization-and-rationalization-of-mutual-fund-schemes_99983.html" target="_blank" rel="noopener">SEBI — current mutual-fund categorisation</a><a href="https://www.amfiindia.com/investor/knowledge-center-info?zoneName=TypesOfMutualFundSchemes" target="_blank" rel="noopener">AMFI — Types of Mutual Fund Schemes</a>';
+    }else{
+      text.innerHTML='<strong>Research Mode is selected.</strong><br><br>The secure research layer should search multiple trusted sources, cross-check the information, and return a cited answer here.';
+      source.innerHTML='<strong>Planned source priority</strong><a href="https://www.sebi.gov.in/" target="_blank" rel="noopener">SEBI — securities-market and investor information</a><a href="https://www.amfiindia.com/investor" target="_blank" rel="noopener">AMFI — mutual-fund investor information</a><a href="https://www.rbi.org.in/" target="_blank" rel="noopener">RBI — banking and monetary information</a>';
+    }
+  }else{
+    text.innerHTML='<strong>Your question:</strong> '+escapeHtml(q)+'<br><br><strong>WealthAria educational response layer</strong><br>This interface is ready to connect to the WealthAria AI knowledge backend. For current or changing information, enable <em>Deep Web Research</em> so the future research layer can retrieve and cite sources.';
+    source.innerHTML='<strong>Tip:</strong> For current rates, tax rules, market data or regulatory changes, use Deep Web Research.';
   }
-  note.style.display='block';
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+async function researchMoneycontrol(){
+  const status=document.getElementById('mfStatus'), rows=document.getElementById('mfRows'), category=document.getElementById('mfCategory').value;
+  status.textContent='Connecting to the secure Moneycontrol research endpoint…';
+  rows.innerHTML='<tr><td colspan="5">Loading…</td></tr>';
+  try{
+    const r=await fetch('/api/moneycontrol-mf?category='+encodeURIComponent(category),{headers:{Accept:'application/json'}});
+    const data=await r.json();
+    if(!r.ok) throw new Error(data.error||'Research endpoint unavailable');
+    status.innerHTML='<strong>Source retrieved:</strong> Moneycontrol Performance Tracker. '+escapeHtml(data.note||'');
+    const avg=(data.categoryAverages||[]);
+    const lines=avg.length?avg.slice(0,20).map(x=>`<tr><td><strong>${escapeHtml(x.category)}</strong><br><small>Moneycontrol category average</small></td><td colspan=4>— <small>Fund-level SIP XIRR not verified</small></td></tr>`).join(''):'<tr><td colspan="5">Moneycontrol was reached, but no category rows were safely parsed. Open the source tracker to inspect the live table.</td></tr>';
+    rows.innerHTML=lines;
+  }catch(e){
+    status.innerHTML='<strong>Research endpoint not connected.</strong> '+escapeHtml(e.message||String(e))+'<br>Use the Moneycontrol tracker link above until the secure backend is deployed.';
+    rows.innerHTML='<tr><td colspan="5">No live values shown — preventing unverified or incorrectly labelled XIRR.</td></tr>';
+  }
+}
+
+function toggleMenu(){
+  const nav=document.querySelector('.nav');
+  if(getComputedStyle(nav).display==='none'){nav.style.display='flex';nav.style.position='absolute';nav.style.top='74px';nav.style.left='0';nav.style.right='0';nav.style.padding='18px 20px';nav.style.background='#fff';nav.style.flexDirection='column';nav.style.borderBottom='1px solid #d7e5e0';}
+  else nav.removeAttribute('style');
 }
 </script>
 </body>
