@@ -132,6 +132,60 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
 .site-header{height:76px;background:rgba(255,255,255,.94);border-bottom:1px solid #e0e9e4;position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
 .nav-wrap{width:min(1200px,94%);height:100%;margin:auto;display:flex;align-items:center;gap:28px}.site-header .brand{display:flex;align-items:center;gap:9px;font:800 22px Manrope,Arial;letter-spacing:-.8px;white-space:nowrap}.site-header .mark{width:35px;height:35px;border-radius:10px;background:#10261f;color:#5ee0a0;display:grid;place-items:center;font:800 17px Manrope,Arial}.site-header .brand>span:last-child{color:#10261f}.site-header .brand>span:last-child>span{color:#22a96b}.site-header nav{display:flex;gap:21px;margin-left:auto}.site-header nav a{font-size:13px;font-weight:600;color:#5c6d66;text-decoration:none}.site-header nav a.active,.site-header nav a:hover{color:#10261f}.site-header .header-btn{background:#10261f;color:#fff;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none}
 @media(max-width:950px){.site-header nav{display:none}.site-header{height:68px}.site-header .header-btn{margin-left:auto}.site-header .nav-wrap{gap:12px}.site-header .brand{font-size:20px}.site-header .mark{width:34px;height:34px;font-size:16px}}
+
+/* Final mobile bottom-section fix */
+@media(max-width:620px){
+  .cta{padding:28px 0 42px;}
+  .cta-box{
+    padding:28px 22px 30px;
+    border-radius:18px;
+    display:block;
+    overflow:visible;
+  }
+  .cta-box h2{
+    font-size:27px;
+    line-height:1.12;
+    margin:10px 0 0;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .cta-box p{
+    font-size:14px;
+    line-height:1.55;
+    margin:12px 0 0;
+  }
+  .cta-box .btn{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:20px 0 0;
+    text-align:center;
+  }
+  footer{
+    padding:30px 0 24px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px 18px;
+    align-items:start;
+  }
+  .footer-brand{grid-column:1 / -1;}
+  .footer-brand-text{display:inline-block;font:800 22px Manrope,Arial,sans-serif;letter-spacing:-.8px;color:#10261f;text-decoration:none;}
+  .footer-brand-text span{color:#22a96b;}
+  .footer-grid > div b{display:block;margin-bottom:8px;}
+  .footer-grid > div a:not(.footer-brand){
+    display:block;
+    margin:7px 0;
+  }
+  .footer-bottom{
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid #e8efec;
+    font-size:11px;
+    line-height:1.6;
+  }
+}
 </style>
 </head>
 <body>
@@ -252,9 +306,7 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
 <footer>
   <div class="container footer-grid">
     <div>
-      <a class="brand footer-brand" href="index.html" aria-label="WealthAria">
-        <span class="mark">W</span><span>Wealth<span>Aria</span></span>
-      </a>
+      <a class="footer-brand-text" href="index.html" aria-label="WealthAria">Wealth<span>Aria</span></a>
       <p>Build Wealth. Simply. Intelligently.</p>
     </div>
     <div><b>Explore</b><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
