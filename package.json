@@ -1,0 +1,7 @@
+{
+  "name": "wealtharia",
+  "private": true,
+  "dependencies": {
+    "openai": "^5.20.0"
+  }
+}
