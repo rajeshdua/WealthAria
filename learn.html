@@ -186,7 +186,7 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
     line-height:1.6;
   }
 }
-</style>
+.footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}.footer-brand>span{color:#42c991!important}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0;color:#a8c0b9}.footer a:hover{color:#63dda3}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}@media(max-width:700px){.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.footer-brand{font-size:26px}.footer h4{font-size:14px}.footer a,.footer p,.copyright{font-size:12px;line-height:1.6}}</style>
 </head>
 <body>
 
@@ -303,18 +303,11 @@ footer{border-top:1px solid #e8efec;padding:30px 0 25px}
 </section>
 </main>
 
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <a class="footer-brand-text" href="index.html" aria-label="WealthAria">Wealth<span>Aria</span></a>
-      <p>Build Wealth. Simply. Intelligently.</p>
-    </div>
-    <div><b>Explore</b><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div>
-    <div><b>Company</b><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-    <div><b>Legal</b><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-  </div>
-  <div class="container footer-bottom">© 2026 WealthAria. Educational platform. Not financial advice.</div>
-</footer>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Wealth<span>Aria</span></div><p>Build Wealth. Simply. Intelligently.</p>
+  <div class="footer-grid"><div></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+  <div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div>
+</div></footer>
 
 <script>
 document.querySelectorAll('.navlinks a').forEach(a=>{
