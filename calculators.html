@@ -19,77 +19,6 @@
 @media(max-width:900px){.top{grid-template-columns:minmax(0,1fr);overflow:hidden}.output{width:100%}.field label{gap:8px}.field label output{font-size:11px}.header{height:76px;padding:0 5%}.nav{display:none}.hamb{display:block}.hero{padding:0 0 10px}.heroBox{grid-template-columns:1fr;padding:22px 5% 8px;min-height:0}.hero h1{font-size:43px;line-height:.98;margin:10px 0}.heroArt{height:160px}.jar{transform:scale(.62);transform-origin:bottom right;right:10%}.stem{transform:scale(.62);transform-origin:bottom;right:31%}.l1{right:34%}.l2{right:25%}.l3{right:35%}.l4{right:22%}.arrow{transform:scale(.62) rotate(-19deg);right:0;top:20px}.scribble{right:42%;bottom:35px;font-size:13px}.sticky{right:1%;bottom:12px;transform:scale(.8) rotate(4deg);transform-origin:bottom right}.tabs{padding:10px 4% 5px}.tabGrid{display:flex;overflow-x:auto;overflow-y:hidden;gap:8px;scrollbar-width:none;padding-right:2px}.tabGrid::-webkit-scrollbar{display:none}.tab{flex:0 0 calc((92vw - 24px)/4);min-width:0;border-radius:15px;padding:10px 5px 7px}.tab .ico{font-size:22px;height:28px}.cagrIcon{gap:4px}.cagrIcon i{width:6px;height:21px}.cagrIcon i:nth-child(2){height:27px}.cagrIcon i:nth-child(3){height:18px}.tab small{font-size:10px}.panel{padding:9px 4% 27px}.top{grid-template-columns:1fr;padding:17px}.heading h2{font-size:25px}.output{padding:16px}.big{font-size:29px}.insight{margin:0 17px 18px}.cta{margin:27px 4%}.ctaIn{display:block}.cta .learn{display:inline-block;margin-top:14px}}
 @media(max-width:560px){.brand{font-size:25px}.mark{width:45px;height:45px}.hero h1{font-size:42px}.hero p{font-size:15px}.heroArt{height:150px}.tab{flex-basis:calc((92vw - 24px)/4)}.stats{grid-template-columns:1fr 1fr}.buttons{gap:7px}.buttons .btn{font-size:15px;padding:13px 8px}}
 .footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}.footer-brand>span{color:#42c991!important}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0;color:#a8c0b9;text-decoration:none!important}.footer a:hover{color:#63dda3}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}@media(max-width:700px){.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.footer-brand{font-size:26px}.footer h4{font-size:14px}.footer a,.footer p,.copyright{font-size:12px;line-height:1.6}}
-/* ===== EXACT MAIN MOBILE / FOOTER MATCH ===== */
-@media(max-width:800px){
-  .header{height:68px;padding:0 20px;z-index:110}
-  .brand{font-size:20px;gap:9px;letter-spacing:-.8px}
-  .mark{width:34px;height:34px;border-radius:10px;font-size:16px}
-  .nav{display:none}
-  .hamb{display:block;font-size:0;width:42px;height:42px;position:relative;z-index:112}
-  .hamb:before{content:"☰";font-size:28px;line-height:42px;color:var(--ink)}
-  .mobile{display:none;position:fixed;top:68px;left:0;right:0;width:100vw;max-width:none;margin:0;padding:8px 24px 12px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid #d7e5e0;box-shadow:0 10px 24px rgba(16,38,31,.08);z-index:111}
-  .mobile[style*="display: block"]{display:flex!important}
-  .mobile a{display:block;width:100%;padding:7px 0;line-height:1.25;font-size:16px;position:relative;z-index:1;text-decoration:none!important}
-}
-.footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px;text-align:left}
-.footer-inner{max-width:1180px;margin:auto}
-.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}
-.footer-brand>span{color:#42c991!important}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}
-.footer h4{color:#fff;margin:0 0 12px}
-.footer a{display:block;margin:9px 0;color:#a8c0b9;text-decoration:none!important}
-.footer a:hover{color:#63dda3}
-.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}
-@media(max-width:700px){
-  .footer{padding:45px 27px 25px}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
-  .footer-grid>div:first-child{grid-column:1/-1}
-  .footer-brand{font-size:26px}
-  .footer h4{font-size:14px}
-  .footer a,.footer p,.copyright{font-size:12px;line-height:1.6}
-}
-
-/* ===== FINAL MOBILE MENU FIX — MATCH MAIN COMPACT DROPDOWN ===== */
-@media(max-width:800px){
-  .header{z-index:1100 !important}
-  .mobile{
-    display:none;
-    position:fixed !important;
-    top:68px !important;
-    left:0 !important;
-    right:0 !important;
-    width:100vw !important;
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    margin:0 !important;
-    padding:8px 24px 12px !important;
-    box-sizing:border-box !important;
-    background:#fff !important;
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    justify-content:flex-start !important;
-    gap:0 !important;
-    overflow:hidden !important;
-    border-bottom:1px solid #d7e5e0 !important;
-    box-shadow:0 10px 24px rgba(16,38,31,.08) !important;
-    z-index:1200 !important;
-  }
-  .mobile[style*="display: block"]{display:flex !important}
-  .mobile a{
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-    padding:7px 0 !important;
-    margin:0 !important;
-    line-height:1.25 !important;
-    font-size:16px !important;
-    position:relative !important;
-    z-index:1 !important;
-    text-decoration:none !important;
-    font-weight:600 !important;
-  }
-}
 /* ===== FOOTER TYPOGRAPHY — SAME AS SHARED PAGES ===== */
 .footer{background:#10261f !important;color:#a8c0b9 !important;padding:58px 28px 28px !important;text-align:left !important}
 .footer-inner{max-width:1180px !important;margin:auto !important}
@@ -110,18 +39,33 @@
 }
 
 
-/* ===== HEADER STANDARD — MATCH AI TOOLS REFERENCE ===== */
-@media (min-width:801px){
-  .header{height:82px !important;padding:14px 28px !important}
-  .header .brand{gap:14px !important;font-family:Arial,Helvetica,sans-serif !important;font-size:30px !important;font-weight:800 !important;letter-spacing:-1.5px !important}
-  .header .mark{width:54px !important;height:54px !important;border-radius:16px !important;font-size:31px !important}
-  .header .nav{gap:20px !important;font-family:Arial,Helvetica,sans-serif !important;font-weight:700 !important}
-  .header .nav a{font-size:14px !important;font-weight:700 !important}
-}
-
 /* ===== FINAL FOOTER BRAND EXACT STANDARD ===== */
 .footer-brand{font-family:Arial,Helvetica,sans-serif !important;font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
 @media(max-width:700px){.footer-brand{font-size:26px !important}}
+
+/* ===== WEALTHARIA MASTER HEADER — AI TOOLS STANDARD ===== */
+.site-header{height:82px!important;min-height:82px!important;background:#fff!important;border-bottom:1px solid #d7e5e0!important;position:sticky!important;top:0!important;z-index:1100!important;box-sizing:border-box!important}
+.nav-wrap{width:min(1180px,100%)!important;max-width:1180px!important;height:82px!important;min-height:82px!important;margin:auto!important;padding:14px 28px!important;display:flex!important;align-items:center!important;gap:28px!important;box-sizing:border-box!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:30px!important;line-height:1!important;font-weight:800!important;letter-spacing:-1.5px!important;white-space:nowrap!important;color:#10261f!important;text-decoration:none!important}
+.brand .mark{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;flex:0 0 54px!important;border-radius:16px!important;background:#10261f!important;color:#53e0a8!important;display:grid!important;place-items:center!important;font-family:Arial,Helvetica,sans-serif!important;font-size:31px!important;line-height:1!important;font-weight:800!important;box-sizing:border-box!important}
+.brand>span:last-child{color:#10261f!important}.brand>span:last-child>span{color:#22a96b!important}
+.site-header .nav{display:flex!important;align-items:center!important;gap:20px!important;margin-left:auto!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:700!important}
+.site-header .nav a{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important}
+.header-btn{background:#10261f!important;color:#fff!important;padding:15px 22px!important;border-radius:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:800!important;white-space:nowrap!important}
+.menu-btn{display:none!important;border:0!important;background:transparent!important;cursor:pointer!important;color:#10261f!important}
+@media(max-width:800px){
+.site-header{height:68px!important;min-height:68px!important}
+.nav-wrap{height:68px!important;min-height:68px!important;padding:0 20px!important;gap:0!important}
+.brand{gap:9px!important;font-size:20px!important;letter-spacing:-.8px!important}
+.brand .mark{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;flex:0 0 34px!important;border-radius:10px!important;font-size:16px!important}
+.site-header .nav,.header .nav{display:none!important}
+.header-btn{display:none!important}
+.menu-btn{display:block!important;margin-left:auto!important;width:42px!important;height:42px!important;padding:0!important;font-size:0!important;position:relative!important;z-index:1201!important}
+.menu-btn:before{content:"☰";font-size:28px;line-height:42px}
+.nav.menu-open{display:flex!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;width:100vw!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:8px 24px 12px!important;box-sizing:border-box!important;background:#fff!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;overflow:hidden!important;border-bottom:1px solid #d7e5e0!important;box-shadow:0 10px 24px rgba(16,38,31,.08)!important;z-index:1200!important}
+.nav.menu-open::after{display:none!important;content:none!important}
+.nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
+}
 </style>
 
 <style>
@@ -245,11 +189,7 @@
 }
 </style></head>
 <body>
-<header class="header">
-<a class="brand" href="index.html"><span class="mark">W</span><span>Wealth<b>Aria</b></span></a>
-<nav class="nav"><a href="index.html">Home</a><a href="learn.html">Learn</a><a class="active" href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-<div class="hamb" onclick="toggleMenu()">☰</div>
-</header>
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="WealthAria"><span class="mark">W</span><span>Wealth<span>Aria</span></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="learn.html">Learn</a><a class="active" href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button></div></header>
 <nav id="mobile" class="mobile"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
 
 <section class="hero"><div class="heroBox"><div class="heroCopy"><div class="eyebrow">CALCULATORS</div><h1>Plan Today.<br>A Brighter<br><span>Tomorrow.</span></h1><p>Simple tools. Real numbers. Smarter financial decisions.</p></div>
@@ -324,7 +264,7 @@ const rupee=n=>"₹"+Math.round(Number(n)||0).toLocaleString("en-IN");
 const n=id=>Math.max(0,Number($(id).value)||0);
 function set(id,v){$(id).textContent=v}
 function makeBars(id,values){const el=$(id);el.innerHTML="";const max=Math.max(...values,1);values.forEach(v=>{const b=document.createElement("i");b.style.height=Math.max(3,v/max*100)+"%";el.appendChild(b)})}
-function toggleMenu(){const e=$("mobile");e.style.display=e.style.display==="block"?"none":"block"}
+function toggleMenu(){const nav=document.querySelector(".nav");nav.classList.toggle("menu-open")}
 function activate(tool){
  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tool===tool));
  document.querySelectorAll(".panel").forEach(x=>x.classList.toggle("active",x.id==="panel-"+tool));
