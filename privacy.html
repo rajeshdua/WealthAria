@@ -32,34 +32,33 @@
 @media(max-width:760px){.page-hero{padding:52px 0 48px}.page-section{padding:55px 0}.cards-grid{grid-template-columns:1fr}.form-card{padding:22px}.nav-wrap{gap:12px}.brand{font-size:20px}.mark{width:34px;height:34px;font-size:16px}.header-btn{padding:10px 12px;font-size:12px}}
 
 .footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}.footer-brand>span{color:#42c991!important}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0;color:#a8c0b9}.footer a:hover{color:#63dda3}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}@media(max-width:700px){.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.footer-brand{font-size:26px}.footer h4{font-size:14px}.footer a,.footer p,.copyright{font-size:12px;line-height:1.6}}.menu-btn{display:none;border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:var(--ink,#10261f)}@media(max-width:800px){.nav{display:none}.header-btn{display:none}.menu-btn{display:block;margin-left:auto}.nav-wrap{position:relative}.nav.menu-open{display:flex;position:fixed;top:68px;left:0;right:0;width:100vw;max-width:none;margin:0;padding:8px 24px 12px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid #d7e5e0;box-shadow:0 10px 24px rgba(16,38,31,.08);z-index:100}.nav.menu-open a{display:block;width:100%;padding:7px 0;line-height:1.25;font-size:16px}.nav.menu-open::after{content:"";position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;z-index:0}.nav.menu-open a{position:relative;z-index:1}}
-/* ===== FINAL MOBILE HEADER — MATCH AI TOOLS EXACTLY ===== */
-@media(max-width:800px){
-  .site-header{height:68px !important;z-index:1100 !important}
-  .nav-wrap{height:68px !important;min-height:0 !important;padding:0 20px !important;position:relative !important;z-index:1101 !important}
-  .brand{font-size:20px !important;gap:9px !important;letter-spacing:-.8px !important}
-  .brand .mark{width:34px !important;height:34px !important;border-radius:10px !important;font-size:16px !important}
-  .menu-btn{display:block !important;margin-left:auto !important;width:42px !important;height:42px !important;padding:0 !important;font-size:0 !important;position:relative !important;z-index:1201 !important}
-  .menu-btn:before{content:"☰";font-size:28px;line-height:42px;color:var(--ink,#10261f)}
-  .nav,.nav[style]{display:none !important}
-  .nav.menu-open{display:flex !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;width:100vw !important;height:auto !important;min-height:0 !important;max-height:none !important;margin:0 !important;padding:8px 24px 12px !important;box-sizing:border-box !important;background:#fff !important;flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;gap:0 !important;overflow:hidden !important;border-bottom:1px solid #d7e5e0 !important;box-shadow:0 10px 24px rgba(16,38,31,.08) !important;z-index:1200 !important}
-  .nav.menu-open::after{display:none !important;content:none !important}
-  .nav.menu-open a{display:block !important;width:100% !important;height:auto !important;padding:7px 0 !important;margin:0 !important;line-height:1.25 !important;font-size:16px !important;font-weight:600 !important;position:relative !important;z-index:1 !important;text-decoration:none !important}
-}
-
-/* ===== HEADER STANDARD — MATCH AI TOOLS REFERENCE ===== */
-@media (min-width:801px){
-  .site-header{height:82px !important;background:rgba(255,255,255,.97) !important;border-bottom:1px solid #d7e5e0 !important}
-  .nav-wrap{max-width:1180px !important;min-height:82px !important;height:82px !important;padding:14px 28px !important;gap:28px !important}
-  .brand{display:flex !important;align-items:center !important;gap:14px !important;font-family:Arial,Helvetica,sans-serif !important;font-weight:800 !important;font-size:30px !important;letter-spacing:-1.5px !important;white-space:nowrap !important}
-  .brand .mark,.mark{width:54px !important;height:54px !important;border-radius:16px !important;font-family:Arial,Helvetica,sans-serif !important;font-size:31px !important;font-weight:800 !important}
-  .site-header .nav{display:flex !important;align-items:center !important;gap:20px !important;margin-left:auto !important;font-family:Arial,Helvetica,sans-serif !important;font-weight:700 !important}
-  .site-header .nav a{font-size:14px !important;font-weight:700 !important}
-  .header-btn{padding:15px 22px !important;border-radius:14px !important;font-family:Arial,Helvetica,sans-serif !important;font-weight:800 !important}
-}
-
 /* ===== FINAL FOOTER BRAND STANDARD ===== */
 .footer-brand{font-family:Arial,Helvetica,sans-serif !important;font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
 @media(max-width:700px){.footer-brand{font-size:26px !important}}
+
+/* ===== WEALTHARIA MASTER HEADER — AI TOOLS STANDARD ===== */
+.site-header{height:82px!important;min-height:82px!important;background:#fff!important;border-bottom:1px solid #d7e5e0!important;position:sticky!important;top:0!important;z-index:1100!important;box-sizing:border-box!important}
+.nav-wrap{width:min(1180px,100%)!important;max-width:1180px!important;height:82px!important;min-height:82px!important;margin:auto!important;padding:14px 28px!important;display:flex!important;align-items:center!important;gap:28px!important;box-sizing:border-box!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:30px!important;line-height:1!important;font-weight:800!important;letter-spacing:-1.5px!important;white-space:nowrap!important;color:#10261f!important;text-decoration:none!important}
+.brand .mark{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;flex:0 0 54px!important;border-radius:16px!important;background:#10261f!important;color:#53e0a8!important;display:grid!important;place-items:center!important;font-family:Arial,Helvetica,sans-serif!important;font-size:31px!important;line-height:1!important;font-weight:800!important;box-sizing:border-box!important}
+.brand>span:last-child{color:#10261f!important}.brand>span:last-child>span{color:#22a96b!important}
+.site-header .nav{display:flex!important;align-items:center!important;gap:20px!important;margin-left:auto!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:700!important}
+.site-header .nav a{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important}
+.header-btn{background:#10261f!important;color:#fff!important;padding:15px 22px!important;border-radius:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:800!important;white-space:nowrap!important}
+.menu-btn{display:none!important;border:0!important;background:transparent!important;cursor:pointer!important;color:#10261f!important}
+@media(max-width:800px){
+.site-header{height:68px!important;min-height:68px!important}
+.nav-wrap{height:68px!important;min-height:68px!important;padding:0 20px!important;gap:0!important}
+.brand{gap:9px!important;font-size:20px!important;letter-spacing:-.8px!important}
+.brand .mark{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;flex:0 0 34px!important;border-radius:10px!important;font-size:16px!important}
+.site-header .nav,.header .nav{display:none!important}
+.header-btn{display:none!important}
+.menu-btn{display:block!important;margin-left:auto!important;width:42px!important;height:42px!important;padding:0!important;font-size:0!important;position:relative!important;z-index:1201!important}
+.menu-btn:before{content:"☰";font-size:28px;line-height:42px}
+.nav.menu-open{display:flex!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;width:100vw!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:8px 24px 12px!important;box-sizing:border-box!important;background:#fff!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;overflow:hidden!important;border-bottom:1px solid #d7e5e0!important;box-shadow:0 10px 24px rgba(16,38,31,.08)!important;z-index:1200!important}
+.nav.menu-open::after{display:none!important;content:none!important}
+.nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
+}
 </style>
 <style>
 /* ===== FINAL GLOBAL LOGO STANDARD — ALL WEALTHARIA PAGES ===== */
@@ -180,23 +179,7 @@
   .site-header .nav,.header .nav{font-family:Arial,Helvetica,sans-serif !important}
   .site-header .nav a,.header .nav a{font-family:Arial,Helvetica,sans-serif !important;font-size:16px !important;font-weight:600 !important}
 }
-</style></head><body><header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="WealthAria">
-      <span class="mark">W</span><span>Wealth<span>Aria</span></span>
-    </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="learn.html">Learn</a>
-      <a href="calculators.html">Calculators</a>
-      <a href="ai.html">AI Tools</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-  </div>
-</header><main><section class="page-hero"><div class="container"><div class="eyebrow">WEALTHARIA</div><h1>Privacy Policy</h1><p>How WealthAria approaches privacy on this educational platform.</p></div></section><section class="page-section"><div class="container"><div class="cards-grid"><div class="info-card"><div class="icon">📘</div><h3>Information We Collect</h3><p>WealthAria is designed as an education-first website. Information may be collected when you voluntarily submit it through a form or when basic technical information is processed to operate and improve the site.</p></div><div class="info-card"><div class="icon">📘</div><h3>How We Use Information</h3><p>Information may be used to respond to enquiries, improve website functionality, maintain security and understand how visitors use the platform.</p></div><div class="info-card"><div class="icon">📘</div><h3>Third-Party Services</h3><p>Some site features may use third-party services. Their own privacy policies and terms may apply.</p></div><div class="info-card"><div class="icon">📘</div><h3>Contact</h3><p>For privacy questions, contact hello@wealtharia.com.</p></div></div></div></section></main><footer class="footer"><div class="footer-inner">
+</style></head><body><header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="WealthAria"><span class="mark">W</span><span>Wealth<span>Aria</span></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button></div></header><main><section class="page-hero"><div class="container"><div class="eyebrow">WEALTHARIA</div><h1>Privacy Policy</h1><p>How WealthAria approaches privacy on this educational platform.</p></div></section><section class="page-section"><div class="container"><div class="cards-grid"><div class="info-card"><div class="icon">📘</div><h3>Information We Collect</h3><p>WealthAria is designed as an education-first website. Information may be collected when you voluntarily submit it through a form or when basic technical information is processed to operate and improve the site.</p></div><div class="info-card"><div class="icon">📘</div><h3>How We Use Information</h3><p>Information may be used to respond to enquiries, improve website functionality, maintain security and understand how visitors use the platform.</p></div><div class="info-card"><div class="icon">📘</div><h3>Third-Party Services</h3><p>Some site features may use third-party services. Their own privacy policies and terms may apply.</p></div><div class="info-card"><div class="icon">📘</div><h3>Contact</h3><p>For privacy questions, contact hello@wealtharia.com.</p></div></div></div></section></main><footer class="footer"><div class="footer-inner">
   <div class="footer-brand">Wealth<span>Aria</span></div><p>Build Wealth. Simply. Intelligently.</p>
   <div class="footer-grid"><div></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
   <div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div>
