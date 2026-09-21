@@ -48,6 +48,66 @@
   .footer h4{font-size:14px}
   .footer a,.footer p,.copyright{font-size:12px;line-height:1.6}
 }
+
+/* ===== FINAL MOBILE MENU FIX — MATCH MAIN COMPACT DROPDOWN ===== */
+@media(max-width:800px){
+  .header{z-index:1100 !important}
+  .mobile{
+    display:none;
+    position:fixed !important;
+    top:68px !important;
+    left:0 !important;
+    right:0 !important;
+    width:100vw !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:8px 24px 12px !important;
+    box-sizing:border-box !important;
+    background:#fff !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+    overflow:hidden !important;
+    border-bottom:1px solid #d7e5e0 !important;
+    box-shadow:0 10px 24px rgba(16,38,31,.08) !important;
+    z-index:1200 !important;
+  }
+  .mobile[style*="display: block"]{display:flex !important}
+  .mobile a{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    padding:7px 0 !important;
+    margin:0 !important;
+    line-height:1.25 !important;
+    font-size:16px !important;
+    position:relative !important;
+    z-index:1 !important;
+    text-decoration:none !important;
+  }
+}
+/* ===== FOOTER TYPOGRAPHY — SAME AS SHARED PAGES ===== */
+.footer{background:#10261f !important;color:#a8c0b9 !important;padding:58px 28px 28px !important;text-align:left !important}
+.footer-inner{max-width:1180px !important;margin:auto !important}
+.footer-brand{font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+.footer-brand>span{color:#42c991 !important}
+.footer-grid{display:grid !important;grid-template-columns:2fr 1fr 1fr 1fr !important;gap:35px !important;margin:28px 0 !important}
+.footer h4{color:#fff !important;margin:0 0 12px !important;font-size:16px !important}
+.footer a{display:block !important;margin:9px 0 !important;color:#a8c0b9 !important;font-size:16px !important;line-height:1.6 !important;text-decoration:none !important}
+.footer p{font-size:16px !important;line-height:1.6 !important}
+.copyright{border-top:1px solid rgba(255,255,255,.09) !important;padding-top:16px !important;color:#70847d !important;font-size:12px !important;line-height:1.6 !important}
+@media(max-width:700px){
+  .footer{padding:45px 27px 25px !important}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .footer-grid>div:first-child{grid-column:1/-1 !important}
+  .footer-brand{font-size:26px !important}
+  .footer h4{font-size:14px !important}
+  .footer a,.footer p,.copyright{font-size:12px !important;line-height:1.6 !important}
+}
+
 </style>
 </head>
 <body>
