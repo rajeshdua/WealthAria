@@ -5,9 +5,357 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b2f27">
 <title>AI Tools | WealthAria</title>
+<style>
+:root{--ink:#092d25;--green:#20a875;--green2:#35c58c;--mint:#eef9f5;--mint2:#dff3eb;--line:#d7e5e0;--muted:#687b76;--white:#fff;--dark:#082f27}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav-wrap{max-width:1180px;margin:auto;min-height:82px;padding:14px 28px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:-1.5px;white-space:nowrap}.brand .mark{width:54px;height:54px;border-radius:16px;background:var(--dark);color:#53e0a8;display:grid;place-items:center;font-size:31px}.brand>span:last-child span{color:var(--green)}.nav{display:flex;align-items:center;gap:20px;margin-left:auto;font-weight:700;color:#31524a}.nav a:hover{color:var(--green)}.header-btn{background:var(--dark);color:#fff;padding:15px 22px;border-radius:14px;font-weight:800;white-space:nowrap}.menu-btn{display:none;border:0;background:transparent;font-size:34px;color:var(--ink)}
+.container{max-width:1180px;margin:auto;padding:0 28px}
+.hero{background:var(--mint);min-height:640px;border-radius:0 0 44px 44px;padding:78px 0 64px;overflow:hidden}.eyebrow,.section-kicker{font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#318d71;font-size:15px}.hero h1{font-size:clamp(48px,7vw,86px);line-height:.98;letter-spacing:-4px;max-width:780px;margin:22px 0;color:var(--ink)}.hero h1 span{color:var(--green)}.hero p{font-size:22px;color:#647872;max-width:760px;margin:24px 0}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:17px 28px;border-radius:15px;font-weight:800;font-size:17px;border:1px solid var(--green);cursor:pointer}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--ink);border-color:#ccdcd7}.hero-art{margin:54px auto 0;max-width:900px;height:330px;border:1px solid #d6e9e1;border-radius:36px;background:radial-gradient(circle at 50% 45%,#65d6a2 0 18%,#31b97d 19% 32%,#cdeee1 33% 52%,#e8f7f2 53%);position:relative;overflow:hidden;box-shadow:0 25px 60px rgba(8,47,39,.08)}.orb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:82px;color:#fff;font-weight:800}.bubble{position:absolute;background:#fff;border:1px solid var(--line);padding:13px 20px;border-radius:16px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.08)}.b1{left:8%;top:16%}.b2{right:8%;top:30%}.b3{left:12%;bottom:15%}.b4{right:12%;bottom:12%;background:var(--dark);color:#fff;border-color:var(--dark)}
+.section{padding:86px 0}.section h2{font-size:clamp(38px,5vw,62px);line-height:1.05;letter-spacing:-2.5px;margin:18px 0}.section-intro{font-size:20px;color:var(--muted);max-width:760px}.category{margin-top:42px}.category h3{font-size:27px;margin:0 0 18px}.chips{display:flex;flex-wrap:wrap;gap:12px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:13px 17px;font-weight:700;color:#356d5e;cursor:pointer;transition:.2s}.chip:hover,.chip.active{background:var(--mint2);border-color:#9fd9c5;color:var(--ink)}
+.ask-section{background:#f6fbf9;padding:86px 0}.ask-card{background:#fff;border:1px solid var(--line);border-radius:32px;padding:32px;box-shadow:0 20px 55px rgba(8,47,39,.06)}.ask-card h2{margin-top:0}.textarea{width:100%;min-height:170px;border:1px solid #cfdfda;border-radius:20px;padding:20px;font:inherit;font-size:18px;resize:vertical;color:var(--ink)}.textarea:focus{outline:3px solid rgba(32,168,117,.12);border-color:var(--green)}.ask-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:16px}.research-toggle{display:flex;align-items:center;gap:10px;font-weight:700;color:#466a61}.research-toggle input{width:20px;height:20px;accent-color:var(--green)}.helper{color:#80908c;font-size:14px;margin-top:12px}.answer-box{display:none;margin-top:25px;background:var(--mint);border:1px solid #cde8de;border-radius:22px;padding:24px}.answer-box.show{display:block}.answer-box h3{margin:0 0 10px}.answer-box h2,.answer-box h3,.answer-box h4{line-height:1.25;margin-top:16px;margin-bottom:6px}.answer-box h2:first-child,.answer-box h3:first-child,.answer-box h4:first-child{margin-top:0}.answer-box p{margin:7px 0;line-height:1.55}.answer-box ul,.answer-box ol{margin:5px 0 10px;padding-left:24px}.answer-box li{margin:2px 0;line-height:1.5}.answer-box br{line-height:1.15}.sources{margin-top:20px;padding-top:16px;border-top:1px solid #cde8de}.sources a{color:#167f5b;font-weight:700;display:block;margin-top:7px}
+.research-info{margin-top:24px;padding:20px 22px;border-radius:20px;background:var(--dark);color:#d7eee6}.research-info strong{color:#62dfa9}.source-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.flow-step{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}.flow-step b{display:block;color:#61dca8;margin-bottom:5px}
+.footer{background:var(--dark);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff;display:block}.footer-brand > span{color:#42c991}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0}.copyright{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:13px}
+@media(max-width:800px){body{overflow-x:hidden}.nav-wrap{padding:12px 20px;min-height:74px}.brand{font-size:27px;gap:11px}.brand .mark{width:50px;height:50px;font-size:28px;border-radius:15px}.nav,.header-btn{display:none}.menu-btn{display:block;margin-left:auto}.hero{padding:58px 0 30px;border-radius:0 0 34px 34px}.hero h1{font-size:50px;letter-spacing:-2.7px}.hero p{font-size:18px}.hero-art{height:285px;margin-top:35px}.bubble{font-size:13px;padding:10px 13px}.orb{font-size:58px}.container{padding:0 27px}.section,.ask-section{padding:64px 0}.section h2{font-size:42px}.chips{gap:9px}.chip{font-size:14px;padding:11px 13px}.ask-card{padding:22px;border-radius:26px}.source-flow{grid-template-columns:1fr 1fr}.mf-research{width:100%;max-width:100%;overflow:hidden}.mf-type-grid{grid-template-columns:1fr}.mf-types-card{width:100%;max-width:100%;overflow:hidden}.mf-type-grid span{min-width:0;overflow-wrap:anywhere}.mf-table-wrap{max-width:100%;overflow-x:auto}.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:480px){body{overflow-x:hidden}.brand>span:last-child{font-size:25px}.hero h1{font-size:45px}.actions .btn{width:100%}.source-flow{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.container{width:100%;max-width:100%;padding-left:16px;padding-right:16px}.ask-section .container{padding-left:12px;padding-right:12px}.ask-card{width:100%;max-width:100%;padding:18px;border-radius:22px}.textarea{width:100%;min-width:0}.answer-box{width:100%;max-width:100%;overflow-wrap:anywhere}.answer-box p,.answer-box li{overflow-wrap:anywhere}.mf-research{max-width:100%;overflow:hidden}}
+
+/* ===== AI FOOTER — SAME TYPOGRAPHY AS ALL OTHER PAGES ===== */
+.footer{
+  background:#10261f !important;
+  color:#a8c0b9 !important;
+  padding:58px 28px 28px !important;
+}
+.footer-inner{max-width:1180px !important;margin:auto !important}
+.footer-brand{
+  font-size:28px !important;
+  font-weight:800 !important;
+  color:#fff !important;
+  display:block !important;
+}
+.footer-brand>span{color:#42c991 !important}
+.footer-grid{
+  display:grid !important;
+  grid-template-columns:2fr 1fr 1fr 1fr !important;
+  gap:35px !important;
+  margin:28px 0 !important;
+}
+.footer h4{color:#fff !important;margin:0 0 12px !important;font-size:16px !important}
+.footer a{
+  display:block !important;
+  margin:9px 0 !important;
+  color:#a8c0b9 !important;
+  font-size:16px !important;
+  line-height:1.6 !important;
+  text-decoration:none !important;
+}
+.footer p{font-size:16px !important;line-height:1.6 !important}
+.copyright{
+  border-top:1px solid rgba(255,255,255,.09) !important;
+  padding-top:16px !important;
+  color:#70847d !important;
+  font-size:12px !important;
+  line-height:1.6 !important;
+}
+@media(max-width:700px){
+  .footer{padding:45px 27px 25px !important}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .footer-grid>div:first-child{grid-column:1/-1 !important}
+  .footer-brand{font-size:26px !important}
+  .footer h4{font-size:14px !important}
+  .footer a,.footer p,.copyright{font-size:12px !important;line-height:1.6 !important}
+}
 
 
+/* ===== FINAL FOOTER BRAND EXACT STANDARD ===== */
+.footer-brand{font-family:Arial,Helvetica,sans-serif !important;font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+@media(max-width:700px){.footer-brand{font-size:26px !important}}
 
+/* ===== WEALTHARIA MASTER HEADER — AI TOOLS STANDARD ===== */
+.site-header{height:82px!important;min-height:82px!important;background:#fff!important;border-bottom:1px solid #d7e5e0!important;position:sticky!important;top:0!important;z-index:1100!important;box-sizing:border-box!important}
+.nav-wrap{width:min(1180px,100%)!important;max-width:1180px!important;height:82px!important;min-height:82px!important;margin:auto!important;padding:14px 28px!important;display:flex!important;align-items:center!important;gap:28px!important;box-sizing:border-box!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:30px!important;line-height:1!important;font-weight:800!important;letter-spacing:-1.5px!important;white-space:nowrap!important;color:#10261f!important;text-decoration:none!important}
+.brand .mark{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;flex:0 0 54px!important;border-radius:16px!important;background:#10261f!important;color:#53e0a8!important;display:grid!important;place-items:center!important;font-family:Arial,Helvetica,sans-serif!important;font-size:31px!important;line-height:1!important;font-weight:800!important;box-sizing:border-box!important}
+.brand>span:last-child{color:#10261f!important}.brand>span:last-child>span{color:#22a96b!important}
+.site-header .nav{display:flex!important;align-items:center!important;gap:20px!important;margin-left:auto!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:700!important}
+.site-header .nav a{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important}
+.header-btn{background:#10261f!important;color:#fff!important;padding:15px 22px!important;border-radius:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:800!important;white-space:nowrap!important}
+.menu-btn{display:none!important;border:0!important;background:transparent!important;cursor:pointer!important;color:#10261f!important}
+@media(max-width:800px){
+.site-header{height:68px!important;min-height:68px!important}
+.nav-wrap{height:68px!important;min-height:68px!important;padding:0 20px!important;gap:0!important}
+.brand{gap:9px!important;font-size:20px!important;letter-spacing:-.8px!important}
+.brand .mark{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;flex:0 0 34px!important;border-radius:10px!important;font-size:16px!important}
+.site-header .nav,.header .nav{display:none!important}
+.header-btn{display:none!important}
+.menu-btn{display:block!important;margin-left:auto!important;width:42px!important;height:42px!important;padding:0!important;font-size:0!important;position:relative!important;z-index:1201!important}
+.menu-btn:before{content:"☰";font-size:28px;line-height:42px}
+.nav.menu-open{display:flex!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;width:100vw!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:8px 24px 12px!important;box-sizing:border-box!important;background:#fff!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;overflow:hidden!important;border-bottom:1px solid #d7e5e0!important;box-shadow:0 10px 24px rgba(16,38,31,.08)!important;z-index:1200!important}
+.nav.menu-open::after{display:none!important;content:none!important}
+.nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
+}
+
+/* ===== REVENUE MVP ENTRY CARDS ===== */
+.revenue-entry{padding:0 0 86px}.revenue-entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.revenue-entry-card{border:1px solid var(--line);background:#fff;border-radius:22px;padding:24px;transition:.2s}.revenue-entry-card:hover{border-color:#9fd9c5;transform:translateY(-2px)}.revenue-entry-card .mini-kicker{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#22a96b}.revenue-entry-card h3{font-size:22px;line-height:1.2;margin:8px 0}.revenue-entry-card p{font-size:14px;color:var(--muted);margin:0 0 18px}.revenue-entry-card a{display:inline-flex;padding:11px 15px;border-radius:10px;background:var(--dark);color:#fff;font-weight:800;font-size:13px}.revenue-entry-card a:hover{background:var(--green)}
+@media(max-width:800px){.revenue-entry{padding:0 0 64px}.revenue-entry-grid{grid-template-columns:1fr}.revenue-entry-card{padding:20px}}
+
+/* ===== ACTIVE PAGE NAV INDICATOR — SHARED ACROSS ALL PAGES ===== */
+.site-header .nav a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:4px!important}
+@media(max-width:800px){.site-header .nav.menu-open a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:7px!important}}
+
+/* ===== WEALTHARIA MASTER FOOTER — CALCULATORS STANDARD ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;text-align:left!important;font-family:Arial,Helvetica,sans-serif!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;line-height:1.2!important;font-weight:800!important;color:#fff!important;display:block!important}
+.footer-brand>span{color:#42c991!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important}
+.footer h4{color:#fff!important;margin:0 0 12px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important}
+.footer a{display:block!important;margin:9px 0!important;color:#a8c0b9!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important;text-decoration:none!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important}
+.copyright{border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+
+/* ===== WEALTHARIA MASTER FOOTER — SHARED ACROSS ALL PAGES ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important}
+.footer-brand>span{color:#42c991!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;color:#a8c0b9!important;margin:8px 0 0!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}
+.footer-grid>div:first-child{display:block!important}
+.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}
+.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}
+.footer a:hover{color:#63dda3!important}
+.copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+/* ===== END MASTER FOOTER ===== */
+</style>
+
+<style id="revenue-nav-links">
+.revenue-nav-link{display:none!important}
+@media(max-width:800px){
+.site-header .nav.menu-open .revenue-nav-link{display:block!important}
+.site-header .nav.menu-open .revenue-nav-link,
+.site-header .nav.menu-open a[href="pricing.html"]{font-size:16px!important;font-weight:600!important;padding:7px 0!important}
+}
+</style></head>
+<body>
+
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="WealthAria"><span class="mark">W</span><span>Wealth<span>Aria</span></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a class="active" href="ai.html">AI Tools</a><a class="revenue-nav-link" href="wealth-health-score.html">Wealth Health Score</a><a class="revenue-nav-link" href="wealth-report.html">Wealth Report</a><a href="pricing.html">WealthAria Plus</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button></div></header>
+
+<main>
+<section class="hero">
+<div class="container">
+  <div class="eyebrow">AI TOOLS</div>
+  <h1>Smarter questions.<br><span>Clearer answers.</span></h1>
+  <p>Understand money, investing and financial concepts in simple language — with an AI-ready research experience designed to help you learn before you act.</p>
+  <div class="actions"><a class="btn primary" href="#ask">Ask WealthAria AI →</a><a class="btn secondary" href="#topics">Explore Questions</a></div>
+  <div class="hero-art" aria-label="WealthAria AI visual">
+    <div class="bubble b1">Explain SIP simply</div><div class="bubble b2">What is CAGR?</div><div class="bubble b3">Plan for retirement</div>
+    <div class="bubble b4">WEALTHARIA AI<br><small>Learn • Research • Explain</small></div><div class="orb">AI</div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="topics">
+<div class="container">
+  <div class="section-kicker">EXPLORE TOPICS</div>
+  <h2>Ask about what matters to you.</h2>
+  <p class="section-intro">Choose a question or write your own. The expanded question library covers investing, stocks, mutual funds, loans, tax and retirement.</p>
+
+  <div class="category"><h3>Investing & Compounding</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('What is SIP and how does it work?')">What is SIP?</button>
+    <button class="chip" onclick="setQuestion('SIP vs Lumpsum — how do they differ?')">SIP vs Lumpsum</button>
+    <button class="chip" onclick="setQuestion('How does compounding work in investing?')">How does compounding work?</button>
+    <button class="chip" onclick="setQuestion('What is CAGR? Explain with an example.')">What is CAGR?</button>
+    <button class="chip" onclick="setQuestion('What is XIRR and when is it useful?')">What is XIRR?</button>
+    <button class="chip" onclick="setQuestion('What is asset allocation?')">Asset allocation</button>
+    <button class="chip" onclick="setQuestion('How should an investor think about risk and return?')">Risk & return</button>
+    <button class="chip" onclick="setQuestion('What is diversification and why does it matter?')">Diversification</button>
+  </div></div>
+
+  <div class="category"><h3>Mutual Funds</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('What is a mutual fund?')">What is a mutual fund?</button>
+    <button class="chip" onclick="setQuestion('What are the types of mutual funds in India? Include Flexi Cap and explain each category.')">Type of Mutual Funds</button>
+    <button class="chip" onclick="setQuestion('Show top performing mutual funds category wise using WealthAria data, with SIP XIRR for 1 year, 3 years, 5 years and since inception/all years.')">Top Performing Mutual Funds</button>
+    <button class="chip" onclick="setQuestion('What is NAV?')">NAV explained</button>
+    <button class="chip" onclick="setQuestion('Large Cap vs Mid Cap vs Small Cap funds')">Large vs Mid vs Small Cap</button>
+    <button class="chip" onclick="setQuestion('Index Fund vs Active Fund — explain the difference.')">Index vs Active</button>
+    <button class="chip" onclick="setQuestion('ETF vs Mutual Fund — what is the difference?')">ETF vs Mutual Fund</button>
+    <button class="chip" onclick="setQuestion('What is expense ratio?')">Expense ratio</button>
+    <button class="chip" onclick="setQuestion('What are the risks in mutual funds?')">Mutual fund risks</button>
+    <button class="chip" onclick="setQuestion('Direct Plan vs Regular Plan')">Direct vs Regular</button>
+    <button class="chip" onclick="setQuestion('What is an exit load?')">Exit load</button>
+
+
+  </div></div>
+
+  <div class="category"><h3>Stocks & Markets</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('What is P/E ratio?')">P/E ratio</button><button class="chip" onclick="setQuestion('What is ROE?')">ROE</button><button class="chip" onclick="setQuestion('What is market capitalisation?')">Market cap</button><button class="chip" onclick="setQuestion('How do I read a company balance sheet?')">Balance sheet</button><button class="chip" onclick="setQuestion('What is dividend yield?')">Dividend yield</button><button class="chip" onclick="setQuestion('What is a bull market and bear market?')">Bull vs Bear</button><button class="chip" onclick="setQuestion('What is stock market volatility?')">Volatility</button><button class="chip" onclick="setQuestion('What is an index fund?')">Index funds</button>
+  </div></div>
+
+  <div class="category"><h3>Loans & EMI</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('How is EMI calculated?')">How is EMI calculated?</button><button class="chip" onclick="setQuestion('Explain principal vs interest in a home loan.')">Principal vs interest</button><button class="chip" onclick="setQuestion('How does home-loan prepayment work?')">Loan prepayment</button><button class="chip" onclick="setQuestion('Fixed vs floating interest rate')">Fixed vs floating</button><button class="chip" onclick="setQuestion('What happens to loans when interest rates change?')">Rate changes</button><button class="chip" onclick="setQuestion('What is loan amortisation?')">Amortisation</button>
+  </div></div>
+
+  <div class="category"><h3>Tax</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('Old tax regime vs new tax regime')">Old vs New regime</button><button class="chip" onclick="setQuestion('Explain Section 80C.')">Section 80C</button><button class="chip" onclick="setQuestion('What is capital gains tax?')">Capital gains</button><button class="chip" onclick="setQuestion('STCG vs LTCG')">STCG vs LTCG</button><button class="chip" onclick="setQuestion('How are mutual funds taxed in India?')">MF taxation</button><button class="chip" onclick="setQuestion('How are shares taxed in India?')">Share taxation</button>
+  </div></div>
+
+  <div class="category"><h3>Retirement & Goals</h3><div class="chips">
+    <button class="chip" onclick="setQuestion('How much retirement corpus might I need?')">Retirement corpus</button><button class="chip" onclick="setQuestion('How does inflation affect retirement planning?')">Inflation</button><button class="chip" onclick="setQuestion('What is SWP?')">SWP explained</button><button class="chip" onclick="setQuestion('How can I estimate retirement monthly income?')">Monthly retirement income</button><button class="chip" onclick="setQuestion('How do I plan a long-term financial goal?')">Goal planning</button>
+  </div></div>
+</div>
+</section>
+
+<section class="ask-section" id="ask">
+<div class="container">
+  <div class="ask-card">
+    <div class="section-kicker">ASK WEALTHARIA AI</div>
+    <h2>What do you want to understand?</h2>
+    <p class="section-intro">Ask in your own words. For current facts, rates, rules, market information or changing data, use Research Mode so a WealthAria's research layer can retrieve and validate fresh information.</p>
+    <textarea id="question" class="textarea" placeholder="Example: Explain SIP to me like I am a beginner..."></textarea>
+    <div class="ask-row"><button class="btn primary" onclick="askAI()">Ask WealthAria AI →</button><label class="research-toggle"><input id="researchMode" type="checkbox"> WealthAria Research Mode</label></div>
+    <div class="helper">Educational use only • No personalized investment advice</div>
+    <div id="answer" class="answer-box"><h3 id="answerTitle">WealthAria AI</h3><div id="answerText"></div><div id="sourceArea" class="sources"></div></div>
+    <div class="research-info"><strong>How WealthAria Research Mode will work</strong><br>Understand → Research → Validate → Explain.
+      <div class="source-flow"><div class="flow-step"><b>1. Search</b>Find current and relevant information.</div><div class="flow-step"><b>2. Verify</b>Prefer official and authoritative sources.</div><div class="flow-step"><b>3. Explain</b>Summarize in plain language.</div><div class="flow-step"><b>4. Cite</b>Show the sources used for the answer.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="cta"><div class="container"><div class="cta-card" style="background:var(--dark);color:#fff;border-radius:34px;padding:54px">
+  <div class="section-kicker" style="color:#59dca8">BUILT FOR LEARNING</div><h2 style="font-size:clamp(38px,5vw,60px);line-height:1.05;margin:0 0 20px;letter-spacing:-2px">AI should make money <span style="color:#5ee1ab">easier to understand.</span></h2>
+  <p style="color:#b4cbc4;font-size:19px;max-width:700px">WealthAria is designed as an educational starting point. When questions involve current rules, rates, markets or products, the research layer should show where the information came from.</p>
+  <a class="btn primary" href="learn.html">Continue Learning →</a>
+</div></div></section>
+<p class="disclaimer" style="font-size:13px;color:#7c8d88;text-align:center;max-width:850px;margin:0 auto 60px">WealthAria provides educational information and tools, not investment, tax, legal or financial advice. Current information can change; users should verify important decisions against authoritative sources and consult an appropriately qualified professional where necessary.</p>
+</main>
+
+<section class="revenue-tools" style="padding:56px 28px;background:#f8faf8;border-top:1px solid #e0e9e4"><div style="max-width:1180px;margin:auto"><div style="text-align:center;margin-bottom:28px"><div style="font-size:12px;letter-spacing:2px;font-weight:800;color:#22a96b">WEALTHARIA PLANNING TOOLS</div><h2 style="font-size:32px;line-height:1.2;color:#10261f;margin:10px 0">Go beyond AI answers</h2><p style="max-width:650px;margin:auto;color:#687b73;font-size:15px">Use simple WealthAria tools to understand your financial foundations and create a personalised educational wealth snapshot.</p></div><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px"><a href="wealth-health-score.html" style="display:block;background:#fff;border:1px solid #e0e9e4;border-radius:16px;padding:24px;text-decoration:none;color:#10261f"><div style="font-size:12px;font-weight:800;color:#22a96b;letter-spacing:1px">FREE TOOL</div><h3 style="font-size:22px;margin:8px 0">Wealth Health Score</h3><p style="color:#687b73;font-size:14px;line-height:1.55;margin:0 0 18px">Check five core areas of your financial foundations and get an educational score.</p><span style="font-weight:800;color:#22a96b">Check your score →</span></a><a href="wealth-report.html" style="display:block;background:#fff;border:2px solid #22a96b;border-radius:16px;padding:23px;text-decoration:none;color:#10261f"><div style="font-size:12px;font-weight:800;color:#22a96b;letter-spacing:1px">PERSONALISED TOOL</div><h3 style="font-size:22px;margin:8px 0">Personalised Wealth Report</h3><p style="color:#687b73;font-size:14px;line-height:1.55;margin:0 0 18px">Turn your income, expenses, savings, debt and investing inputs into a clearer wealth snapshot.</p><span style="font-weight:800;color:#22a96b">Create your report →</span></a></div></div></section><style>@media(max-width:700px){.revenue-tools{padding:45px 20px!important}.revenue-tools h2{font-size:27px!important}.revenue-tools>div>div:last-child{grid-template-columns:1fr!important}}</style><footer class="footer"><div class="footer-inner"><div class="footer-brand"><span class="footer-word">Wealth</span><span class="footer-ar">Aria</span></div><p>Build Wealth. Simply. Intelligently.</p><div class="footer-grid"><div></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div><div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div></div></footer>
+
+<script>
+function setQuestion(q){
+  document.getElementById('question').value=q;
+  document.getElementById('ask').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+async function askAI(){
+  const q=document.getElementById('question').value.trim();
+  const research=document.getElementById('researchMode').checked;
+  const box=document.getElementById('answer');
+  const text=document.getElementById('answerText');
+  const source=document.getElementById('sourceArea');
+  const button=document.querySelector('.ask-row .btn.primary');
+
+  if(!q){document.getElementById('question').focus();return;}
+
+  box.classList.add('show');
+  text.innerHTML='<strong>WealthAria AI is thinking…</strong><br><br>Please wait.';
+  source.innerHTML='';
+  button.disabled=true;
+
+  try{
+    const response=await fetch('/api/ask',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({question:q,researchMode:research})
+    });
+    const data=await response.json();
+    if(!response.ok) throw new Error(data.error||'WealthAria AI could not process the request.');
+
+    /* CHANGED: render AI Markdown as formatted HTML instead of showing ** and ### literally. */
+    text.innerHTML=renderMarkdown(data.answer||'No answer was returned.');
+    source.innerHTML='<strong>WealthAria</strong><br>Answer generated through the WealthAria AI service.';
+  }catch(e){
+    text.innerHTML='<strong>WealthAria AI is not available yet.</strong><br><br>'+escapeHtml(e.message||String(e));
+    source.innerHTML='';
+  }finally{button.disabled=false;}
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#039;'}[m]));
+}
+
+/* NEW: lightweight Markdown renderer for AI responses.
+   It supports headings, bold, italics, bullets and paragraphs while
+   escaping HTML first for safety. */
+function renderMarkdown(s){
+  let h=escapeHtml(String(s).trim());
+
+  /* Headings */
+  h=h.replace(/^### (.+)$/gm,'<h4>$1</h4>');
+  h=h.replace(/^## (.+)$/gm,'<h3>$1</h3>');
+  h=h.replace(/^# (.+)$/gm,'<h2>$1</h2>');
+
+  /* Inline emphasis */
+  h=h.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
+
+  /* Lists */
+  h=h.replace(/^(?:\s*[-•] .+(?:\n|$))+/gm,function(block){
+    const items=block.trim().split(/\n/).map(line=>line.replace(/^\s*[-•]\s+/,'').trim()).filter(Boolean);
+    return '<ul>'+items.map(item=>'<li>'+item+'</li>').join('')+'</ul>';
+  });
+
+  h=h.replace(/^(?:\s*\d+\.\s+.+(?:\n|$))+/gm,function(block){
+    const items=block.trim().split(/\n/).map(line=>line.replace(/^\s*\d+\.\s+/,'').trim()).filter(Boolean);
+    return '<ol>'+items.map(item=>'<li>'+item+'</li>').join('')+'</ol>';
+  });
+
+  /* Paragraphs */
+  const blocks=h.split(/\n\s*\n/).map(block=>block.trim()).filter(Boolean);
+  h=blocks.map(block=>{
+    if(/^<h[234]>/.test(block) || /^<(ul|ol)>/.test(block) || /^<p>/.test(block)) return block;
+    return '<p>'+block.replace(/\n/g,'<br>')+'</p>';
+  }).join('');
+
+  return h;
+}
+
+async function researchWealthAriaMF(){
+  const status=document.getElementById('mfStatus');
+  const rows=document.getElementById('mfRows');
+  const category=document.getElementById('mfCategory').value;
+  status.textContent='Connecting to the WealthAria research service…';
+  rows.innerHTML='<tr><td colspan="5">Loading…</td></tr>';
+
+  try{
+    const r=await fetch('/api/wealtharia-mf?category='+encodeURIComponent(category),{headers:{Accept:'application/json'}});
+    const data=await r.json();
+    if(!r.ok) throw new Error(data.error||'WealthAria research service unavailable');
+
+    status.innerHTML='<strong>WealthAria research:</strong> '+escapeHtml(data.note||'Verified research data retrieved.');
+    const avg=data.categoryAverages||[];
+    const lines=avg.length
+      ? avg.slice(0,20).map(x=>`<tr><td><strong>${escapeHtml(x.category||'')}</strong></td><td colspan="4">${escapeHtml(x.note||'—')}</td></tr>`).join('')
+      : '<tr><td colspan="5">No verified research data is currently available.</td></tr>';
+    rows.innerHTML=lines;
+  }catch(e){
+    status.innerHTML='<strong>WealthAria research service is not connected yet.</strong> '+escapeHtml(e.message||String(e));
+    rows.innerHTML='<tr><td colspan="5">No live values shown — preventing unverified or incorrectly labelled XIRR.</td></tr>';
+  }
+}
+
+function toggleMenu(){
+  const nav=document.querySelector('.nav');
+  nav.classList.toggle('menu-open');
+}
+</script>
 <style id="wealtharia-footer-master">.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}.footer-inner{max-width:1180px!important;margin:auto!important}.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important;letter-spacing:-.5px!important}.footer-brand .footer-word{color:#fff!important}.footer-brand .footer-ar{color:#42c991!important}.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;color:#a8c0b9!important;margin:8px 0 0!important}.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}.footer-grid>div:first-child{display:block!important}.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}.footer a:hover{color:#63dda3!important}.footer .copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important;font-weight:400!important}@media(max-width:700px){.footer{padding:45px 27px 25px!important}.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}.footer-grid>div:first-child{grid-column:1/-1!important}.footer-brand{font-size:26px!important}.footer h4{font-size:14px!important}.footer a,.footer p,.footer .copyright{font-size:12px!important;line-height:1.6!important}}</style>
 </body>
 </html>
