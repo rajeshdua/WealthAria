@@ -5,9 +5,273 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>WealthAria | Financial Calculators</title>
 <meta name="description" content="WealthAria financial calculators for SIP, EMI, Lumpsum, CAGR, FD, RD, PPF and retirement planning.">
+<style>
+:root{--g:#16ad78;--g2:#0a8f63;--dark:#063d32;--ink:#0b3028;--muted:#667b75;--mint:#eaf8f3;--line:#dceae5;--card:#fff;--bg:#f5faf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}button{cursor:pointer}
+.header{height:82px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 3.5%;position:sticky;top:0;z-index:50}.brand{display:flex;align-items:center;gap:12px;font-size:29px;font-weight:800;text-decoration:none;color:var(--ink)}.mark{width:48px;height:48px;border-radius:15px;background:var(--dark);display:grid;place-items:center;color:#19b47d;font-weight:900;font-size:30px}.brand span:last-child b{color:#20ad78}.brand:link,.brand:visited,.brand:hover,.brand:active{color:var(--ink);text-decoration:none}.nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}.nav a{text-decoration:none;color:#31544c}.nav .active{color:#31544c;border-bottom:0;padding-bottom:0}.hamb{display:none;font-size:31px}.mobile{display:none;position:fixed;top:82px;left:0;right:0;background:#fff;z-index:49;padding:8px 6%;box-shadow:0 12px 30px #063d3215}.mobile a{display:block;padding:13px 0;text-decoration:none;color:var(--ink);font-weight:700}
+.hero{padding:0 3.5% 14px;background:#fff}.heroBox{max-width:1180px;margin:auto;min-height:320px;border-radius:0 0 24px 24px;overflow:hidden;background:linear-gradient(100deg,#edf9f5,#e1f4eb);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:32px 3.5%;position:relative}.heroCopy{position:relative;z-index:2}.eyebrow{letter-spacing:4px;font-size:12px;font-weight:800;color:#348a70}.hero h1{font-size:clamp(44px,5.2vw,69px);line-height:.99;letter-spacing:-3px;margin:15px 0}.hero h1 span{color:var(--g)}.hero p{font-size:17px;color:#607570;line-height:1.5;margin:0}.art{height:280px;position:relative}.jar{position:absolute;right:23%;bottom:24px;width:145px;height:180px;border:4px solid #a58b52;border-radius:22px 22px 42px 42px;background:#d4b25b24;box-shadow:inset 10px 0 20px #fff5}.jar:before{content:"";position:absolute;top:-13px;left:3px;width:131px;height:23px;border:4px solid #a58b52;border-radius:50%;background:#ddc67a55}.stem{position:absolute;right:34%;bottom:173px;width:6px;height:145px;border-radius:8px;background:#318e62;transform:rotate(5deg)}.leaf{position:absolute;width:68px;height:34px;background:#48a968;border-radius:70% 0 70% 0}.l1{right:38%;bottom:265px;transform:rotate(25deg)}.l2{right:29%;bottom:246px;transform:rotate(-27deg)}.l3{right:39%;bottom:221px;transform:rotate(35deg)}.l4{right:27%;bottom:201px;transform:rotate(-34deg)}.coin{position:absolute;border-radius:50%;background:#d0aa55;border:2px solid #9b7934}.coin1{width:34px;height:34px;right:46%;bottom:27px}.coin2{width:28px;height:28px;right:39%;bottom:36px}.coin3{width:32px;height:32px;right:32%;bottom:57px}.stack{position:absolute;right:52%;bottom:24px;width:65px;height:23px;border-radius:50%;background:#caa75a;border:2px solid #9b7934}.stack:before,.stack:after{content:"";position:absolute;left:-2px;width:65px;height:23px;border-radius:50%;background:#caa75a;border:2px solid #9b7934}.stack:before{top:-14px}.stack:after{top:-28px}.arrow{position:absolute;right:4%;top:70px;width:125px;height:95px;border-top:7px solid #21c889;border-radius:50%;transform:rotate(-19deg)}.arrow:after{content:"↗";position:absolute;right:-7px;top:-38px;color:#21c889;font-size:62px;font-weight:900}.scribble{position:absolute;right:46%;bottom:88px;font:20px cursive;color:#176651;transform:rotate(-7deg)}.sticky{position:absolute;right:0;bottom:31px;background:#fff4a5;padding:13px 15px;transform:rotate(4deg);font-weight:800;line-height:1.25;box-shadow:0 7px 16px #7b682020}
+.tabs{background:#fff;padding:14px 3.5% 7px;overflow:hidden}.tabGrid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;min-width:0}.tab{min-width:0;border:1px solid var(--line);background:#fff;border-radius:17px;padding:13px 6px 8px;box-shadow:0 4px 13px #063d3210;color:var(--ink)}.tab .ico{display:flex;align-items:center;justify-content:center;width:100%;max-width:100%;font-size:25px;height:32px;line-height:1;overflow:hidden}.cagrIcon{gap:5px}.cagrIcon i{display:block;width:7px;height:24px;border-radius:2px;background:currentColor}.cagrIcon i:nth-child(2){height:30px}.cagrIcon i:nth-child(3){height:20px}.tab small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;font-size:12px}.tab.active{background:linear-gradient(#24bc85,#0da36d);color:#fff;border-color:var(--g);transform:translateY(-2px)}.triangle{display:none;margin:8px auto 0;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:10px solid #eaf8f3}.tab.active .triangle{display:block}
+.panel{display:none;background:#fff;padding:15px 3.5% 32px}.panel.active{display:block}.box{max-width:1180px;margin:auto;border:1px solid var(--line);border-radius:23px;background:#fff;box-shadow:0 8px 28px #063d3210;overflow:hidden}.top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px;padding:24px;min-width:0}.top>div{min-width:0}.heading{display:flex;align-items:center;gap:12px;margin-bottom:20px}.hIcon{width:48px;height:48px;border-radius:14px;background:#e5f8f0;display:grid;place-items:center;font-size:26px}.heading h2{margin:0;font-size:29px}.heading p{margin:5px 0 0;color:var(--muted);font-size:14px}.field{margin:0 0 15px}.field label{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;font-size:12px;font-weight:800;color:#60756f;margin-bottom:7px}.field label output{white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:right;color:#60756f}.field input{display:block;width:100%;max-width:100%;height:43px;border:1px solid #d7e4e0;border-radius:10px;padding:9px 12px;color:#163c34;outline:none}.field input:focus{border-color:var(--g)}.range{appearance:none;width:100%!important;height:7px!important;padding:0!important;border:0!important;background:#e2ebe8!important;border-radius:99px}.range::-webkit-slider-thumb{appearance:none;width:21px;height:21px;border-radius:50%;background:var(--g);box-shadow:0 2px 6px #063d3230}.range::-moz-range-thumb{width:21px;height:21px;border:0;border-radius:50%;background:var(--g)}.limits{display:flex;justify-content:space-between;color:#82928d;font-size:9px;margin-top:5px}.buttons{display:flex;gap:9px;min-width:0}.buttons .btn{min-width:0}.btn{flex:1;border:0;border-radius:10px;padding:13px;font-weight:800}.calc{background:#099b6a;color:#fff}.reset{background:#fff;color:#098f63;border:1px solid #15a978}
+.output{min-width:0;overflow:hidden;background:linear-gradient(145deg,#f1faf7,#e8f6f1);border-radius:18px;padding:19px}.label{font-size:11px;color:#637872;font-weight:800}.big{font-size:clamp(26px,4vw,33px);line-height:1.08;overflow-wrap:anywhere;font-weight:900;color:#099b6a;margin:5px 0 13px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#fff;border-radius:12px;padding:12px}.stat small{display:block;font-size:9px;color:#758780;font-weight:800}.stat strong{display:block;font-size:18px;margin-top:5px}.graph{background:#fff;border-radius:13px;padding:12px;margin-top:11px}.graphTitle{font-size:11px;font-weight:800;margin-bottom:7px}.bars{height:126px;display:flex;align-items:end;gap:4px}.bars i{flex:1;min-height:3px;background:linear-gradient(#31c48e,#0b9868);border-radius:4px 4px 0 0}.legend{display:flex;justify-content:space-between;color:#84938f;font-size:9px;margin-top:6px}.insight{margin:0 24px 23px;background:#effaf6;border:1px solid #d9eee6;border-radius:15px;padding:12px 15px;font-size:12px;line-height:1.5}.insight b{color:#078d62}.formula{font-size:10px;color:#7c8d88;line-height:1.5;margin-top:9px}
+.hbars{display:grid;gap:10px;padding-top:5px}.hrow{display:grid;grid-template-columns:72px 1fr 80px;gap:7px;align-items:center;font-size:9px;color:#627670}.track{height:9px;background:#e1ece8;border-radius:99px;overflow:hidden}.fill{height:100%;background:#16ad78;border-radius:99px}
+.disclaimer{padding:25px 6%;text-align:center;background:#fff;color:#788883;font-size:10px;line-height:1.6}.cta{margin:30px 3.5% 42px;background:#e2f5ed;border-radius:22px}.ctaIn{max-width:1180px;margin:auto;padding:29px 4%;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0;font-size:29px}.cta p{margin:7px 0 0;color:var(--muted)}.learn{background:var(--g);color:#fff;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}footer{background:#06372d;color:#d6e9e3;text-align:center;padding:29px}footer strong{color:#fff;font-size:20px}footer p{font-size:11px;color:#a4c1b9}
+
+@media(max-width:900px){.top{grid-template-columns:minmax(0,1fr);overflow:hidden}.output{width:100%}.field label{gap:8px}.field label output{font-size:11px}.header{height:76px;padding:0 5%}.nav{display:none}.hamb{display:block}.hero{padding:0 0 10px}.heroBox{grid-template-columns:1fr;padding:22px 5% 8px;min-height:0}.hero h1{font-size:43px;line-height:.98;margin:10px 0}.heroArt{height:160px}.jar{transform:scale(.62);transform-origin:bottom right;right:10%}.stem{transform:scale(.62);transform-origin:bottom;right:31%}.l1{right:34%}.l2{right:25%}.l3{right:35%}.l4{right:22%}.arrow{transform:scale(.62) rotate(-19deg);right:0;top:20px}.scribble{right:42%;bottom:35px;font-size:13px}.sticky{right:1%;bottom:12px;transform:scale(.8) rotate(4deg);transform-origin:bottom right}.tabs{padding:10px 4% 5px}.tabGrid{display:flex;overflow-x:auto;overflow-y:hidden;gap:8px;scrollbar-width:none;padding-right:2px}.tabGrid::-webkit-scrollbar{display:none}.tab{flex:0 0 calc((92vw - 24px)/4);min-width:0;border-radius:15px;padding:10px 5px 7px}.tab .ico{font-size:22px;height:28px}.cagrIcon{gap:4px}.cagrIcon i{width:6px;height:21px}.cagrIcon i:nth-child(2){height:27px}.cagrIcon i:nth-child(3){height:18px}.tab small{font-size:10px}.panel{padding:9px 4% 27px}.top{grid-template-columns:1fr;padding:17px}.heading h2{font-size:25px}.output{padding:16px}.big{font-size:29px}.insight{margin:0 17px 18px}.cta{margin:27px 4%}.ctaIn{display:block}.cta .learn{display:inline-block;margin-top:14px}}
+@media(max-width:560px){.brand{font-size:25px}.mark{width:45px;height:45px}.hero h1{font-size:42px}.hero p{font-size:15px}.heroArt{height:150px}.tab{flex-basis:calc((92vw - 24px)/4)}.stats{grid-template-columns:1fr 1fr}.buttons{gap:7px}.buttons .btn{font-size:15px;padding:13px 8px}}
+.footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}.footer-brand>span{color:#42c991!important}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0;color:#a8c0b9;text-decoration:none!important}.footer a:hover{color:#63dda3}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}@media(max-width:700px){.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.footer-brand{font-size:26px}.footer h4{font-size:14px}.footer a,.footer p,.copyright{font-size:12px;line-height:1.6}}
+/* ===== FOOTER TYPOGRAPHY — SAME AS SHARED PAGES ===== */
+.footer{background:#10261f !important;color:#a8c0b9 !important;padding:58px 28px 28px !important;text-align:left !important}
+.footer-inner{max-width:1180px !important;margin:auto !important}
+.footer-brand{font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+.footer-brand>span{color:#42c991 !important}
+.footer-grid{display:grid !important;grid-template-columns:2fr 1fr 1fr 1fr !important;gap:35px !important;margin:28px 0 !important}
+.footer h4{color:#fff !important;margin:0 0 12px !important;font-size:16px !important}
+.footer a{display:block !important;margin:9px 0 !important;color:#a8c0b9 !important;font-size:16px !important;line-height:1.6 !important;text-decoration:none !important}
+.footer p{font-size:16px !important;line-height:1.6 !important}
+.copyright{border-top:1px solid rgba(255,255,255,.09) !important;padding-top:16px !important;color:#70847d !important;font-size:12px !important;line-height:1.6 !important}
+@media(max-width:700px){
+  .footer{padding:45px 27px 25px !important}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .footer-grid>div:first-child{grid-column:1/-1 !important}
+  .footer-brand{font-size:26px !important}
+  .footer h4{font-size:14px !important}
+  .footer a,.footer p,.copyright{font-size:12px !important;line-height:1.6 !important}
+}
 
 
+/* ===== FINAL FOOTER BRAND EXACT STANDARD ===== */
+.footer-brand{font-family:Arial,Helvetica,sans-serif !important;font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+@media(max-width:700px){.footer-brand{font-size:26px !important}}
 
+/* ===== WEALTHARIA MASTER HEADER — AI TOOLS STANDARD ===== */
+.site-header{height:82px!important;min-height:82px!important;background:#fff!important;border-bottom:1px solid #d7e5e0!important;position:sticky!important;top:0!important;z-index:1100!important;box-sizing:border-box!important}
+.nav-wrap{width:min(1180px,100%)!important;max-width:1180px!important;height:82px!important;min-height:82px!important;margin:auto!important;padding:14px 28px!important;display:flex!important;align-items:center!important;gap:28px!important;box-sizing:border-box!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:30px!important;line-height:1!important;font-weight:800!important;letter-spacing:-1.5px!important;white-space:nowrap!important;color:#10261f!important;text-decoration:none!important}
+.brand .mark{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;flex:0 0 54px!important;border-radius:16px!important;background:#10261f!important;color:#53e0a8!important;display:grid!important;place-items:center!important;font-family:Arial,Helvetica,sans-serif!important;font-size:31px!important;line-height:1!important;font-weight:800!important;box-sizing:border-box!important}
+.brand>span:last-child{color:#10261f!important}.brand>span:last-child>span{color:#22a96b!important}
+.site-header .nav{display:flex!important;align-items:center!important;gap:20px!important;margin-left:auto!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:700!important}
+.site-header .nav a{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important}
+.header-btn{background:#10261f!important;color:#fff!important;padding:15px 22px!important;border-radius:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:800!important;white-space:nowrap!important}
+.menu-btn{display:none!important;border:0!important;background:transparent!important;cursor:pointer!important;color:#10261f!important}
+@media(max-width:800px){
+.site-header{height:68px!important;min-height:68px!important}
+.nav-wrap{height:68px!important;min-height:68px!important;padding:0 20px!important;gap:0!important}
+.brand{gap:9px!important;font-size:20px!important;letter-spacing:-.8px!important}
+.brand .mark{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;flex:0 0 34px!important;border-radius:10px!important;font-size:16px!important}
+.site-header .nav,.header .nav{display:none!important}
+.header-btn{display:none!important}
+.menu-btn{display:block!important;margin-left:auto!important;width:42px!important;height:42px!important;padding:0!important;font-size:0!important;position:relative!important;z-index:1201!important}
+.menu-btn:before{content:"☰";font-size:28px;line-height:42px}
+.nav.menu-open{display:flex!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;width:100vw!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:8px 24px 12px!important;box-sizing:border-box!important;background:#fff!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;overflow:hidden!important;border-bottom:1px solid #d7e5e0!important;box-shadow:0 10px 24px rgba(16,38,31,.08)!important;z-index:1200!important}
+.nav.menu-open::after{display:none!important;content:none!important}
+.nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
+}
+/* ===== ACTIVE PAGE NAV INDICATOR — SHARED ACROSS ALL PAGES ===== */
+.site-header .nav a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:4px!important}
+@media(max-width:800px){.site-header .nav.menu-open a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:7px!important}}
+
+/* ===== WEALTHARIA MASTER FOOTER — CALCULATORS STANDARD ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;text-align:left!important;font-family:Arial,Helvetica,sans-serif!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;line-height:1.2!important;font-weight:800!important;color:#fff!important;display:block!important}
+.footer-brand>span{color:#42c991!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important}
+.footer h4{color:#fff!important;margin:0 0 12px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important}
+.footer a{display:block!important;margin:9px 0!important;color:#a8c0b9!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important;text-decoration:none!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important}
+.copyright{border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+
+/* ===== WEALTHARIA MASTER FOOTER — SHARED ACROSS ALL PAGES ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important}
+.footer-brand>span{color:#42c991!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;color:#a8c0b9!important;margin:8px 0 0!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}
+.footer-grid>div:first-child{display:block!important}
+.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}
+.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}
+.footer a:hover{color:#63dda3!important}
+.copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+/* ===== END MASTER FOOTER ===== */
+</style>
+
+<style id="revenue-nav-links">
+.revenue-nav-link{display:none!important}
+@media(max-width:800px){
+.site-header .nav.menu-open .revenue-nav-link{display:block!important}
+.site-header .nav.menu-open .revenue-nav-link,
+.site-header .nav.menu-open a[href="pricing.html"]{font-size:16px!important;font-weight:600!important;padding:7px 0!important}
+}
+</style></head>
+<body>
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="WealthAria"><span class="mark">W</span><span>Wealth<span>Aria</span></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="learn.html">Learn</a><a class="active" href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a class="revenue-nav-link" href="wealth-health-score.html">Wealth Health Score</a><a class="revenue-nav-link" href="wealth-report.html">Wealth Report</a><a href="pricing.html">WealthAria Plus</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button></div></header>
+<nav id="mobile" class="mobile"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+
+<section class="hero"><div class="heroBox"><div class="heroCopy"><div class="eyebrow">CALCULATORS</div><h1>Plan Today.<br>A Brighter<br><span>Tomorrow.</span></h1><p>Simple tools. Real numbers. Smarter financial decisions.</p></div>
+<div class="art"><div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div><div class="stack"></div><div class="jar"></div><i class="coin coin1"></i><i class="coin coin2"></i><i class="coin coin3"></i><div class="arrow"></div><div class="scribble">Small<br>Steps<br><b>Big Dreams</b></div><div class="sticky">INVEST<br>PLAN<br>GROW<br>☺</div></div></div></section>
+
+<section class="tabs"><div class="tabGrid">
+<button class="tab active" data-tool="sip"><span class="ico">🌱</span><small>SIP</small><i class="triangle"></i></button>
+<button class="tab" data-tool="emi"><span class="ico">⌂</span><small>EMI</small><i class="triangle"></i></button>
+<button class="tab" data-tool="lumpsum"><span class="ico">₹</span><small>Lumpsum</small><i class="triangle"></i></button>
+<button class="tab" data-tool="cagr"><span class="ico cagrIcon" aria-hidden="true"><i></i><i></i><i></i></span><small>CAGR</small><i class="triangle"></i></button>
+<button class="tab" data-tool="fd"><span class="ico">◎</span><small>FD</small><i class="triangle"></i></button>
+<button class="tab" data-tool="rd"><span class="ico">▣</span><small>RD</small><i class="triangle"></i></button>
+<button class="tab" data-tool="ppf"><span class="ico">◇</span><small>PPF</small><i class="triangle"></i></button>
+<button class="tab" data-tool="retirement"><span class="ico">♙</span><small>Retirement</small><i class="triangle"></i></button>
+</div></section>
+
+<!-- SIP -->
+<section class="panel active" id="panel-sip"><div class="box"><div class="top">
+<div><div class="heading"><div class="hIcon">🌱</div><div><h2>SIP Calculator</h2><p>Start small. Grow big.</p></div></div>
+<div class="field"><label>Monthly Investment (₹)<output id="sipAmtO">10,000</output></label><input class="range" id="sipAmt" type="range" min="500" max="500000" step="500" value="10000"><div class="limits"><span>Min ₹500</span><span>Max ₹5,00,000</span></div></div>
+<div class="field"><label>Investment Period (Years)<output id="sipYrsO">15</output></label><input class="range" id="sipYrs" type="range" min="1" max="50" value="15"><div class="limits"><span>Min 1</span><span>Max 50</span></div></div>
+<div class="field"><label>Expected Return (% p.a.)<output id="sipRateO">12%</output></label><input class="range" id="sipRate" type="range" min="0" max="30" step=".1" value="12"><div class="limits"><span>0%</span><span>Max 30%</span></div></div>
+<div class="buttons"><button class="btn calc" onclick="calcSIP()">Calculate Growth</button><button class="btn reset" onclick="resetSIP()">↻ Reset</button></div></div>
+<div class="output"><div class="label">FUTURE VALUE</div><div class="big" id="sipFV">₹50,45,760</div><div class="stats"><div class="stat"><small>TOTAL INVESTED</small><strong id="sipInv">₹18,00,000</strong></div><div class="stat"><small>ESTIMATED GROWTH</small><strong id="sipGain">₹32,45,760</strong></div></div><div class="graph"><div class="graphTitle">Investment Growth (Estimated)</div><div class="bars" id="sipGraph"></div><div class="legend"><span>₹0</span><span>₹20L</span><span>₹40L</span><span>₹60L</span></div></div></div></div><div class="insight">💡 <b id="sipInsight">A monthly SIP of ₹10,000 at 12% can grow to about ₹50.46 lakhs in 15 years.</b><br>The earlier you start, the more powerful your compounding can become.</div></div></section>
+
+<!-- EMI -->
+<section class="panel" id="panel-emi"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">⌂</div><div><h2>EMI Calculator</h2><p>Know your monthly loan cost.</p></div></div>
+<div class="field"><label>Loan Amount (₹)</label><input id="emiP" type="number" value="1000000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="emiR" type="number" value="8.35" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="emiY" type="number" value="10" min=".01" step=".1"></div><button class="btn calc" onclick="calcEMI()">Calculate EMI</button></div>
+<div class="output"><div class="label">MONTHLY EMI</div><div class="big" id="emiOut">₹12,318</div><div class="stats"><div class="stat"><small>PRINCIPAL</small><strong id="emiPrincipal">₹10,00,000</strong></div><div class="stat"><small>TOTAL INTEREST</small><strong id="emiInt">₹4,78,219</strong></div><div class="stat"><small>TOTAL PAYMENT</small><strong id="emiTotal">₹14,78,219</strong></div></div><div class="graph"><div class="graphTitle">Principal vs Interest</div><div class="bars" id="emiGraph"></div></div></div></div><div class="insight">🏠 <b>Reducing-balance EMI.</b> EMI = P×r×(1+r)ⁿ / [(1+r)ⁿ−1], where r is the monthly interest rate.</div></div></section>
+
+<!-- LUMPSUM -->
+<section class="panel" id="panel-lumpsum"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">₹</div><div><h2>Lumpsum Calculator</h2><p>See one-time investment growth.</p></div></div>
+<div class="field"><label>Investment (₹)</label><input id="lumpP" type="number" value="500000" min="0"></div><div class="field"><label>Expected Return (% p.a.)</label><input id="lumpR" type="number" value="12" min="0" step=".1"></div><div class="field"><label>Period (Years)</label><input id="lumpY" type="number" value="10" min="0" step=".1"></div><button class="btn calc" onclick="calcLump()">Calculate Growth</button></div>
+<div class="output"><div class="label">FUTURE VALUE</div><div class="big" id="lumpFV">₹15,52,924</div><div class="stats"><div class="stat"><small>INVESTED</small><strong id="lumpInv">₹5,00,000</strong></div><div class="stat"><small>ESTIMATED GROWTH</small><strong id="lumpGain">₹10,52,924</strong></div></div><div class="graph"><div class="graphTitle">Value Growth</div><div class="bars" id="lumpGraph"></div></div></div></div><div class="insight">📈 <b>Compound growth is time-sensitive.</b> Formula: FV = P×(1+r)ᵗ.</div></div></section>
+
+<!-- CAGR -->
+<section class="panel" id="panel-cagr"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">▮▮▮</div><div><h2>CAGR Calculator</h2><p>Measure annualized growth.</p></div></div>
+<div class="field"><label>Starting Value (₹)</label><input id="cagrS" type="number" value="100000" min="0"></div><div class="field"><label>Ending Value (₹)</label><input id="cagrE" type="number" value="200000" min="0"></div><div class="field"><label>Period (Years)</label><input id="cagrY" type="number" value="5" min=".0001" step=".1"></div><button class="btn calc" onclick="calcCAGR()">Calculate CAGR</button></div>
+<div class="output"><div class="label">CAGR</div><div class="big" id="cagrOut">14.87%</div><div class="stats"><div class="stat"><small>ABSOLUTE GROWTH</small><strong id="cagrGain">₹1,00,000</strong></div><div class="stat"><small>GROWTH MULTIPLE</small><strong id="cagrMultiple">2.00×</strong></div></div><div class="graph"><div class="graphTitle">Value Path</div><div class="bars" id="cagrGraph"></div></div></div></div><div class="insight">📊 <b>CAGR = (Ending Value ÷ Starting Value)^(1 ÷ Years) − 1.</b></div></div></section>
+
+<!-- FD -->
+<section class="panel" id="panel-fd"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">◎</div><div><h2>FD Calculator</h2><p>Estimate fixed-deposit maturity.</p></div></div>
+<div class="field"><label>Principal (₹)</label><input id="fdP" type="number" value="500000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="fdR" type="number" value="7" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="fdY" type="number" value="5" min="0" step=".1"></div><button class="btn calc" onclick="calcFD()">Calculate Maturity</button></div>
+<div class="output"><div class="label">MATURITY VALUE</div><div class="big" id="fdFV">₹7,07,389</div><div class="stats"><div class="stat"><small>PRINCIPAL</small><strong id="fdPrincipal">₹5,00,000</strong></div><div class="stat"><small>INTEREST</small><strong id="fdInt">₹2,07,389</strong></div></div><div class="graph"><div class="graphTitle">Projected Maturity</div><div class="bars" id="fdGraph"></div></div></div></div><div class="insight">🏦 <b>Quarterly-compounding model.</b> A = P×(1+r/4)⁴ᵗ. Actual FD products can use different conventions.</div></div></section>
+
+<!-- RD -->
+<section class="panel" id="panel-rd"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">▣</div><div><h2>RD Calculator</h2><p>Project recurring savings.</p></div></div>
+<div class="field"><label>Monthly Deposit (₹)</label><input id="rdP" type="number" value="10000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="rdR" type="number" value="7" min="0" step=".01"></div><div class="field"><label>Tenure (Years)</label><input id="rdY" type="number" value="5" min=".25" step=".25"></div><button class="btn calc" onclick="calcRD()">Calculate Maturity</button></div>
+<div class="output"><div class="label">MATURITY VALUE</div><div class="big" id="rdFV">₹7,19,328</div><div class="stats"><div class="stat"><small>TOTAL DEPOSITED</small><strong id="rdInv">₹6,00,000</strong></div><div class="stat"><small>INTEREST</small><strong id="rdInt">₹1,19,328</strong></div></div><div class="graph"><div class="graphTitle">Projected Value</div><div class="bars" id="rdGraph"></div></div></div></div><div class="insight">🏦 <b>Standard RD approximation.</b> Uses quarterly rate with monthly installments and the commonly used RD maturity formula. Bank-specific installment timing may differ.</div></div></section>
+
+<!-- PPF -->
+<section class="panel" id="panel-ppf"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">◇</div><div><h2>PPF Calculator</h2><p>Explore long-term compounding.</p></div></div>
+<div class="field"><label>Annual Contribution (₹)</label><input id="ppfP" type="number" value="150000" min="0"></div><div class="field"><label>Interest Rate (% p.a.)</label><input id="ppfR" type="number" value="7.1" min="0" step=".1"></div><div class="field"><label>Period (Years)</label><input id="ppfY" type="number" value="15" min="1"></div><button class="btn calc" onclick="calcPPF()">Calculate PPF</button></div>
+<div class="output"><div class="label">PROJECTED VALUE</div><div class="big" id="ppfFV">₹40,68,209</div><div class="stats"><div class="stat"><small>CONTRIBUTED</small><strong id="ppfInv">₹22,50,000</strong></div><div class="stat"><small>ESTIMATED INTEREST</small><strong id="ppfInt">₹18,18,209</strong></div></div><div class="graph"><div class="graphTitle">Projected Balance</div><div class="bars" id="ppfGraph"></div></div></div></div><div class="insight">🏛️ <b>Beginning-of-year contribution model.</b> Each annual contribution is added before that year's compounding; the entered rate is assumed constant. Actual PPF interest follows applicable government rules and monthly-balance conventions. Actual PPF interest is governed by applicable government rules.</div></div></section>
+
+<!-- RETIREMENT -->
+<section class="panel" id="panel-retirement"><div class="box"><div class="top"><div><div class="heading"><div class="hIcon">♙</div><div><h2>Retirement Planner</h2><p>Turn a future goal into a number.</p></div></div>
+<div class="field"><label>Current Monthly Expense (₹)</label><input id="retExp" type="number" value="50000" min="0"></div><div class="field"><label>Years to Retirement</label><input id="retY" type="number" value="15" min="1"></div><div class="field"><label>Inflation (% p.a.)</label><input id="retInf" type="number" value="6" min="0" step=".1"></div><div class="field"><label>Return Before Retirement (% p.a.)</label><input id="retPre" type="number" value="12" min="0" step=".1"></div><div class="field"><label>Return During Retirement (% p.a.)</label><input id="retPost" type="number" value="7" min="0" step=".1"></div><div class="field"><label>Retirement Period (Years)</label><input id="retYears" type="number" value="25" min="1"></div><button class="btn calc" onclick="calcRet()">Calculate Plan</button></div>
+<div class="output"><div class="label">TARGET CORPUS</div><div class="big" id="retCorpus">₹0</div><div class="stats"><div class="stat"><small>EXPENSE AT RETIREMENT</small><strong id="retFuture">₹0</strong></div><div class="stat"><small>MONTHLY SIP NEEDED</small><strong id="retSIP">₹0</strong></div></div><div class="graph"><div class="graphTitle">Target Corpus vs SIP Contributions</div><div class="hbars"><div class="hrow"><span>Target</span><div class="track"><div class="fill" id="retCorpusBar"></div></div><b id="retCorpusLbl">₹0</b></div><div class="hrow"><span>SIP invested</span><div class="track"><div class="fill" id="retInvestBar"></div></div><b id="retInvestLbl">₹0</b></div></div></div></div></div><div class="insight">💡 <b>Planning estimate.</b> Future expenses are inflation-adjusted and the corpus is based on monthly withdrawals over the retirement period. Taxes, pensions, existing assets and other income are not included.</div></div></section>
+
+<div class="disclaimer">WealthAria calculators are educational tools. Results depend on the assumptions and conventions displayed for each calculator. Actual market returns, bank products, government rates, taxes, fees and individual circumstances can change the outcome. This page is not investment, tax or financial advice.</div>
+<section class="cta"><div class="ctaIn"><div><h2>Good decisions start with good numbers.</h2><p>Learn the ideas behind the calculations with WealthAria.</p></div><a class="learn" href="learn.html">Learn More →</a></div></section>
+<footer class="footer"><div class="footer-inner"><div class="footer-brand"><span class="footer-word">Wealth</span><span class="footer-ar">Aria</span></div><p>Build Wealth. Simply. Intelligently.</p><div class="footer-grid"><div></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div><div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const rupee=n=>"₹"+Math.round(Number(n)||0).toLocaleString("en-IN");
+const n=id=>Math.max(0,Number($(id).value)||0);
+function set(id,v){$(id).textContent=v}
+function makeBars(id,values){const el=$(id);el.innerHTML="";const max=Math.max(...values,1);values.forEach(v=>{const b=document.createElement("i");b.style.height=Math.max(3,v/max*100)+"%";el.appendChild(b)})}
+function toggleMenu(){const nav=document.querySelector(".nav");nav.classList.toggle("menu-open")}
+function activate(tool){
+ document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tool===tool));
+ document.querySelectorAll(".panel").forEach(x=>x.classList.toggle("active",x.id==="panel-"+tool));
+ window.scrollTo({top:document.querySelector(".tabs").offsetTop-8,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(x=>x.addEventListener("click",()=>activate(x.dataset.tool)));
+
+function calcSIP(){
+ const P=n("sipAmt"), y=Math.max(1,n("sipYrs")), annual=n("sipRate"), r=annual/1200, months=Math.round(y*12);
+ const fv=r===0?P*months:P*((Math.pow(1+r,months)-1)/r)*(1+r), inv=P*months;
+ set("sipAmtO",P.toLocaleString("en-IN"));set("sipYrsO",y);set("sipRateO",annual+"%");
+ set("sipFV",rupee(fv));set("sipInv",rupee(inv));set("sipGain",rupee(fv-inv));
+ set("sipInsight",`A monthly SIP of ${rupee(P)} at ${annual}% can grow to about ₹${(fv/100000).toFixed(2)} lakhs in ${y} years.`);
+ const vals=[];for(let yr=1;yr<=Math.min(15,Math.ceil(y));yr++){const m=yr*12;vals.push(r===0?P*m:P*((Math.pow(1+r,m)-1)/r)*(1+r))}makeBars("sipGraph",vals)
+}
+function resetSIP(){$("sipAmt").value=10000;$("sipYrs").value=15;$("sipRate").value=12;calcSIP()}
+function calcEMI(){
+ const P=n("emiP"), annual=n("emiR"), r=annual/1200, months=Math.max(1,Math.round(n("emiY")*12));
+ const emi=r===0?P/months:P*r*Math.pow(1+r,months)/(Math.pow(1+r,months)-1), total=emi*months, interest=Math.max(0,total-P);
+ set("emiOut",rupee(emi));set("emiPrincipal",rupee(P));set("emiInt",rupee(interest));set("emiTotal",rupee(total));makeBars("emiGraph",[P,interest])
+}
+function calcLump(){
+ const P=n("lumpP"),r=n("lumpR")/100,y=n("lumpY"),fv=P*Math.pow(1+r,y);
+ set("lumpFV",rupee(fv));set("lumpInv",rupee(P));set("lumpGain",rupee(fv-P));
+ const v=[];for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(P*Math.pow(1+r,i));makeBars("lumpGraph",v)
+}
+function calcCAGR(){
+ const s=n("cagrS"),e=n("cagrE"),y=Math.max(.000001,n("cagrY"));let c=0;
+ if(s>0&&e>0)c=(Math.pow(e/s,1/y)-1)*100;
+ set("cagrOut",c.toFixed(2)+"%");set("cagrGain",rupee(e-s));set("cagrMultiple",(s>0?e/s:0).toFixed(2)+"×");
+ const v=[];if(s>0&&e>0)for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(s*Math.pow(e/s,i/y));makeBars("cagrGraph",v.length?v:[1])
+}
+function calcFD(){
+ const P=n("fdP"),annual=n("fdR")/100,y=n("fdY"),m=4,fv=P*Math.pow(1+annual/m,m*y);
+ set("fdFV",rupee(fv));set("fdPrincipal",rupee(P));set("fdInt",rupee(fv-P));
+ const v=[];for(let i=1;i<=Math.min(12,Math.ceil(y));i++)v.push(P*Math.pow(1+annual/m,m*i));makeBars("fdGraph",v)
+}
+function calcRD(){
+ const monthly=n("rdP"), annual=n("rdR")/100, months=Math.max(1,Math.round(n("rdY")*12));
+ // Approximate the common Indian RD convention: each monthly instalment earns
+ // quarterly-compounded interest for the remaining time to maturity.
+ // A month-by-month cash-flow model is used so the timing assumption is explicit.
+ const qRate=annual/4;
+ let fv=0;
+ for(let k=1;k<=months;k++){
+   const remainingMonths=months-k+1;
+   const quarters=remainingMonths/3;
+   fv += monthly*Math.pow(1+qRate,quarters);
+ }
+ const deposited=monthly*months, interest=Math.max(0,fv-deposited);
+ set("rdFV",rupee(fv));set("rdInv",rupee(deposited));set("rdInt",rupee(interest));
+ const v=[];const step=Math.max(1,Math.floor(months/10));
+ for(let m=step;m<=months;m+=step){
+   let x=0;for(let k=1;k<=m;k++)x+=monthly*Math.pow(1+qRate,(m-k+1)/3);
+   v.push(x)
+ }
+ if(!v.length||v[v.length-1]!==fv)v.push(fv);
+ makeBars("rdGraph",v)
+}
+function calcPPF(){
+ const A=n("ppfP"),r=n("ppfR")/100,y=Math.max(1,Math.round(n("ppfY")));let bal=0,v=[];
+ for(let k=1;k<=y;k++){bal=(bal+A)*(1+r);v.push(bal)}
+ const inv=A*y;set("ppfFV",rupee(bal));set("ppfInv",rupee(inv));set("ppfInt",rupee(bal-inv));makeBars("ppfGraph",v.slice(0,15))
+}
+function calcRet(){
+ const expense=n("retExp"),years=Math.max(1,n("retY")),infl=n("retInf")/100,pre=n("retPre")/100,post=n("retPost")/100,retY=Math.max(1,n("retYears"));
+ const future=expense*Math.pow(1+infl,years);
+ const g=Math.pow(1+infl,1/12)-1, r=Math.pow(1+post,1/12)-1, months=Math.round(retY*12);
+ let corpus;
+ if(Math.abs(r-g)<1e-12) corpus=future*months;
+ else corpus=future*(1-Math.pow((1+g)/(1+r),months))/(r-g);
+ const sr=Math.pow(1+pre,1/12)-1, preMonths=Math.round(years*12);
+ const sip=sr===0?corpus/preMonths:corpus*sr/(Math.pow(1+sr,preMonths)-1), invested=sip*preMonths,max=Math.max(corpus,invested,1);
+ set("retCorpus",rupee(corpus));set("retFuture",rupee(future));set("retSIP",rupee(sip));set("retCorpusLbl",rupee(corpus));set("retInvestLbl",rupee(invested));
+ $("retCorpusBar").style.width=(corpus/max*100)+"%";$("retInvestBar").style.width=(invested/max*100)+"%"
+}
+calcSIP();calcEMI();calcLump();calcCAGR();calcFD();calcRD();calcPPF();calcRet();
+["sipAmt","sipYrs","sipRate"].forEach(id=>$(id).addEventListener("input",calcSIP));
+</script>
 <style id="wealtharia-footer-master">.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}.footer-inner{max-width:1180px!important;margin:auto!important}.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important;letter-spacing:-.5px!important}.footer-brand .footer-word{color:#fff!important}.footer-brand .footer-ar{color:#42c991!important}.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;color:#a8c0b9!important;margin:8px 0 0!important}.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}.footer-grid>div:first-child{display:block!important}.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}.footer a:hover{color:#63dda3!important}.footer .copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important;font-weight:400!important}@media(max-width:700px){.footer{padding:45px 27px 25px!important}.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}.footer-grid>div:first-child{grid-column:1/-1!important}.footer-brand{font-size:26px!important}.footer h4{font-size:14px!important}.footer a,.footer p,.footer .copyright{font-size:12px!important;line-height:1.6!important}}</style>
 </body>
 </html>
