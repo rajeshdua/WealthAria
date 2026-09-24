@@ -93,6 +93,11 @@
 .nav.menu-open::after{display:none!important;content:none!important}
 .nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
 }
+
+/* ===== REVENUE MVP ENTRY CARDS ===== */
+.revenue-entry{padding:0 0 86px}.revenue-entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.revenue-entry-card{border:1px solid var(--line);background:#fff;border-radius:22px;padding:24px;transition:.2s}.revenue-entry-card:hover{border-color:#9fd9c5;transform:translateY(-2px)}.revenue-entry-card .mini-kicker{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#22a96b}.revenue-entry-card h3{font-size:22px;line-height:1.2;margin:8px 0}.revenue-entry-card p{font-size:14px;color:var(--muted);margin:0 0 18px}.revenue-entry-card a{display:inline-flex;padding:11px 15px;border-radius:10px;background:var(--dark);color:#fff;font-weight:800;font-size:13px}.revenue-entry-card a:hover{background:var(--green)}
+@media(max-width:800px){.revenue-entry{padding:0 0 64px}.revenue-entry-grid{grid-template-columns:1fr}.revenue-entry-card{padding:20px}}
+
 /* ===== ACTIVE PAGE NAV INDICATOR — SHARED ACROSS ALL PAGES ===== */
 .site-header .nav a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:4px!important}
 @media(max-width:800px){.site-header .nav.menu-open a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:7px!important}}
