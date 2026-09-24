@@ -5,9 +5,395 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="WealthAria Learn — simple, practical financial education for Indian investors.">
 <title>Learn Investing | WealthAria</title>
+<style>
+:root{
+  --ink:#0d3029; --muted:#62736f; --green:#13a66f; --green2:#25b77b;
+  --pale:#f1faf6; --line:#dce8e3; --white:#fff; --dark:#082d25;
+  --shadow:0 14px 40px rgba(9,48,41,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
+header{height:76px;background:rgba(255,255,255,.96);border-bottom:1px solid #edf2f0;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:800;letter-spacing:-.8px}
+.logo-mark{width:38px;height:38px;border-radius:9px;background:var(--dark);color:#fff;display:grid;place-items:center;font-weight:800}
+.logo span{color:var(--green)}
+.navlinks{display:flex;gap:29px;align-items:center;font-size:14px}
+.navlinks a{color:#183b34;position:relative}
+.navlinks a.active{font-weight:700}
+.navlinks a.active:after{content:"";position:absolute;height:2px;background:var(--green);left:0;right:0;bottom:-25px}
+.nav-cta{background:var(--dark);color:#fff!important;padding:11px 18px;border-radius:9px;font-weight:700}
+.menu{display:none;border:0;background:none;font-size:28px;color:var(--ink)}
+
+.hero{background:linear-gradient(115deg,#f2fbf7 0%,#f8fcfa 100%);padding:42px 0 54px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:55px;align-items:center}
+.eyebrow,.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:800;color:#287d68}
+h1{font-size:58px;line-height:1.02;letter-spacing:-2.8px;margin:14px 0 18px;max-width:590px}
+.accent{color:var(--green)}
+.hero-copy{font-size:17px;color:var(--muted);max-width:530px}
+.actions{display:flex;gap:13px;margin:24px 0 20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:9px;border:1px solid #b9ccc6;font-weight:750;font-size:14px}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn.secondary{background:#fff}
+.hero-points{display:flex;gap:24px;flex-wrap:wrap;color:#58716a;font-size:13px}
+.hero-points b{color:var(--ink)}
+.hero-photo{height:430px;border-radius:18px;background:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85") center/cover;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,37,30,.10),transparent 55%)}
+.photo-card{position:absolute;right:24px;top:23px;z-index:2;background:rgba(255,255,255,.94);padding:23px;border-radius:17px;width:185px;box-shadow:0 14px 35px rgba(0,0,0,.12)}
+.photo-card .round{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#d9f7e9;color:var(--green);margin-bottom:13px}
+.photo-card strong{display:block;font-size:16px;line-height:1.35}
+.photo-card small{display:block;color:var(--muted);margin-top:7px}
+
+.topics{padding:70px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
+h2{font-size:39px;line-height:1.08;letter-spacing:-1.6px;margin-top:7px}
+.section-head p{max-width:350px;color:var(--muted);font-size:15px}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.topic{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;transition:.2s;box-shadow:0 3px 15px rgba(10,50,42,.03)}
+.topic:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.topic-img{height:175px;background-size:cover;background-position:center}
+.topic-body{padding:20px}
+.topic-title{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800}
+.icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#eff9f5;font-size:20px;flex:none}
+.topic-body p{color:var(--muted);font-size:14px;margin:9px 0 12px;line-height:1.5}
+.learn-more{color:#069b67;font-size:13px;font-weight:800}
+
+.why{background:var(--pale);padding:68px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.why-copy p{color:var(--muted);max-width:520px;margin-top:16px}
+.benefits{display:grid;gap:20px}
+.benefit{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+.benefit .icon{width:48px;height:48px;background:#d8f5e7}
+.benefit h3{font-size:16px}
+.benefit p{color:var(--muted);font-size:13px;margin-top:2px}
+
+.cta{padding:54px 0}
+.cta-box{background:var(--dark);border-radius:18px;color:#fff;padding:36px 42px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta-box h2{font-size:31px}
+.cta-box p{color:#b7d0c9;margin-top:6px}
+.cta .btn{background:#fff;border-color:#fff;color:var(--ink);white-space:nowrap}
+
+footer{border-top:1px solid #e8efec;padding:30px 0 25px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-links{display:flex;gap:22px;font-size:13px;color:#49645d;flex-wrap:wrap}
+.footer-bottom{margin-top:18px;display:flex;justify-content:space-between;color:#80918d;font-size:12px}
+.social{display:flex;gap:16px;color:#49645d}
+
+@media(max-width:900px){
+  .container{width:min(100% - 32px,680px)}
+  header,.nav{height:68px}
+  .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 20px;flex-direction:column;align-items:flex-start;gap:17px;box-shadow:0 12px 25px rgba(0,0,0,.08)}
+  .navlinks.open{display:flex}
+  .navlinks a.active:after{display:none}
+  .nav-cta{width:100%;text-align:center}
+  .menu{display:block}
+  .hero{padding:30px 0 42px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  h1{font-size:45px;letter-spacing:-2px}
+  .hero-photo{height:320px}
+  .topic-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}
+  .logo{font-size:21px}
+  .logo-mark{width:34px;height:34px}
+  .hero{padding-top:25px}
+  h1{font-size:38px;line-height:1.04}
+  .hero-copy{font-size:15px}
+  .hero-photo{height:275px;border-radius:15px}
+  .photo-card{right:13px;top:13px;width:145px;padding:15px}
+  .photo-card strong{font-size:14px}
+  .photo-card small{font-size:11px}
+  .actions .btn{width:100%}
+  .hero-points{gap:10px 17px;font-size:12px}
+  .topics{padding:48px 0}
+  .section-head{display:block}
+  h2{font-size:32px}
+  .section-head p{margin-top:10px}
+  .topic-grid{grid-template-columns:1fr;gap:15px}
+  .topic-img{height:190px}
+  .topic-body{padding:17px}
+  .why{padding:48px 0}
+  .cta{padding:35px 0}
+  .cta-box{padding:28px 23px;display:block}
+  .cta-box h2{font-size:27px}
+  .cta-box .btn{margin-top:18px;width:100%}
+  .footer-grid,.footer-bottom{display:block}
+  .footer-links{margin-top:18px;gap:14px}
+  .social{margin-top:18px}
+  .footer-bottom{line-height:1.7}
+}
+
+/* Unified WealthAria header */
+.site-header{height:76px;background:rgba(255,255,255,.94);border-bottom:1px solid #e0e9e4;position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
+.nav-wrap{width:min(1200px,94%);height:100%;margin:auto;display:flex;align-items:center;gap:28px}.site-header .brand{display:flex;align-items:center;gap:9px;font:800 22px Manrope,Arial;letter-spacing:-.8px;white-space:nowrap}.site-header .mark{width:35px;height:35px;border-radius:10px;background:#10261f;color:#5ee0a0;display:grid;place-items:center;font:800 17px Manrope,Arial}.site-header .brand>span:last-child{color:#10261f}.site-header .brand>span:last-child>span{color:#22a96b}.site-header nav{display:flex;gap:21px;margin-left:auto}.site-header nav a{font-size:13px;font-weight:600;color:#5c6d66;text-decoration:none}.site-header nav a.active,.site-header nav a:hover{color:#10261f}.site-header .header-btn{background:#10261f;color:#fff;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none}
+@media(max-width:950px){.site-header nav{display:none}.site-header{height:68px}.site-header .header-btn{margin-left:auto}.site-header .nav-wrap{gap:12px}.site-header .brand{font-size:20px}.site-header .mark{width:34px;height:34px;font-size:16px}}
+
+/* Final mobile bottom-section fix */
+@media(max-width:620px){
+  .cta{padding:28px 0 42px;}
+  .cta-box{
+    padding:28px 22px 30px;
+    border-radius:18px;
+    display:block;
+    overflow:visible;
+  }
+  .cta-box h2{
+    font-size:27px;
+    line-height:1.12;
+    margin:10px 0 0;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .cta-box p{
+    font-size:14px;
+    line-height:1.55;
+    margin:12px 0 0;
+  }
+  .cta-box .btn{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:20px 0 0;
+    text-align:center;
+  }
+  footer{
+    padding:30px 0 24px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px 18px;
+    align-items:start;
+  }
+  .footer-brand{grid-column:1 / -1;}
+  .footer-brand-text{display:inline-block;font:800 22px Manrope,Arial,sans-serif;letter-spacing:-.8px;color:#10261f;text-decoration:none;}
+  .footer-brand-text span{color:#22a96b;}
+  .footer-grid > div b{display:block;margin-bottom:8px;}
+  .footer-grid > div a:not(.footer-brand){
+    display:block;
+    margin:7px 0;
+  }
+  .footer-bottom{
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid #e8efec;
+    font-size:11px;
+    line-height:1.6;
+  }
+}
+.footer{background:var(--dark,#10261f);color:#a8c0b9;padding:58px 28px 28px}.footer-inner{max-width:1180px;margin:auto}.footer-brand{font-size:28px;font-weight:800;color:#fff!important;display:block}.footer-brand>span{color:#42c991!important}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;margin:28px 0}.footer h4{color:#fff;margin:0 0 12px}.footer a{display:block;margin:9px 0;color:#a8c0b9}.footer a:hover{color:#63dda3}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:16px;color:#70847d}@media(max-width:700px){.footer{padding:45px 27px 25px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.footer-brand{font-size:26px}.footer h4{font-size:14px}.footer a,.footer p,.copyright{font-size:12px;line-height:1.6}}.menu-btn{display:none;border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:var(--ink,#10261f)}@media(max-width:800px){.nav{display:none}.header-btn{display:none}.menu-btn{display:block;margin-left:auto}.nav-wrap{position:relative}.nav.menu-open{display:flex;position:fixed;top:68px;left:0;right:0;width:100vw;max-width:none;margin:0;padding:8px 24px 12px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid #d7e5e0;box-shadow:0 10px 24px rgba(16,38,31,.08);z-index:100}.nav.menu-open a{display:block;width:100%;padding:7px 0;line-height:1.25;font-size:16px}.nav.menu-open a{position:relative;z-index:1}}
+/* ===== FOOTER TYPOGRAPHY — SAME AS SHARED PAGES ===== */
+.footer{background:#10261f !important;color:#a8c0b9 !important;padding:58px 28px 28px !important}
+.footer-inner{max-width:1180px !important;margin:auto !important}
+.footer-brand{font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+.footer-brand>span{color:#42c991 !important}
+.footer-grid{display:grid !important;grid-template-columns:2fr 1fr 1fr 1fr !important;gap:35px !important;margin:28px 0 !important}
+.footer h4{color:#fff !important;margin:0 0 12px !important;font-size:16px !important}
+.footer a{display:block !important;margin:9px 0 !important;color:#a8c0b9 !important;font-size:16px !important;line-height:1.6 !important;text-decoration:none !important}
+.footer p{font-size:16px !important;line-height:1.6 !important}
+.copyright{border-top:1px solid rgba(255,255,255,.09) !important;padding-top:16px !important;color:#70847d !important;font-size:12px !important;line-height:1.6 !important}
+@media(max-width:700px){
+  .footer{padding:45px 27px 25px !important}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .footer-grid>div:first-child{grid-column:1/-1 !important}
+  .footer-brand{font-size:26px !important}
+  .footer h4{font-size:14px !important}
+  .footer a,.footer p,.copyright{font-size:12px !important;line-height:1.6 !important}
+}
 
 
+/* ===== FINAL FOOTER BRAND EXACT STANDARD ===== */
+.footer-brand{font-family:Arial,Helvetica,sans-serif !important;font-size:28px !important;font-weight:800 !important;color:#fff !important;display:block !important}
+@media(max-width:700px){.footer-brand{font-size:26px !important}}
 
-<style id="wealtharia-footer-master">.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}.footer-inner{max-width:1180px!important;margin:auto!important}.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important;letter-spacing:-.5px!important}.footer-brand .footer-word{color:#fff!important}.footer-brand .footer-ar{color:#42c991!important}.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;color:#a8c0b9!important;margin:8px 0 0!important}.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}.footer-grid>div:first-child{display:block!important}.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}.footer a:hover{color:#63dda3!important}.footer .copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important;font-weight:400!important}@media(max-width:700px){.footer{padding:45px 27px 25px!important}.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}.footer-grid>div:first-child{grid-column:1/-1!important}.footer-brand{font-size:26px!important}.footer h4{font-size:14px!important}.footer a,.footer p,.footer .copyright{font-size:12px!important;line-height:1.6!important}}</style>
+/* ===== WEALTHARIA MASTER HEADER — AI TOOLS STANDARD ===== */
+.site-header{height:82px!important;min-height:82px!important;background:#fff!important;border-bottom:1px solid #d7e5e0!important;position:sticky!important;top:0!important;z-index:1100!important;box-sizing:border-box!important}
+.nav-wrap{width:min(1180px,100%)!important;max-width:1180px!important;height:82px!important;min-height:82px!important;margin:auto!important;padding:14px 28px!important;display:flex!important;align-items:center!important;gap:28px!important;box-sizing:border-box!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:30px!important;line-height:1!important;font-weight:800!important;letter-spacing:-1.5px!important;white-space:nowrap!important;color:#10261f!important;text-decoration:none!important}
+.brand .mark{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;flex:0 0 54px!important;border-radius:16px!important;background:#10261f!important;color:#53e0a8!important;display:grid!important;place-items:center!important;font-family:Arial,Helvetica,sans-serif!important;font-size:31px!important;line-height:1!important;font-weight:800!important;box-sizing:border-box!important}
+.brand>span:last-child{color:#10261f!important}.brand>span:last-child>span{color:#22a96b!important}
+.site-header .nav{display:flex!important;align-items:center!important;gap:20px!important;margin-left:auto!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:700!important}
+.site-header .nav a{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important}
+.header-btn{background:#10261f!important;color:#fff!important;padding:15px 22px!important;border-radius:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:800!important;white-space:nowrap!important}
+.menu-btn{display:none!important;border:0!important;background:transparent!important;cursor:pointer!important;color:#10261f!important}
+@media(max-width:800px){
+.site-header{height:68px!important;min-height:68px!important}
+.nav-wrap{height:68px!important;min-height:68px!important;padding:0 20px!important;gap:0!important}
+.brand{gap:9px!important;font-size:20px!important;letter-spacing:-.8px!important}
+.brand .mark{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;flex:0 0 34px!important;border-radius:10px!important;font-size:16px!important}
+.site-header .nav,.header .nav{display:none!important}
+.header-btn{display:none!important}
+.menu-btn{display:block!important;margin-left:auto!important;width:42px!important;height:42px!important;padding:0!important;font-size:0!important;position:relative!important;z-index:1201!important}
+.menu-btn:before{content:"☰";font-size:28px;line-height:42px}
+.nav.menu-open{display:flex!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;width:100vw!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:8px 24px 12px!important;box-sizing:border-box!important;background:#fff!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;overflow:hidden!important;border-bottom:1px solid #d7e5e0!important;box-shadow:0 10px 24px rgba(16,38,31,.08)!important;z-index:1200!important}
+.nav.menu-open::after{display:none!important;content:none!important}
+.nav.menu-open a{display:block!important;width:100%!important;height:auto!important;padding:7px 0!important;margin:0!important;line-height:1.25!important;font-size:16px!important;font-weight:600!important;position:relative!important;z-index:1!important;text-decoration:none!important}
+}
+/* ===== ACTIVE PAGE NAV INDICATOR — SHARED ACROSS ALL PAGES ===== */
+.site-header .nav a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:4px!important}
+@media(max-width:800px){.site-header .nav.menu-open a.active{color:#16ad78!important;border-bottom:2px solid #16ad78!important;padding-bottom:7px!important}}
+
+/* ===== WEALTHARIA MASTER FOOTER — CALCULATORS STANDARD ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;text-align:left!important;font-family:Arial,Helvetica,sans-serif!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;line-height:1.2!important;font-weight:800!important;color:#fff!important;display:block!important}
+.footer-brand>span{color:#42c991!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important}
+.footer h4{color:#fff!important;margin:0 0 12px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important}
+.footer a{display:block!important;margin:9px 0!important;color:#a8c0b9!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important;text-decoration:none!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.6!important}
+.copyright{border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+
+/* ===== WEALTHARIA MASTER FOOTER — SHARED ACROSS ALL PAGES ===== */
+.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important}
+.footer-brand>span{color:#42c991!important}
+.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;color:#a8c0b9!important;margin:8px 0 0!important}
+.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}
+.footer-grid>div:first-child{display:block!important}
+.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}
+.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}
+.footer a:hover{color:#63dda3!important}
+.copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important}
+@media(max-width:700px){
+.footer{padding:45px 27px 25px!important}
+.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}
+.footer-grid>div:first-child{grid-column:1/-1!important}
+.footer-brand{font-size:26px!important}
+.footer h4{font-size:14px!important}
+.footer a,.footer p,.copyright{font-size:12px!important;line-height:1.6!important}
+}
+/* ===== END MASTER FOOTER ===== */
+</style>
+
+<style id="revenue-nav-links">
+.revenue-nav-link{display:none!important}
+@media(max-width:800px){
+.site-header .nav.menu-open .revenue-nav-link{display:block!important}
+.site-header .nav.menu-open .revenue-nav-link,
+.site-header .nav.menu-open a[href="pricing.html"]{font-size:16px!important;font-weight:600!important;padding:7px 0!important}
+}
+</style></head>
+<body>
+
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="WealthAria"><span class="mark">W</span><span>Wealth<span>Aria</span></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Home</a><a class="active" href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a><a class="revenue-nav-link" href="wealth-health-score.html">Wealth Health Score</a><a class="revenue-nav-link" href="wealth-report.html">Wealth Report</a><a href="pricing.html">WealthAria Plus</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="header-btn" href="learn.html">Start Learning</a><button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button></div></header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">LEARN • PLAN • GROW</div>
+      <h1>Learn Investing<br>for a Brighter <span class="accent">Tomorrow.</span></h1>
+      <p class="hero-copy">Simple, practical and easy-to-understand financial education for everyone. Build your knowledge, make better decisions and take control of your financial future.</p>
+      <div class="actions">
+        <a class="btn primary" href="#topics">Start Learning →</a>
+        <a class="btn secondary" href="#topics">Explore All Topics</a>
+      </div>
+      <div class="hero-points">
+        <span>🎓 <b>Practical</b> Knowledge</span>
+        <span>▮▮ <b>Easy</b> to Understand</span>
+        <span>👥 <b>For</b> Everyone</span>
+      </div>
+    </div>
+    <div class="hero-photo" aria-label="Financial education desk photograph">
+      <div class="photo-card">
+        <div class="round">↗</div>
+        <strong>Knowledge today, a wealthier tomorrow.</strong>
+        <small>Learn. Apply. Grow.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topics" id="topics">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">EXPLORE OUR LEARNING TOPICS</div>
+        <h2>Choose a <span class="accent">Topic</span></h2>
+      </div>
+      <p>Start your journey towards financial freedom with structured, easy-to-follow guides and resources.</p>
+    </div>
+
+    <div class="topic-grid">
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">📊</span>Mutual Funds</div><p>Understand SIPs, NAV, returns, risk and asset allocation.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">📈</span>Stock Market</div><p>Learn investing, valuation and long-term wealth creation.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">💰</span>Personal Finance</div><p>Create budgets, save more and manage money wisely.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🏛️</span>Tax Planning</div><p>Learn about deductions, exemptions and tax-saving strategies.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🛡️</span>Insurance</div><p>Health, life and vehicle insurance explained simply.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+      <a class="topic" href="#">
+        <div class="topic-img" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=82')"></div>
+        <div class="topic-body"><div class="topic-title"><span class="icon">🎯</span>Retirement Planning</div><p>Plan today for a financially secure retirement.</p><span class="learn-more">Learn More →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <div class="section-label">WHY LEARN WITH WEALTHARIA?</div>
+      <h2>Knowledge creates <span class="accent">opportunities.</span></h2>
+      <p>The more you learn, the better your financial decisions become. WealthAria brings education and real-world insights together in one simple experience.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><span class="icon">💡</span><div><h3>Clear and Simple</h3><p>Complex topics explained in easy language.</p></div></div>
+      <div class="benefit"><span class="icon">👥</span><div><h3>Practical and Relevant</h3><p>Real-life examples and actionable insights.</p></div></div>
+      <div class="benefit"><span class="icon">📈</span><div><h3>For Every Stage</h3><p>Whether you are a beginner or an experienced investor.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <div class="section-label" style="color:#77d9b2">YOUR FINANCIAL JOURNEY</div>
+        <h2>Learn Today. <span class="accent">Build a Better Tomorrow.</span></h2>
+        <p>Explore our learning resources and take one more step towards your goals.</p>
+      </div>
+      <a class="btn" href="#topics">Start Learning →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-brand"><span class="footer-word">Wealth</span><span class="footer-ar">Aria</span></div><p>Build Wealth. Simply. Intelligently.</p><div class="footer-grid"><div></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="calculators.html">Calculators</a><a href="ai.html">AI Tools</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div><div class="copyright">© 2026 WealthAria. Educational platform. Not financial advice.</div></div></footer>
+
+<script>
+document.querySelectorAll('.navlinks a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open'));
+});
+</script>
+<script>function toggleMenu(){const nav=document.querySelector('.nav');nav.classList.toggle('menu-open');}</script><style id="wealtharia-footer-master">.footer{background:#10261f!important;color:#a8c0b9!important;padding:58px 28px 28px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}.footer-inner{max-width:1180px!important;margin:auto!important}.footer-brand{font-family:Arial,Helvetica,sans-serif!important;font-size:28px!important;font-weight:800!important;line-height:1.2!important;color:#fff!important;display:block!important;margin:0!important;letter-spacing:-.5px!important}.footer-brand .footer-word{color:#fff!important}.footer-brand .footer-ar{color:#42c991!important}.footer p{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;color:#a8c0b9!important;margin:8px 0 0!important}.footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important;margin:28px 0!important;padding:0!important}.footer-grid>div:first-child{display:block!important}.footer h4{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.2!important;font-weight:700!important;color:#fff!important;margin:0 0 12px!important}.footer a{font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.55!important;font-weight:400!important;display:block!important;margin:9px 0!important;color:#a8c0b9!important;text-decoration:none!important}.footer a:hover{color:#63dda3!important}.footer .copyright{font-family:Arial,Helvetica,sans-serif!important;border-top:1px solid rgba(255,255,255,.09)!important;padding-top:16px!important;color:#70847d!important;font-size:12px!important;line-height:1.6!important;font-weight:400!important}@media(max-width:700px){.footer{padding:45px 27px 25px!important}.footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;margin:28px 0!important}.footer-grid>div:first-child{grid-column:1/-1!important}.footer-brand{font-size:26px!important}.footer h4{font-size:14px!important}.footer a,.footer p,.footer .copyright{font-size:12px!important;line-height:1.6!important}}</style>
 </body>
 </html>
