@@ -1120,3 +1120,46 @@ body :where(
 body button.chip[onclick*="Show top performing mutual funds"]{
   display:none!important;
 }
+
+
+/* ===== MOBILE CATEGORY NESTING SAFETY =====
+   Prevent an accidentally nested topic category from becoming a
+   narrow box. Every topic category must use the same full-width
+   container and the same mobile chip rhythm.
+*/
+@media(max-width:700px){
+  body .category .category{
+    width:100%!important;
+    max-width:100%!important;
+    margin:20px 0 0!important;
+    padding:20px 16px 22px!important;
+    border:0!important;
+    border-radius:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
+  body .category .category:first-child{
+    margin-top:0!important;
+  }
+  body .category .category .chips{
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:14px!important;
+    box-sizing:border-box!important;
+  }
+  body .category .category .chip{
+    width:100%!important;
+    min-width:0!important;
+    min-height:58px!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+  }
+  body .category .category .chip:nth-child(3){
+    grid-column:1 / -1!important;
+  }
+}
