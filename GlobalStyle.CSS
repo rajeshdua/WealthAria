@@ -491,3 +491,78 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     min-height:0!important;
   }
 }
+
+
+/* ===== MOBILE DEAD-SPACE CORRECTION =====
+   Final global phone pass: keep sections distinct, but remove
+   unnecessary top/bottom air and compounded nested padding.
+*/
+@media(max-width:700px){
+  /* A compact section rhythm across the entire site */
+  main > section{
+    padding-top:24px!important;
+    padding-bottom:24px!important;
+  }
+
+  /* Page/landing heroes: content starts closer to the header */
+  main > .hero,
+  main > .page-hero{
+    padding-top:24px!important;
+    padding-bottom:24px!important;
+  }
+
+  /* Home/landing hero nested padding must not stack into dead space */
+  main .hero-inner{
+    padding-top:12px!important;
+    padding-bottom:12px!important;
+    gap:12px!important;
+  }
+  main .hero-art{
+    margin-top:8px!important;
+  }
+
+  /* Keep the first content block close to a hero illustration */
+  main > .features{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+
+  /* Common section headings and card grids */
+  main .section-head{
+    margin-bottom:14px!important;
+  }
+  main .cards-grid,
+  main .feature-grid,
+  main .blog-grid{
+    margin-top:16px!important;
+    gap:12px!important;
+  }
+
+  /* Comfortable card padding, without large surrounding gaps */
+  main .info-card,
+  main .form-card{
+    padding:18px!important;
+  }
+  main .box{
+    margin-top:8px!important;
+    margin-bottom:12px!important;
+  }
+
+  /* Compact transitions around CTA / AI / tool sections */
+  main .cta,
+  main .ask-section,
+  main .topics,
+  main .why,
+  main .blog,
+  main .revenue-tools{
+    padding-top:24px!important;
+    padding-bottom:24px!important;
+  }
+
+  /* Don't let a nested CTA add another large vertical buffer */
+  main .cta-box{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding:24px 20px!important;
+  }
+}
