@@ -932,3 +932,30 @@ body :where(
   border:2px solid var(--wa-green)!important;
   box-sizing:border-box!important;
 }
+
+
+/* ===== CONTENT BOX BOUNDARY REFINEMENT =====
+   Boundaries belong to the visible rounded content boxes themselves.
+   Avoid double/square borders on structural wrappers and tiny summary cells.
+*/
+body :where(
+  .panel,
+  .stat,
+  .ctaIn
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:0!important;
+}
+
+/* Keep the CTA boundary on its rounded outer container. */
+body :where(.cta,.cta-box):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
+}
+
+/* Calculators: give the main calculator its own breathing room below tabs. */
+@media(max-width:700px){
+  .tabs ~ .panel.active{
+    margin-top:12px!important;
+  }
+}
