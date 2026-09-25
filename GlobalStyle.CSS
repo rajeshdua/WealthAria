@@ -848,3 +848,58 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     padding:14px 0 20px!important;
   }
 }
+
+
+/* ===== CALCULATORS — TRUE MOBILE SPACING AUTHORITY =====
+   The Calculators page has no <main> wrapper, so main-scoped rules
+   cannot affect its .panel/.disclaimer/.cta elements. Target the
+   calculator flow directly after .tabs.
+*/
+@media(max-width:700px){
+  .tabs ~ .panel{
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0 20px 8px!important;
+    box-sizing:border-box!important;
+  }
+  .tabs ~ .panel.active{
+    display:block!important;
+  }
+  .tabs ~ .panel:not(.active){
+    display:none!important;
+  }
+  .tabs ~ .panel .box{
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    box-sizing:border-box!important;
+  }
+  .tabs ~ .panel .insight{
+    margin:8px 0 0!important;
+  }
+
+  .tabs ~ .disclaimer{
+    width:100%!important;
+    margin:0!important;
+    padding:14px 20px!important;
+    box-sizing:border-box!important;
+    line-height:1.55!important;
+  }
+
+  .tabs ~ .cta{
+    width:calc(100% - 40px)!important;
+    max-width:none!important;
+    margin:8px auto 20px!important;
+    padding:0!important;
+    box-sizing:border-box!important;
+  }
+  .tabs ~ .cta .ctaIn{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:22px 24px!important;
+    box-sizing:border-box!important;
+  }
+}
