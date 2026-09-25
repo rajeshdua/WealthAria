@@ -1082,3 +1082,36 @@ body :where(
     box-sizing:border-box!important;
   }
 }
+
+
+/* ===== MOBILE TOPIC CHIP SEQUENCE =====
+   Use a clean two-column rhythm for topic buttons. Long questions span
+   both columns so the sequence reads as intentional rows rather than
+   an uneven vertical list.
+*/
+@media(max-width:700px){
+  body .category .chips{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:14px!important;
+    align-items:stretch!important;
+  }
+
+  body .category .chip{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    min-height:58px!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+  }
+
+  /* The longer third question becomes a deliberate full-width row. */
+  body .category .chip:nth-child(3){
+    grid-column:1 / -1!important;
+  }
+}
