@@ -1151,3 +1151,31 @@ body :where(
     position:relative!important;
   }
 }
+
+
+/* Correct odd-row filler: create a real grid item via the chips container,
+   not inside the final question chip. */
+@media(max-width:700px){
+  body .category .chips > .chip:last-child:nth-child(odd)::after{
+    content:none!important;
+  }
+
+  body .category .chips:has(> .chip:last-child:nth-child(odd))::after{
+    content:"Ask your own question →"!important;
+    grid-column:auto!important;
+    min-height:58px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:12px 14px!important;
+    border:2px solid var(--wa-green,#25a86f)!important;
+    border-radius:999px!important;
+    background:transparent!important;
+    color:var(--wa-green,#25a86f)!important;
+    font-size:15px!important;
+    font-weight:700!important;
+    line-height:1.2!important;
+    text-align:center!important;
+  }
+}
