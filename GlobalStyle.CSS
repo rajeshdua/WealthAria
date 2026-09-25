@@ -659,3 +659,42 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
 }
 
 @media(max-width:700px){main > .hero + .features + .why{padding-top:20px!important;padding-bottom:12px!important}main > .hero + .features + .why .two-col{row-gap:18px!important}main > .hero + .features + .why + .cta{padding-top:12px!important;padding-bottom:20px!important}main > .hero + .features + .why + .cta .cta-box{margin-top:0!important}}
+
+
+/* ===== HOME MOBILE GAP — FINAL FIX =====
+   Remove nested desktop/tablet padding from the Home "Why" block.
+   This specifically prevents the large blank area before the CTA.
+*/
+@media(max-width:700px){
+  main > .why{
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+    min-height:0!important;
+    height:auto!important;
+  }
+  main > .why .two-col{
+    display:block!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    margin-top:0!important;
+    margin-bottom:0!important;
+    gap:0!important;
+  }
+  main > .why .two-col>div:first-child{
+    margin-bottom:18px!important;
+  }
+  main > .why .reason-list{
+    margin:0!important;
+    padding:0!important;
+  }
+  main > .why .reason-list>div{
+    padding:14px 0!important;
+  }
+  main > .why .reason-list>div:last-child{
+    padding-bottom:0!important;
+  }
+  main > .why + .cta{
+    padding-top:8px!important;
+    margin-top:0!important;
+  }
+}
