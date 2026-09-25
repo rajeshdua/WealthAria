@@ -903,3 +903,32 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     box-sizing:border-box!important;
   }
 }
+
+
+/* ===== GLOBAL CONTENT BOX BOUNDARIES =====
+   Give all true content/card containers a consistent WealthAria
+   section boundary. Header, footer, buttons and large page sections
+   are intentionally excluded.
+*/
+body :where(
+  .card,
+  .box,
+  .panel,
+  .feature,
+  .stat,
+  .result,
+  .calculator,
+  .form-card,
+  .info-card,
+  .cta-box,
+  .ctaIn,
+  .insight,
+  .note,
+  .ask-card,
+  .category,
+  .blog-card,
+  .plans .card
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:2px solid var(--wa-green)!important;
+  box-sizing:border-box!important;
+}
