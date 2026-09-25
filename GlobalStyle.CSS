@@ -1038,3 +1038,47 @@ body :where(
   border-radius:22px!important;
   overflow:hidden!important;
 }
+
+
+/* ===== MOBILE CATEGORY / CHIP SPACING =====
+   Keep topic chips comfortably inside their rounded category boundary.
+   Natural flex wrapping is retained; no forced/symmetric column pattern.
+*/
+@media(max-width:700px){
+  body .category:not(.site-header *):not(.footer *){
+    padding:20px 16px 22px!important;
+    margin-top:20px!important;
+    margin-bottom:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
+
+  body .category:first-child{
+    margin-top:0!important;
+  }
+
+  body .category h3{
+    margin:0 0 20px!important;
+    line-height:1.12!important;
+  }
+
+  body .category .chips{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    align-items:flex-start!important;
+    align-content:flex-start!important;
+    justify-content:flex-start!important;
+    gap:14px!important;
+    row-gap:14px!important;
+    column-gap:14px!important;
+    padding:0!important;
+    margin:0!important;
+  }
+
+  body .category .chip{
+    margin:0!important;
+    flex:0 0 auto!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+}
