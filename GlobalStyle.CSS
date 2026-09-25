@@ -195,6 +195,10 @@ input,select,textarea,button{font-family:'DM Sans',Arial,Helvetica,sans-serif}
 button{cursor:pointer}
 
 
+
+/* Brand name inside page content only — header/footer excluded */
+.wa-content-brand{color:var(--wa-green)!important}
+
 /* =========================================================
    GLOBAL CONTENT GREEN THEME
    Applies to page content only.
