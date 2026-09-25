@@ -1115,3 +1115,39 @@ body :where(
     grid-column:1 / -1!important;
   }
 }
+
+
+/* Fill the final half-row on mobile with a subtle question/action chip.
+   This keeps odd-count topic groups visually balanced without changing
+   page HTML or creating non-functional controls. */
+@media(max-width:700px){
+  body .category .chips > .chip:last-child:nth-child(odd)::after{
+    content:"Ask your own question →";
+    display:block!important;
+    width:100%!important;
+    font:inherit!important;
+    font-size:15px!important;
+    font-weight:700!important;
+    line-height:1.2!important;
+    color:var(--wa-green,#25a86f)!important;
+    text-align:center!important;
+  }
+
+  body .category .chips > .chip:last-child:nth-child(odd){
+    grid-column:auto!important;
+  }
+
+  body .category .chips > .chip:last-child:nth-child(odd)::after{
+    /* The pseudo chip occupies the next grid cell visually. */
+  }
+
+  body .category .chips:has(> .chip:last-child:nth-child(odd)){
+    grid-auto-flow:row!important;
+  }
+
+  /* Keep the final real chip in column 1 so the pseudo chip can occupy
+     the matching column 2. */
+  body .category .chips > .chip:last-child:nth-child(odd){
+    position:relative!important;
+  }
+}
