@@ -345,3 +345,47 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
   color:#fff!important;
   background:var(--wa-green-2)!important;
 }
+
+
+/* ===== MOBILE SPACING PASS =====
+   Reduce excessive vertical whitespace on phones while
+   preserving desktop spacing and Header/Footer styling.
+*/
+@media(max-width:700px){
+  .page-hero{
+    padding:44px 0 38px!important;
+  }
+  .page-section,
+  .section{
+    padding:44px 0!important;
+  }
+  .topics{
+    padding:44px 0!important;
+  }
+  .ask-section{
+    padding:38px 0!important;
+  }
+  .features{
+    padding:24px 0!important;
+  }
+  .why{
+    padding:50px 0!important;
+  }
+  .cta{
+    padding-bottom:50px!important;
+  }
+  .blog{
+    padding-bottom:50px!important;
+  }
+  .revenue-tools{
+    padding:40px 20px!important;
+  }
+  .plans{
+    gap:16px!important;
+    padding-bottom:32px!important;
+  }
+  .box{
+    margin-top:16px!important;
+    margin-bottom:20px!important;
+  }
+}
