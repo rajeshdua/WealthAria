@@ -389,3 +389,105 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     margin-bottom:20px!important;
   }
 }
+
+
+/* ===== GLOBAL MOBILE DENSITY / SCROLL PASS =====
+   Site-wide phone layout: reduce dead space and section gaps
+   while keeping cards comfortable and readable.
+*/
+@media(max-width:700px){
+  /* Remove large desktop-style section breathing room on phones */
+  main > section{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+  main > section + section{
+    margin-top:0!important;
+  }
+
+  /* Hero blocks should size to their content, not reserve a tall viewport */
+  main .hero,
+  main .page-hero{
+    min-height:0!important;
+  }
+  main .hero-inner{
+    min-height:0!important;
+    padding-top:32px!important;
+    padding-bottom:32px!important;
+    gap:24px!important;
+  }
+  main .hero-art{
+    margin-top:24px!important;
+  }
+
+  /* Keep the most common section headings close to their content */
+  main .section-head,
+  main .page-section .section-head{
+    margin-bottom:20px!important;
+  }
+  main .section-label,
+  main .eyebrow{
+    margin-bottom:10px!important;
+  }
+
+  /* Comfortable but compact card stacks */
+  main .cards-grid,
+  main .feature-grid,
+  main .blog-grid,
+  main .plans,
+  main .grid{
+    gap:14px!important;
+  }
+  main .cards-grid,
+  main .feature-grid,
+  main .blog-grid{
+    margin-top:22px!important;
+  }
+  main .card,
+  main .box,
+  main .panel,
+  main .feature,
+  main .info-card,
+  main .form-card{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+
+  /* Compact common card internals without making them cramped */
+  main .info-card{
+    padding:20px!important;
+  }
+  main .form-card{
+    padding:20px!important;
+  }
+
+  /* Avoid oversized vertical gaps around common CTA areas */
+  main .cta,
+  main .ask-section{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+  }
+  main .cta-box{
+    padding:28px 22px!important;
+  }
+
+  /* Keep stacked content blocks visually separated, not widely spaced */
+  main .reason-list>div{
+    padding:14px 0!important;
+  }
+  main .category{
+    margin-top:22px!important;
+    margin-bottom:0!important;
+  }
+
+  /* Calculator / tool pages */
+  main .tabs{
+    padding-top:10px!important;
+    padding-bottom:6px!important;
+  }
+  main .heroBox{
+    min-height:0!important;
+  }
+}
