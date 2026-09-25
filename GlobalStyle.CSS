@@ -194,6 +194,35 @@ h1,h2,h3,h4,h5,h6{
 input,select,textarea,button{font-family:'DM Sans',Arial,Helvetica,sans-serif}
 button{cursor:pointer}
 
+
+/* =========================================================
+   GLOBAL CONTENT GREEN THEME
+   Applies to page content only.
+   Header, footer and logos are intentionally excluded.
+   ========================================================= */
+body :where(h1,h2,h3,h4,h5,h6,a):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  color:var(--wa-green)!important;
+}
+
+body :where(.btn,button,input[type="submit"],input[type="button"],input[type="reset"]):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  background:var(--wa-green)!important;
+  border-color:var(--wa-green)!important;
+  color:#fff!important;
+}
+
+body :where(a:hover,.btn:hover,button:hover):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  color:var(--wa-green-2)!important;
+}
+
+body :where(.card,.box,.panel,.feature,.stat,.result,.calculator,.form-card):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border-color:var(--wa-green)!important;
+}
+
+body :where(input:focus,select:focus,textarea:focus):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border-color:var(--wa-green)!important;
+  box-shadow:0 0 0 3px rgba(34,169,107,.12)!important;
+}
+
 /* ===== MASTER MOBILE ===== */
 @media(max-width:800px){
   .site-header{height:68px!important;min-height:68px!important}
