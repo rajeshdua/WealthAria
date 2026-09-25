@@ -759,3 +759,92 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     margin-bottom:10px!important;
   }
 }
+
+
+/* ===== CALCULATORS + WEALTHARIA PLUS — MOBILE FINAL ALIGNMENT ===== */
+@media(max-width:700px){
+
+  /* Calculators: remove the remaining vertical air around the active tool,
+     disclaimer and CTA while keeping the calculator card readable. */
+  main .panel{
+    padding-top:6px!important;
+    padding-bottom:10px!important;
+  }
+  main .panel .box{
+    margin-top:0!important;
+    margin-bottom:8px!important;
+  }
+  main .panel .insight{
+    margin-bottom:8px!important;
+  }
+  main .disclaimer{
+    padding:10px 5%!important;
+    margin:0!important;
+    line-height:1.55!important;
+  }
+  main .cta{
+    margin:8px 4% 20px!important;
+  }
+  main .ctaIn{
+    width:100%!important;
+    max-width:none!important;
+    padding:22px 24px!important;
+    box-sizing:border-box!important;
+  }
+  main .cta h2{
+    margin:0!important;
+  }
+  main .cta .learn{
+    margin-top:12px!important;
+  }
+
+  /* WealthAria Plus / revenue pages: keep every mobile block centered
+     on the same 20px side rail and prevent nested width drift. */
+  main .wrap{
+    width:calc(100% - 40px)!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  main > .hero{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+  main > .hero .wrap{
+    width:calc(100% - 40px)!important;
+  }
+  main > .plans{
+    width:calc(100% - 40px)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-bottom:18px!important;
+    gap:12px!important;
+  }
+  main > .plans .card{
+    width:100%!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+  main > .section{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+  main > .section .wrap{
+    width:calc(100% - 40px)!important;
+  }
+  main > .section .features{
+    width:100%!important;
+    margin:0!important;
+    gap:12px!important;
+  }
+  main > .section .feature{
+    width:100%!important;
+    box-sizing:border-box!important;
+  }
+  main > .note{
+    width:calc(100% - 40px)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:14px 0 20px!important;
+  }
+}
