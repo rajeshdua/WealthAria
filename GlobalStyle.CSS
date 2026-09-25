@@ -1115,3 +1115,8 @@ body :where(
     grid-column:1 / -1!important;
   }
 }
+
+/* ===== HIDE NON-AI MUTUAL FUND DATA CHIP ===== */
+body button.chip[onclick*="Show top performing mutual funds"]{
+  display:none!important;
+}
