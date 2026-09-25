@@ -310,5 +310,55 @@ calcSIP();calcEMI();calcLump();calcCAGR();calcFD();calcRD();calcPPF();calcRet();
 .footer .copyright{font-size:12px!important;line-height:1.55!important;padding-top:14px!important}
 }
 </style>
-<link rel="stylesheet" href="GlobalStyle.CSS"></body>
+<style id="calculators-mobile-final">
+@media(max-width:700px){
+  /* One consistent 20px mobile rail, matching the rest of WealthAria. */
+  main{width:100%!important;overflow-x:hidden!important}
+  main>.panel{
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0 20px 8px!important;
+    box-sizing:border-box!important;
+  }
+  main>.panel.active{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+  }
+  main>.panel>.box{
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    box-sizing:border-box!important;
+  }
+  main>.panel .insight{
+    margin:8px 0 0!important;
+  }
+
+  /* Disclaimer sits directly after the calculator content. */
+  main>.disclaimer{
+    width:100%!important;
+    margin:0!important;
+    padding:10px 20px!important;
+    box-sizing:border-box!important;
+  }
+
+  /* CTA uses exactly the same centred 20px rail. */
+  main>.cta{
+    width:calc(100% - 40px)!important;
+    max-width:none!important;
+    margin:8px auto 18px!important;
+    box-sizing:border-box!important;
+  }
+  main>.cta .ctaIn{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:22px 24px!important;
+    box-sizing:border-box!important;
+  }
+}
+</style><link rel="stylesheet" href="GlobalStyle.CSS"></body>
 </html>
