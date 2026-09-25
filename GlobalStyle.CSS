@@ -698,3 +698,14 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     margin-top:0!important;
   }
 }
+
+
+/* ===== HOME MOBILE — TIGHTEN WHY → CTA ===== */
+@media(max-width:700px){
+  main > .why{
+    padding-bottom:0!important;
+  }
+  main > .why + .cta{
+    padding-top:0!important;
+  }
+}
