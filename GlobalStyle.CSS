@@ -333,3 +333,15 @@ body :where(input:focus,select:focus,textarea:focus):not(.site-header *):not(.fo
   .footer-grid>div:nth-child(4){align-self:start!important}
   .footer .copyright{font-size:12px!important;line-height:1.55!important;padding-top:14px!important}
 }
+
+
+/* CTA buttons keep readable white text */
+body :where(.learn,.cta .learn,.btn.white):not(.site-header *):not(.footer *){
+  background:var(--wa-green)!important;
+  color:#fff!important;
+  border-color:var(--wa-green)!important;
+}
+body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *):not(.footer *){
+  color:#fff!important;
+  background:var(--wa-green-2)!important;
+}
