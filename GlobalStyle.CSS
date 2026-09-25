@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+/* =========================================================
+   WEALTHARIA MASTER DESIGN SYSTEM
+   Single source of truth for shared site UI.
+   ========================================================= */
+:root{
+  --wa-ink:#10261f;
+  --wa-green:#22a96b;
+  --wa-green-2:#45c989;
+  --wa-mint:#e9f8f0;
+  --wa-bg:#f8faf8;
+  --wa-text:#18352b;
+  --wa-muted:#687b73;
+  --wa-line:#e0e9e4;
+  --wa-white:#fff;
+}
+
+html{background:var(--wa-bg)!important}
+body{
+  background:var(--wa-bg)!important;
+  color:var(--wa-text)!important;
+  font-family:'DM Sans',Arial,Helvetica,sans-serif!important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:'Manrope',Arial,Helvetica,sans-serif!important;
+}
+
+/* ===== MASTER HEADER ===== */
+.site-header{
+  height:82px!important;
+  min-height:82px!important;
+  background:#fff!important;
+  border-bottom:1px solid #d7e5e0!important;
+  position:sticky!important;
+  top:0!important;
+  z-index:1100!important;
+  box-sizing:border-box!important;
+}
+.nav-wrap{
+  width:min(1180px,100%)!important;
+  max-width:1180px!important;
+  height:82px!important;
+  min-height:82px!important;
+  margin:auto!important;
+  padding:14px 28px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:28px!important;
+  box-sizing:border-box!important;
+}
+.site-header .brand{
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:30px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  letter-spacing:-1.5px!important;
+  white-space:nowrap!important;
+  color:var(--wa-ink)!important;
+  text-decoration:none!important;
+}
+.site-header .brand .mark{
+  width:54px!important;
+  height:54px!important;
+  min-width:54px!important;
+  min-height:54px!important;
+  flex:0 0 54px!important;
+  border-radius:16px!important;
+  background:var(--wa-ink)!important;
+  color:#53e0a8!important;
+  display:grid!important;
+  place-items:center!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:31px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  box-sizing:border-box!important;
+}
+.site-header .brand>span:last-child{color:var(--wa-ink)!important}
+.site-header .brand>span:last-child>span{color:var(--wa-green)!important}
+.site-header .nav{
+  display:flex!important;
+  align-items:center!important;
+  gap:20px!important;
+  margin-left:auto!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+}
+.site-header .nav a{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:14px!important;
+  line-height:1.2!important;
+  font-weight:700!important;
+  color:#31524a!important;
+  text-decoration:none!important;
+  border-bottom:2px solid transparent!important;
+  padding-bottom:4px!important;
+}
+.site-header .nav a:hover{
+  color:var(--wa-green)!important;
+}
+.site-header .nav a.active{
+  color:#16ad78!important;
+  border-bottom-color:#16ad78!important;
+}
+.site-header .header-btn{
+  background:var(--wa-ink)!important;
+  color:#fff!important;
+  padding:15px 22px!important;
+  border-radius:14px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:14px!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+  text-decoration:none!important;
+}
+.site-header .menu-btn{
+  display:none!important;
+  border:0!important;
+  background:transparent!important;
+  cursor:pointer!important;
+  color:var(--wa-ink)!important;
+}
+.revenue-nav-link{display:none!important}
+
+/* ===== MASTER FOOTER ===== */
+.footer{
+  background:var(--wa-ink)!important;
+  color:#a8c0b9!important;
+  padding:58px 28px 28px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  text-align:left!important;
+}
+.footer-inner{max-width:1180px!important;margin:auto!important}
+.footer-brand{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:28px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  color:#fff!important;
+  display:block!important;
+  margin:0!important;
+  letter-spacing:-.5px!important;
+}
+.footer-brand .footer-word{color:#fff!important}
+.footer-brand .footer-ar{color:#42c991!important}
+.footer p{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:16px!important;
+  line-height:1.55!important;
+  color:#a8c0b9!important;
+  margin:8px 0 0!important;
+}
+.footer-grid{
+  display:grid!important;
+  grid-template-columns:2fr 1fr 1fr 1fr!important;
+  gap:35px!important;
+  margin:28px 0!important;
+  padding:0!important;
+}
+.footer-grid>div:first-child{display:block!important}
+.footer h4{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:16px!important;
+  line-height:1.2!important;
+  font-weight:700!important;
+  color:#fff!important;
+  margin:0 0 12px!important;
+}
+.footer a{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:16px!important;
+  line-height:1.55!important;
+  font-weight:400!important;
+  display:block!important;
+  margin:9px 0!important;
+  color:#a8c0b9!important;
+  text-decoration:none!important;
+}
+.footer a:hover{color:#63dda3!important}
+.footer .copyright{
+  font-family:Arial,Helvetica,sans-serif!important;
+  border-top:1px solid rgba(255,255,255,.09)!important;
+  padding-top:16px!important;
+  color:#70847d!important;
+  font-size:12px!important;
+  line-height:1.6!important;
+}
+
+/* ===== SHARED FORM / CARD LANGUAGE ===== */
+input,select,textarea,button{font-family:'DM Sans',Arial,Helvetica,sans-serif}
+button{cursor:pointer}
+
+/* ===== MASTER MOBILE ===== */
+@media(max-width:800px){
+  .site-header{height:68px!important;min-height:68px!important}
+  .nav-wrap{
+    height:68px!important;
+    min-height:68px!important;
+    padding:0 20px!important;
+    gap:0!important;
+  }
+  .site-header .brand{
+    gap:9px!important;
+    font-size:20px!important;
+    letter-spacing:-.8px!important;
+  }
+  .site-header .brand .mark{
+    width:34px!important;
+    height:34px!important;
+    min-width:34px!important;
+    min-height:34px!important;
+    flex:0 0 34px!important;
+    border-radius:10px!important;
+    font-size:16px!important;
+  }
+  .site-header .nav,
+  .site-header .header-btn{display:none!important}
+  .site-header .menu-btn{
+    display:block!important;
+    margin-left:auto!important;
+    width:42px!important;
+    height:42px!important;
+    padding:0!important;
+    font-size:0!important;
+    position:relative!important;
+    z-index:1201!important;
+  }
+  .site-header .menu-btn:before{
+    content:"☰";
+    font-size:28px;
+    line-height:42px;
+  }
+  .site-header .nav.menu-open{
+    display:flex!important;
+    position:fixed!important;
+    top:68px!important;
+    left:0!important;
+    right:0!important;
+    width:100vw!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:8px 24px 12px!important;
+    box-sizing:border-box!important;
+    background:#fff!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    overflow:hidden!important;
+    border-bottom:1px solid #d7e5e0!important;
+    box-shadow:0 10px 24px rgba(16,38,31,.08)!important;
+    z-index:1200!important;
+  }
+  .site-header .nav.menu-open a{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    padding:7px 0!important;
+    margin:0!important;
+    line-height:1.25!important;
+    font-size:16px!important;
+    font-weight:600!important;
+    position:relative!important;
+    z-index:1!important;
+    text-decoration:none!important;
+  }
+  .site-header .nav.menu-open a.active{
+    color:#16ad78!important;
+    border-bottom:2px solid #16ad78!important;
+    padding-bottom:7px!important;
+  }
+  .site-header .nav.menu-open .revenue-nav-link{
+    display:block!important;
+  }
+  .site-header .nav.menu-open a[href="pricing.html"]{
+    font-size:16px!important;
+    font-weight:600!important;
+    padding:7px 0!important;
+  }
+
+  .footer{padding:42px 27px 22px!important}
+  .footer-brand{font-size:26px!important;line-height:1.2!important}
+  .footer p{font-size:12px!important;line-height:1.5!important;margin:7px 0 0!important}
+  .footer-grid{
+    grid-template-columns:1fr 1fr!important;
+    column-gap:28px!important;
+    row-gap:0!important;
+    margin:25px 0 22px!important;
+  }
+  .footer-grid>div:first-child{grid-column:1/-1!important}
+  .footer h4{font-size:14px!important;line-height:1.25!important;margin:0 0 10px!important}
+  .footer a{font-size:12px!important;line-height:1.45!important;margin:0 0 9px!important}
+  .footer-grid>div:nth-child(2),
+  .footer-grid>div:nth-child(3),
+  .footer-grid>div:nth-child(4){align-self:start!important}
+  .footer .copyright{font-size:12px!important;line-height:1.55!important;padding-top:14px!important}
+}
