@@ -1018,3 +1018,23 @@ body .insight:not(.site-header *):not(.footer *){
 @media(max-width:700px){
   .tabs ~ .panel.active{margin-top:12px!important}
 }
+
+
+/* ===== FIX ROUNDING FOR EXISTING GLOBAL CONTENT BOUNDARIES =====
+   The boundary is applied to the content container, not its children.
+*/
+body :where(
+  .category,
+  .calculator,
+  .result,
+  .note,
+  .blog-card,
+  .plans .card,
+  .panel,
+  .feature,
+  .info-card,
+  .form-card
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border-radius:22px!important;
+  overflow:hidden!important;
+}
