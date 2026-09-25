@@ -959,3 +959,62 @@ body :where(.cta,.cta-box):not(.site-header *):not(.footer *):not(.site-header):
     margin-top:12px!important;
   }
 }
+
+
+/* ===== SHARED ROUNDED CONTENT BOUNDARIES — ALL PAGES =====
+   Global-only rule: major visible content boxes use one consistent
+   rounded green boundary. Structural wrappers remain unbordered.
+*/
+body :where(
+  .feature-card,
+  .photo-card,
+  .info-card,
+  .policy-card,
+  .form-card,
+  .hero-panel,
+  .answer-box,
+  .research-info,
+  .ask-card,
+  .cta-card,
+  .cta-box,
+  .box,
+  .score,
+  .card
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
+}
+
+/* Internal/structural wrappers must not create a second boundary. */
+body :where(
+  .panel,
+  .ctaIn,
+  .stat,
+  .wrap,
+  .container,
+  .section,
+  .page-section,
+  .features,
+  .blog-grid,
+  .cards-grid,
+  .feature-grid,
+  .topic-grid,
+  .contact-grid,
+  .faq-grid,
+  .policy-grid,
+  .footer-grid
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:0!important;
+}
+
+/* Calculator insight is already a self-contained rounded callout. */
+body .insight:not(.site-header *):not(.footer *){
+  border:2px solid var(--wa-green)!important;
+  border-radius:18px!important;
+}
+
+/* Keep the calculator's main box separated from its tab row on mobile. */
+@media(max-width:700px){
+  .tabs ~ .panel.active{margin-top:12px!important}
+}
