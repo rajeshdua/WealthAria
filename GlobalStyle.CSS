@@ -709,3 +709,53 @@ body :where(.learn:hover,.cta .learn:hover,.btn.white:hover):not(.site-header *)
     padding-top:0!important;
   }
 }
+
+
+/* ===== INNER PAGES — MOBILE COMPACT RHYTHM =====
+   Home is intentionally excluded; its spacing is tuned separately.
+   Keep inner pages compact without making cards or forms cramped.
+*/
+@media(max-width:700px){
+  main > .page-hero{
+    padding-top:16px!important;
+    padding-bottom:16px!important;
+  }
+  main > .page-section{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+  main > .page-section + .page-section{
+    padding-top:12px!important;
+  }
+  main > .page-section .section-head{
+    margin-top:0!important;
+    margin-bottom:10px!important;
+  }
+  main > .page-section .cards-grid{
+    margin-top:12px!important;
+    gap:12px!important;
+  }
+  main > .page-section .info-card{
+    padding:18px!important;
+  }
+  main > .page-section .form-card{
+    padding:18px!important;
+  }
+
+  /* Common non-home content sections */
+  main > .section,
+  main > .topics,
+  main > .ask-section,
+  main > .revenue-tools{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+  main > .section + .section,
+  main > .topics + .section,
+  main > .section + .topics{
+    padding-top:12px!important;
+  }
+  main > .section .section-head{
+    margin-bottom:10px!important;
+  }
+}
