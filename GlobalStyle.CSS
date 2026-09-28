@@ -1280,3 +1280,47 @@ body button.chip[onclick*="Show top performing mutual funds"]{
     letter-spacing:-.8px!important;
   }
 }
+
+
+/* ===== AI PAGE TYPOGRAPHY ALIGNMENT =====
+   Match the AI hero's type scale to the Home hero while retaining
+   the AI page's own content and layout.
+*/
+@media(min-width:701px){
+  body:has(.category) .hero .eyebrow{
+    font-size:10px!important;
+    letter-spacing:1.8px!important;
+    line-height:1.4!important;
+  }
+  body:has(.category) .hero h1{
+    font-size:clamp(43px,5.5vw,67px)!important;
+    line-height:1.08!important;
+    letter-spacing:-2.8px!important;
+  }
+  body:has(.category) .hero p{
+    font-size:17px!important;
+    line-height:1.6!important;
+  }
+  body:has(.category) .hero .actions .btn{
+    font-size:13px!important;
+  }
+}
+@media(max-width:700px){
+  body:has(.category) .hero .eyebrow{
+    font-size:10px!important;
+    letter-spacing:1.8px!important;
+    line-height:1.4!important;
+  }
+  body:has(.category) .hero h1{
+    font-size:42px!important;
+    line-height:1.08!important;
+    letter-spacing:-2px!important;
+  }
+  body:has(.category) .hero p{
+    font-size:17px!important;
+    line-height:1.6!important;
+  }
+  body:has(.category) .hero .actions .btn{
+    font-size:13px!important;
+  }
+}
