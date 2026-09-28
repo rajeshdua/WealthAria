@@ -1201,3 +1201,41 @@ body button.chip[onclick*="Show top performing mutual funds"]{
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
   }
 }
+
+
+/* ===== AI TOPIC CARDS — FORCE FULL MOBILE WIDTH =====
+   Correct narrow topic cards on the live AI page without changing
+   page HTML or affecting other pages.
+*/
+@media(max-width:700px){
+  #topics .container .category{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    flex:0 0 100%!important;
+    grid-column:1 / -1!important;
+    justify-self:stretch!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    box-sizing:border-box!important;
+  }
+
+  #topics .container .category:has(.category){
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+  }
+
+  #topics .container .category .category{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    grid-column:1 / -1!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    border:2px solid var(--wa-green)!important;
+    border-radius:22px!important;
+    box-sizing:border-box!important;
+  }
+}
