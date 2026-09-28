@@ -1364,3 +1364,14 @@ body:has(.category) .ask-row .btn{
     font-weight:700!important;
   }
 }
+
+
+/* ===== PREVENT DOUBLE CTA BOUNDARIES =====
+   The section is a layout wrapper; only the inner CTA card should
+   carry the rounded green boundary.
+*/
+body main > section.cta{
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
