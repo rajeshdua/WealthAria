@@ -1258,3 +1258,25 @@ body button.chip[onclick*="Show top performing mutual funds"]{
     letter-spacing:-.8px!important;
   }
 }
+
+
+/* ===== SITE-WIDE HEADER WORDMARK NORMALIZATION =====
+   One logo text specification for every page using the shared header.
+   Explicitly size both wordmark spans to prevent page-level inheritance
+   or legacy logo rules from changing the visible text size.
+*/
+.site-header a.brand > span:last-child,
+.site-header a.brand > span:last-child > span{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:30px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  letter-spacing:-1.5px!important;
+}
+@media(max-width:800px){
+  .site-header a.brand > span:last-child,
+  .site-header a.brand > span:last-child > span{
+    font-size:20px!important;
+    letter-spacing:-.8px!important;
+  }
+}
