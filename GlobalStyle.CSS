@@ -1239,3 +1239,22 @@ body button.chip[onclick*="Show top performing mutual funds"]{
     box-sizing:border-box!important;
   }
 }
+
+
+/* ===== HEADER WORDMARK SIZE — HOME AND AI STANDARD =====
+   Keep the visible WealthAria text identical on every page,
+   including pages with legacy responsive logo rules.
+*/
+.site-header .brand>span:last-child{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:30px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  letter-spacing:-1.5px!important;
+}
+@media(max-width:800px){
+  .site-header .brand>span:last-child{
+    font-size:20px!important;
+    letter-spacing:-.8px!important;
+  }
+}
