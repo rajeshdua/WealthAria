@@ -1375,3 +1375,21 @@ body main > section.cta{
   border-radius:0!important;
   box-shadow:none!important;
 }
+
+
+/* ===== CTA SINGLE-BOUNDARY FIX — FINAL OVERRIDE =====
+   CTA section and its layout container are transparent wrappers.
+   The inner .cta-box is the only element that receives a boundary.
+*/
+body main section.cta,
+body main section.cta > .container{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+body main section.cta > .container > .cta-box{
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
+}
