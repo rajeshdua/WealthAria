@@ -1324,3 +1324,43 @@ body button.chip[onclick*="Show top performing mutual funds"]{
     font-size:13px!important;
   }
 }
+
+
+/* ===== AI PAGE ACTION BUTTONS — MATCH HOME / LEARN =====
+   Standardize the main action buttons while keeping topic chips
+   compact and readable for their different purpose.
+*/
+body:has(.category) .hero .actions .btn,
+body:has(.category) .ask-row .btn{
+  min-height:52px!important;
+  padding:13px 19px!important;
+  border-radius:9px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:13px!important;
+  line-height:1.25!important;
+  font-weight:800!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:700px){
+  body:has(.category) .hero .actions{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:12px!important;
+  }
+  body:has(.category) .hero .actions .btn{
+    display:flex!important;
+    width:100%!important;
+    min-height:52px!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  body:has(.category) .ask-row .btn{
+    min-height:52px!important;
+  }
+  body:has(.category) .category .chip{
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:14px!important;
+    line-height:1.35!important;
+    font-weight:700!important;
+  }
+}
