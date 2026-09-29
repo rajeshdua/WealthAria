@@ -2397,3 +2397,58 @@ html body main .topic-grid > .topic .topic-body .topic-title > span.icon{
     font-size:32px!important;
   }
 }
+
+/* ===== UNIVERSAL CONTENT ICON CLEANUP =====
+   Apply the unboxed Learn icon treatment to icon containers throughout
+   every page. Preserve the glyph/image and surrounding card borders.
+   Header and footer branding are excluded.
+*/
+html body main :is(
+  [class~="feature-icon"],
+  [class~="icon"],
+  [class~="info-icon"],
+  [class~="policy-icon"],
+  [class~="panel-icon"],
+  [class~="hIcon"],
+  [class~="ico"],
+  [class~="cIcon"],
+  [class~="tool-icon"],
+  [class~="topic-icon"],
+  [class~="icon-wrap"],
+  [class~="icon-box"]
+):not(.site-header *):not(.footer *){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+
+/* Remove fixed tile dimensions from standalone emoji/icon wrappers while
+   allowing image artwork to retain its natural dimensions. */
+html body main :is(
+  .feature-icon,
+  .info-card .icon,
+  .topic-title .icon,
+  .benefit .icon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .hIcon,
+  .tool-icon,
+  .topic-icon
+):not(.site-header *):not(.footer *){
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:100%!important;
+  flex:0 0 auto!important;
+  padding:0!important;
+  overflow:visible!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
