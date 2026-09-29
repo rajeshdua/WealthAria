@@ -2167,3 +2167,15 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
     margin-bottom:8px!important;
   }
 }
+
+
+/* ===== HOME BLOG IMAGE STRIPS — COMPACT MOBILE HEIGHT =====
+   Applies only to the three colored image areas on the Home page.
+*/
+@media(max-width:700px){
+  html body main > section.blog .blog-grid > .post > .post-img{
+    height:80px!important;
+    min-height:80px!important;
+    max-height:80px!important;
+  }
+}
