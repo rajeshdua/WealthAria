@@ -1628,7 +1628,7 @@ body .tab .cagrIcon i{max-width:7px!important}
    Brighter, colorful calculator icons with fixed, contained tiles.
    CSS-only: no calculator markup or page-specific styles changed.
 */
-body:has(>.tabs) .panel .heading .hIcon{
+body:has(.tabs) .panel .heading .hIcon{
   width:68px!important;
   height:68px!important;
   min-width:68px!important;
@@ -1645,52 +1645,52 @@ body:has(>.tabs) .panel .heading .hIcon{
   line-height:1!important;
   box-shadow:0 8px 20px rgba(16,38,31,.14),inset 0 1px 0 rgba(255,255,255,.85)!important;
 }
-body:has(>.tabs) .panel .heading .hIcon::before{
+body:has(.tabs) .panel .heading .hIcon::before{
   display:block!important;
   font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
   font-size:36px!important;
   line-height:1!important;
   filter:drop-shadow(0 2px 2px rgba(16,38,31,.14))!important;
 }
-body:has(>.tabs) #panel-sip .heading .hIcon{background:linear-gradient(145deg,#d8fff0 0%,#77e8b2 100%)!important}
-body:has(>.tabs) #panel-sip .heading .hIcon::before{content:"🌱"}
-body:has(>.tabs) #panel-emi .heading .hIcon{background:linear-gradient(145deg,#dceeff 0%,#8fc5ff 100%)!important}
-body:has(>.tabs) #panel-emi .heading .hIcon::before{content:"🏠"}
-body:has(>.tabs) #panel-lumpsum .heading .hIcon{background:linear-gradient(145deg,#fff0c7 0%,#ffc65c 100%)!important}
-body:has(>.tabs) #panel-lumpsum .heading .hIcon::before{content:"💰"}
-body:has(>.tabs) #panel-cagr .heading .hIcon{background:linear-gradient(145deg,#e9e0ff 0%,#b9a0ff 100%)!important}
-body:has(>.tabs) #panel-cagr .heading .hIcon::before{content:"📈"}
-body:has(>.tabs) #panel-fd .heading .hIcon{background:linear-gradient(145deg,#dff4ff 0%,#8dd9f4 100%)!important}
-body:has(>.tabs) #panel-fd .heading .hIcon::before{content:"🏦"}
-body:has(>.tabs) #panel-rd .heading .hIcon{background:linear-gradient(145deg,#ffe4ed 0%,#ff9fbd 100%)!important}
-body:has(>.tabs) #panel-rd .heading .hIcon::before{content:"🪙"}
-body:has(>.tabs) #panel-ppf .heading .hIcon{background:linear-gradient(145deg,#e4eaff 0%,#a6baff 100%)!important}
-body:has(>.tabs) #panel-ppf .heading .hIcon::before{content:"📊"}
-body:has(>.tabs) #panel-retirement .heading .hIcon{background:linear-gradient(145deg,#ffebd6 0%,#ffc18b 100%)!important}
-body:has(>.tabs) #panel-retirement .heading .hIcon::before{content:"🌅"}
+body:has(.tabs) #panel-sip .heading .hIcon{background:linear-gradient(145deg,#d8fff0 0%,#77e8b2 100%)!important}
+body:has(.tabs) #panel-sip .heading .hIcon::before{content:"🌱"}
+body:has(.tabs) #panel-emi .heading .hIcon{background:linear-gradient(145deg,#dceeff 0%,#8fc5ff 100%)!important}
+body:has(.tabs) #panel-emi .heading .hIcon::before{content:"🏠"}
+body:has(.tabs) #panel-lumpsum .heading .hIcon{background:linear-gradient(145deg,#fff0c7 0%,#ffc65c 100%)!important}
+body:has(.tabs) #panel-lumpsum .heading .hIcon::before{content:"💰"}
+body:has(.tabs) #panel-cagr .heading .hIcon{background:linear-gradient(145deg,#e9e0ff 0%,#b9a0ff 100%)!important}
+body:has(.tabs) #panel-cagr .heading .hIcon::before{content:"📈"}
+body:has(.tabs) #panel-fd .heading .hIcon{background:linear-gradient(145deg,#dff4ff 0%,#8dd9f4 100%)!important}
+body:has(.tabs) #panel-fd .heading .hIcon::before{content:"🏦"}
+body:has(.tabs) #panel-rd .heading .hIcon{background:linear-gradient(145deg,#ffe4ed 0%,#ff9fbd 100%)!important}
+body:has(.tabs) #panel-rd .heading .hIcon::before{content:"🪙"}
+body:has(.tabs) #panel-ppf .heading .hIcon{background:linear-gradient(145deg,#e4eaff 0%,#a6baff 100%)!important}
+body:has(.tabs) #panel-ppf .heading .hIcon::before{content:"📊"}
+body:has(.tabs) #panel-retirement .heading .hIcon{background:linear-gradient(145deg,#ffebd6 0%,#ffc18b 100%)!important}
+body:has(.tabs) #panel-retirement .heading .hIcon::before{content:"🌅"}
 
 /* Replace monochrome text symbols with vivid, legible emoji icons. */
-body:has(>.tabs) .tabs .tab .ico{
+body:has(.tabs) .tabs .tab .ico{
   font-size:0!important;
 }
-body:has(>.tabs) .tabs .tab .ico::before{
+body:has(.tabs) .tabs .tab .ico::before{
   display:block!important;
   font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
   font-size:28px!important;
   line-height:1!important;
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.16))!important;
 }
-body:has(>.tabs) .tabs .tab[data-tool="sip"] .ico::before{content:"🌱"}
-body:has(>.tabs) .tabs .tab[data-tool="emi"] .ico::before{content:"🏠"}
-body:has(>.tabs) .tabs .tab[data-tool="lumpsum"] .ico::before{content:"💰"}
-body:has(>.tabs) .tabs .tab[data-tool="cagr"] .ico::before{content:"📈"}
-body:has(>.tabs) .tabs .tab[data-tool="fd"] .ico::before{content:"🏦"}
-body:has(>.tabs) .tabs .tab[data-tool="rd"] .ico::before{content:"🪙"}
-body:has(>.tabs) .tabs .tab[data-tool="ppf"] .ico::before{content:"📊"}
-body:has(>.tabs) .tabs .tab[data-tool="retirement"] .ico::before{content:"🌅"}
+body:has(.tabs) .tabs .tab[data-tool="sip"] .ico::before{content:"🌱"}
+body:has(.tabs) .tabs .tab[data-tool="emi"] .ico::before{content:"🏠"}
+body:has(.tabs) .tabs .tab[data-tool="lumpsum"] .ico::before{content:"💰"}
+body:has(.tabs) .tabs .tab[data-tool="cagr"] .ico::before{content:"📈"}
+body:has(.tabs) .tabs .tab[data-tool="fd"] .ico::before{content:"🏦"}
+body:has(.tabs) .tabs .tab[data-tool="rd"] .ico::before{content:"🪙"}
+body:has(.tabs) .tabs .tab[data-tool="ppf"] .ico::before{content:"📊"}
+body:has(.tabs) .tabs .tab[data-tool="retirement"] .ico::before{content:"🌅"}
 /* Give calculator tab icons their own bright, rounded badge while
    keeping each glyph fully inside the tab card. */
-body:has(>.tabs) .tabs .tab .ico{
+body:has(.tabs) .tabs .tab .ico{
   width:44px!important;
   height:44px!important;
   min-height:44px!important;
@@ -1710,10 +1710,10 @@ body:has(>.tabs) .tabs .tab .ico{
   position:relative!important;
   isolation:isolate!important;
 }
-body:has(>.tabs) .tabs .tab .ico > *{
+body:has(.tabs) .tabs .tab .ico > *{
   display:none!important;
 }
-body:has(>.tabs) .tabs .tab .ico::before{
+body:has(.tabs) .tabs .tab .ico::before{
   position:absolute!important;
   inset:0!important;
   display:flex!important;
@@ -1724,13 +1724,13 @@ body:has(>.tabs) .tabs .tab .ico::before{
   pointer-events:none!important;
 }
 @media(max-width:700px){
-  body:has(>.tabs) .panel .heading .hIcon{
+  body:has(.tabs) .panel .heading .hIcon{
     width:64px!important;height:64px!important;
     min-width:64px!important;min-height:64px!important;
     flex-basis:64px!important;border-radius:18px!important;
   }
-  body:has(>.tabs) .panel .heading .hIcon::before{font-size:34px!important}
-  body:has(>.tabs) .tabs .tab .ico{
+  body:has(.tabs) .panel .heading .hIcon::before{font-size:34px!important}
+  body:has(.tabs) .tabs .tab .ico{
     width:38px!important;height:38px!important;
     min-height:38px!important;flex-basis:38px!important;
     font-size:0!important;border-radius:11px!important;
@@ -1741,14 +1741,14 @@ body:has(>.tabs) .tabs .tab .ico::before{
    Reduce oversized green tiles on phones without changing other page cards.
 */
 @media(max-width:700px){
-  body:has(>.tabs) .tabs{
+  body:has(.tabs) .tabs{
     padding:8px 3.5% 6px!important;
   }
-  body:has(>.tabs) .tabs .tabGrid{
+  body:has(.tabs) .tabs .tabGrid{
     gap:8px!important;
     align-items:stretch!important;
   }
-  body:has(>.tabs) .tabs .tab{
+  body:has(.tabs) .tabs .tab{
     height:auto!important;
     min-height:0!important;
     padding:8px 4px 6px!important;
@@ -1761,7 +1761,7 @@ body:has(>.tabs) .tabs .tab .ico::before{
     gap:3px!important;
     box-sizing:border-box!important;
   }
-  body:has(>.tabs) .tabs .tab .ico{
+  body:has(.tabs) .tabs .tab .ico{
     width:34px!important;
     height:34px!important;
     min-height:34px!important;
@@ -1769,18 +1769,81 @@ body:has(>.tabs) .tabs .tab .ico::before{
     margin:0 auto 2px!important;
     border-radius:10px!important;
   }
-  body:has(>.tabs) .tabs .tab .ico::before{
+  body:has(.tabs) .tabs .tab .ico::before{
     font-size:23px!important;
   }
-  body:has(>.tabs) .tabs .tab small{
+  body:has(.tabs) .tabs .tab small{
     font-size:11px!important;
     line-height:1.2!important;
     white-space:normal!important;
     overflow-wrap:anywhere!important;
     text-align:center!important;
   }
-  body:has(>.tabs) .tabs .tab .triangle{
+  body:has(.tabs) .tabs .tab .triangle{
     margin:3px auto 0!important;
   }
 }
 
+
+
+/* ===== CALCULATOR ICON ALIGNMENT — FINAL GLOBAL OVERRIDE =====
+   Center both the replacement glyph and its icon tile. Hide legacy
+   icon children so the original and replacement can never overlap.
+*/
+@media(max-width:900px){
+  body:has(.tabs) .tabs .tab{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    text-align:center!important;
+  }
+  body:has(.tabs) .tabs .tab .ico{
+    align-self:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:0!important;
+    position:relative!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    overflow:hidden!important;
+  }
+  body:has(.tabs) .tabs .tab .ico::before{
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    transform:none!important;
+  }
+  body:has(.tabs) .panel .heading .hIcon{
+    display:grid!important;
+    place-items:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    position:relative!important;
+    overflow:hidden!important;
+  }
+  body:has(.tabs) .panel .heading .hIcon::before{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    transform:none!important;
+  }
+}
