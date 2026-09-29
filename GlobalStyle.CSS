@@ -2189,3 +2189,28 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
     max-height:30px!important;
   }
 }
+
+
+/* ===== HOME BLOG CARDS — COMPACT MOBILE CONTENT =====
+   Pull each article's text closer to the image strip and reduce
+   card height without changing desktop styling or card boundaries.
+*/
+@media(max-width:700px){
+  html body main > section.blog .blog-grid > .post > .post-body{
+    padding:12px 16px 14px!important;
+    margin:0!important;
+  }
+  html body main > section.blog .blog-grid > .post > .post-body > small{
+    display:block!important;
+    margin:0 0 5px!important;
+    line-height:1.2!important;
+  }
+  html body main > section.blog .blog-grid > .post > .post-body > h3{
+    margin:0 0 5px!important;
+    line-height:1.2!important;
+  }
+  html body main > section.blog .blog-grid > .post > .post-body > p{
+    margin:0!important;
+    line-height:1.35!important;
+  }
+}
