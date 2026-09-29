@@ -1393,3 +1393,26 @@ body main section.cta > .container > .cta-box{
   border-radius:22px!important;
   box-sizing:border-box!important;
 }
+
+/* ===== FINAL CTA BORDER CLEANUP — ONE VISIBLE CARD =====
+   Remove the extra frame from CTA sections and layout wrappers on every page.
+   The actual CTA card alone keeps its rounded green outline.
+*/
+body main > section.cta,
+body main > section.cta::before,
+body main > section.cta::after,
+body main > section.cta > .container,
+body main > section.cta > .container::before,
+body main > section.cta > .container::after,
+body main > section.cta > .container > .cta-box::before,
+body main > section.cta > .container > .cta-box::after{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+body main > section.cta > .container > .cta-box{
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  box-shadow:none!important;
+  box-sizing:border-box!important;
+}
