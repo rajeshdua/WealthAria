@@ -2179,3 +2179,13 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
     max-height:80px!important;
   }
 }
+
+
+/* ===== HOME BLOG IMAGE STRIPS — 30PX MOBILE HEIGHT ===== */
+@media(max-width:700px){
+  html body main > section.blog .blog-grid > .post > .post-img{
+    height:30px!important;
+    min-height:30px!important;
+    max-height:30px!important;
+  }
+}
