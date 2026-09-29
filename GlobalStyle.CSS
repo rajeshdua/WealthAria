@@ -2250,3 +2250,26 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
     line-height:1.25!important;
   }
 }
+
+
+/* ===== SITE-WIDE ICON BORDER CLEANUP =====
+   Remove decorative/double outlines from icon containers on every page.
+   Preserve icon artwork, colors, backgrounds, sizing and card borders.
+   Header and footer branding are excluded.
+*/
+body :where(
+  .feature-icon,
+  .icon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .hIcon,
+  .ico,
+  .cIcon,
+  .tool-icon,
+  .topic-icon
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
