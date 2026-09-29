@@ -2325,3 +2325,31 @@ html body main :is(
   box-shadow:none!important;
   border-radius:0!important;
 }
+
+
+/* ===== DEFINITIVE ICON TILE RESET =====
+   Higher specificity than the colored icon variants above.
+   Removes icon tile fills/outlines only; keeps the glyph and card borders.
+*/
+html body main .feature-icon.feature-icon,
+html body main .info-card:nth-child(n) .icon.icon,
+html body main .policy-card:nth-child(n) .policy-icon.policy-icon,
+html body main .benefit .icon.icon,
+html body main .panel-icon.panel-icon,
+html body main .info-icon.info-icon,
+html body main .policy-icon.policy-icon,
+html body main .hIcon.hIcon,
+html body main .tab .ico.ico,
+html body main .icon.icon,
+html body main .ico.ico,
+html body main .cIcon.cIcon,
+html body main .tool-icon.tool-icon,
+html body main .topic-icon.topic-icon{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
