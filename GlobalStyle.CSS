@@ -2452,3 +2452,59 @@ html body main :is(
   align-items:center!important;
   justify-content:center!important;
 }
+
+/* ===== CONTENT ICON TILE RESET — ALL PAGES (NO MAIN WRAPPER ASSUMED) =====
+   Pages use top-level sections rather than a <main> element. Target icon
+   wrappers directly under body so the cleanup applies on every page.
+*/
+html body :is(
+  .feature-icon,
+  .topic-title > .icon,
+  .benefit > .icon,
+  .info-card .icon,
+  .policy-card .policy-icon,
+  .hIcon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .ico,
+  .cIcon,
+  .tool-icon,
+  .topic-icon,
+  .icon-wrap,
+  .icon-box
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+html body :is(
+  .feature-icon,
+  .topic-title > .icon,
+  .benefit > .icon,
+  .info-card .icon,
+  .policy-card .policy-icon,
+  .hIcon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .ico,
+  .cIcon,
+  .tool-icon,
+  .topic-icon,
+  .icon-wrap,
+  .icon-box
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:0!important;
+  margin-right:0!important;
+  overflow:visible!important;
+  flex:0 0 auto!important;
+}
