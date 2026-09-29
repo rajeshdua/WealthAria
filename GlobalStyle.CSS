@@ -1503,12 +1503,12 @@ body main section.cta > .container > .cta-box:not(.site-header *):not(.footer *)
 }
 
 /* ===== SITE-WIDE ICON ENHANCEMENT =====
-   Enlarge shared content icons, add brighter accent colors, and keep
-   each icon fixed inside its own tile/card without changing page markup.
-   Header and footer branding are intentionally excluded.
+   Make content icons larger, vivid and consistently contained
+   across all pages. Header and footer branding stay untouched.
 */
 body :where(
   .feature-icon,
+  .icon,
   .info-card .icon,
   .topic-title .icon,
   .benefit .icon,
@@ -1517,59 +1517,79 @@ body :where(
   .panel-icon,
   .hIcon
 ):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
-  width:56px!important;
-  height:56px!important;
-  min-width:56px!important;
-  min-height:56px!important;
+  width:60px!important;
+  height:60px!important;
+  min-width:60px!important;
+  min-height:60px!important;
   max-width:100%!important;
-  flex:0 0 56px!important;
-  display:grid!important;
+  flex:0 0 60px!important;
+  display:inline-grid!important;
   place-items:center!important;
   box-sizing:border-box!important;
   padding:0!important;
-  font-size:29px!important;
+  font-size:32px!important;
   line-height:1!important;
   overflow:hidden!important;
   text-align:center!important;
-  border-radius:15px!important;
-  color:var(--wa-green)!important;
+  border-radius:17px!important;
+  background:linear-gradient(145deg,#e2fff0 0%,#b8f3d4 100%)!important;
+  color:#087f50!important;
+  box-shadow:0 5px 14px rgba(16,38,31,.10),inset 0 1px 0 rgba(255,255,255,.8)!important;
 }
 
-/* Keep the Learn-page benefit icons round, with the larger glyph contained. */
+/* Learn benefit icons are circular; keep the glyph centered in the tile. */
 body .benefit .icon:not(.site-header *):not(.footer *){
   border-radius:50%!important;
-  background:#d8f5e7!important;
-  color:#159b65!important;
+  background:linear-gradient(145deg,#dcfff0 0%,#a9edce 100%)!important;
+  color:#087f50!important;
 }
 
-/* Preserve distinct, vivid accent treatments for the Home feature tiles. */
-body .feature-icon.green{background:#d9f5e7!important;color:#078d59!important}
-body .feature-icon.blue{background:#dceaff!important;color:#1769d2!important}
-body .feature-icon.purple{background:#e9e0ff!important;color:#7048d8!important}
-body .feature-icon.orange{background:#ffebd0!important;color:#c87513!important}
+/* Give repeated content-card icons a lively, coordinated color rotation. */
+body .info-card:nth-child(4n+2) .icon,
+body .policy-card:nth-child(4n+2) .policy-icon{
+  background:linear-gradient(145deg,#e2efff 0%,#b8d5ff 100%)!important;
+  color:#155fc2!important;
+}
+body .info-card:nth-child(4n+3) .icon,
+body .policy-card:nth-child(4n+3) .policy-icon{
+  background:linear-gradient(145deg,#f0e6ff 0%,#d8c1ff 100%)!important;
+  color:#7040c8!important;
+}
+body .info-card:nth-child(4n) .icon,
+body .policy-card:nth-child(4n) .policy-icon{
+  background:linear-gradient(145deg,#fff0d9 0%,#ffd39a 100%)!important;
+  color:#b9670a!important;
+}
 
-/* The calculator tabs use a compact horizontal icon, not a square tile. */
+/* Home feature tiles retain distinct, saturated accent families. */
+body .feature-icon.green{background:linear-gradient(145deg,#d8ffea 0%,#9cebc3 100%)!important;color:#087f50!important}
+body .feature-icon.blue{background:linear-gradient(145deg,#e0efff 0%,#a9ceff 100%)!important;color:#155fc2!important}
+body .feature-icon.purple{background:linear-gradient(145deg,#f0e5ff 0%,#d2b5ff 100%)!important;color:#7040c8!important}
+body .feature-icon.orange{background:linear-gradient(145deg,#fff0d9 0%,#ffc879 100%)!important;color:#b9670a!important}
+
+/* Calculator tabs use compact glyphs, not oversized icon tiles. */
 body .tab .ico:not(.site-header *):not(.footer *){
   width:100%!important;
   min-width:0!important;
   max-width:100%!important;
-  height:36px!important;
-  min-height:36px!important;
+  height:38px!important;
+  min-height:38px!important;
   flex:0 1 auto!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  font-size:29px!important;
+  font-size:32px!important;
   line-height:1!important;
   overflow:hidden!important;
   box-sizing:border-box!important;
 }
 body .tab .cagrIcon i{max-width:7px!important}
 
-/* On narrow screens, icons remain within their cards and never force overflow. */
+/* On phones, keep icons fixed-size and clipped within their own tile. */
 @media(max-width:700px){
   body :where(
     .feature-icon,
+    .icon,
     .info-card .icon,
     .topic-title .icon,
     .benefit .icon,
@@ -1578,18 +1598,27 @@ body .tab .cagrIcon i{max-width:7px!important}
     .panel-icon,
     .hIcon
   ):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
-    width:56px!important;
-    height:56px!important;
-    min-width:56px!important;
-    min-height:56px!important;
-    flex:0 0 56px!important;
-    font-size:30px!important;
+    width:60px!important;
+    height:60px!important;
+    min-width:60px!important;
+    min-height:60px!important;
+    flex:0 0 60px!important;
+    font-size:32px!important;
     max-width:100%!important;
     overflow:hidden!important;
   }
+  body .topic-title .icon{
+    width:46px!important;
+    height:46px!important;
+    min-width:46px!important;
+    min-height:46px!important;
+    flex-basis:46px!important;
+    font-size:25px!important;
+    border-radius:13px!important;
+  }
   body .tab .ico:not(.site-header *):not(.footer *){
-    height:34px!important;
-    min-height:34px!important;
-    font-size:27px!important;
+    height:36px!important;
+    min-height:36px!important;
+    font-size:29px!important;
   }
 }
