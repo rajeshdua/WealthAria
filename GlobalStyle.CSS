@@ -2364,3 +2364,36 @@ html body main .topic-title > .icon{
   box-shadow:none!important;
   border-radius:0!important;
 }
+
+/* ===== LEARN PAGE: REMOVE ICON TILE COMPLETELY =====
+   Keep the emoji glyph only; remove the colored square, border and shadow.
+   This is deliberately scoped to Learn topic-card icons.
+*/
+html body main .topic-grid > .topic .topic-body .topic-title > span.icon{
+  all:unset!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:none!important;
+  padding:0!important;
+  margin:0!important;
+  font-size:32px!important;
+  line-height:1!important;
+  background:none!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  color:inherit!important;
+}
+@media(max-width:700px){
+  html body main .topic-grid > .topic .topic-body .topic-title > span.icon{
+    font-size:32px!important;
+  }
+}
