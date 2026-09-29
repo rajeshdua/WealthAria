@@ -2118,3 +2118,52 @@ html body main > section.features > .container.feature-grid > a.feature-card > s
     border-radius:14px!important;
   }
 }
+
+
+/* ===== HOME FEATURE CARDS — KEEP CARD BORDERS, REMOVE ICON TILES =====
+   The four destination cards retain their rounded green outlines.
+   Only the colored square backgrounds behind the icons are removed.
+*/
+html body main > section.features > .container.feature-grid > a.feature-card{
+  border:2px solid var(--wa-green)!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:18px!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:14px 16px!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+}
+html body main > section.features > .container.feature-grid > a.feature-card .feature-icon{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  width:54px!important;
+  height:54px!important;
+  min-width:54px!important;
+  min-height:54px!important;
+  flex:0 0 54px!important;
+  margin:0 0 8px!important;
+  overflow:visible!important;
+}
+@media(max-width:700px){
+  html body main > section.features{padding:8px 0!important}
+  html body main > section.features > .container.feature-grid{
+    gap:10px!important;
+    margin:0 auto!important;
+  }
+  html body main > section.features > .container.feature-grid > a.feature-card{
+    border:2px solid var(--wa-green)!important;
+    border-radius:16px!important;
+    padding:12px 14px!important;
+  }
+  html body main > section.features > .container.feature-grid > a.feature-card .feature-icon{
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    margin-bottom:8px!important;
+  }
+}
