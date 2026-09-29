@@ -1470,3 +1470,18 @@ html body main section.cta > .container > .cta-box{
   box-shadow:none!important;
   box-sizing:border-box!important;
 }
+
+/* ===== LEARN CTA: FINAL OVERRIDE FOR GLOBAL BORDER RULES ===== */
+body main section.cta:not(.site-header *):not(.footer *):not(.site-header):not(.footer),
+body main section.cta > .container:not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+body main section.cta > .container > .cta-box:not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
