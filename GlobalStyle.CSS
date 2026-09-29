@@ -1847,3 +1847,69 @@ body:has(.tabs) .tabs .tab .ico::before{
     transform:none!important;
   }
 }
+
+
+/* ===== FINAL CALCULATOR ICON BOX ALIGNMENT =====
+   Keep both tab icons and active calculator icons centered in their
+   own tiles. Hide legacy tab glyphs so only the refreshed icon shows.
+   Scoped to the calculator page; all other pages remain unchanged.
+*/
+@media(max-width:900px){
+  body:has(.tabs) .tabs .tab .ico{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    align-self:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:0!important;
+    position:relative!important;
+    overflow:hidden!important;
+    line-height:1!important;
+    text-align:center!important;
+  }
+  body:has(.tabs) .tabs .tab .ico>*{
+    display:none!important;
+  }
+  body:has(.tabs) .tabs .tab .ico::before{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    transform:none!important;
+  }
+  body:has(.tabs) .panel .heading .hIcon{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex:0 0 64px!important;
+    position:relative!important;
+    padding:0!important;
+    overflow:hidden!important;
+    text-align:center!important;
+    line-height:1!important;
+  }
+  body:has(.tabs) .panel .heading .hIcon::before{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    transform:none!important;
+  }
+}
