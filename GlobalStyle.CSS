@@ -1447,3 +1447,26 @@ body main section.cta > .container > :is(.cta-box,.cta-card)::after{
   outline:0!important;
   box-shadow:none!important;
 }
+
+/* ===== LEARN CTA: REMOVE THE EXTRA OUTER FRAME =====
+   Keep one rounded green boundary around the dark CTA card only.
+   The section and layout container are transparent wrappers.
+*/
+html body main section.cta,
+html body main section.cta::before,
+html body main section.cta::after,
+html body main section.cta > .container,
+html body main section.cta > .container::before,
+html body main section.cta > .container::after{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+html body main section.cta > .container > .cta-box{
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  outline:0!important;
+  box-shadow:none!important;
+  box-sizing:border-box!important;
+}
