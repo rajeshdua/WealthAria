@@ -2273,3 +2273,28 @@ body :where(
   outline:0!important;
   box-shadow:none!important;
 }
+
+
+/* ===== FINAL ICON OUTLINE RESET — HIGH-SPECIFICITY GLOBAL OVERRIDE =====
+   Clear borders and decorative shadows on icon tiles themselves, without
+   affecting the surrounding cards or their green section boundaries.
+*/
+html body main :is(
+  .feature-icon,
+  .info-card .icon,
+  .topic-title .icon,
+  .benefit .icon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .hIcon,
+  .tab .ico,
+  .cIcon,
+  .tool-icon,
+  .topic-icon,
+  .icon
+):not(.site-header *):not(.footer *){
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
