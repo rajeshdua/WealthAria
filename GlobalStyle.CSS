@@ -1920,6 +1920,12 @@ body:has(.tabs) .tabs .tab .ico::before{
 body .hero-art .coin.c1{
   display:grid!important;
   place-items:center!important;
+  /* Keep the coin icon only; remove the old circular badge. */
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
   font-size:0!important;
   line-height:0!important;
   color:transparent!important;
