@@ -2298,3 +2298,30 @@ html body main :is(
   outline:0!important;
   box-shadow:none!important;
 }
+
+
+/* ===== SITE-WIDE ICON TILE REMOVAL =====
+   Match the clean, unboxed Home icons across every page.
+   Remove only the icon container's colored tile/border; keep the icon glyph,
+   its size, and the surrounding card or section borders.
+*/
+html body main :is(
+  .feature-icon,
+  .icon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .hIcon,
+  .ico,
+  .cIcon,
+  .tool-icon,
+  .topic-icon
+):not(.site-header *):not(.footer *){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
