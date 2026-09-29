@@ -1628,7 +1628,7 @@ body .tab .cagrIcon i{max-width:7px!important}
    Brighter, colorful calculator icons with fixed, contained tiles.
    CSS-only: no calculator markup or page-specific styles changed.
 */
-body:has(>.tabs) main>.panel .heading .hIcon{
+body:has(>.tabs) .panel .heading .hIcon{
   width:68px!important;
   height:68px!important;
   min-width:68px!important;
@@ -1645,7 +1645,7 @@ body:has(>.tabs) main>.panel .heading .hIcon{
   line-height:1!important;
   box-shadow:0 8px 20px rgba(16,38,31,.14),inset 0 1px 0 rgba(255,255,255,.85)!important;
 }
-body:has(>.tabs) main>.panel .heading .hIcon::before{
+body:has(>.tabs) .panel .heading .hIcon::before{
   display:block!important;
   font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
   font-size:36px!important;
@@ -1669,9 +1669,28 @@ body:has(>.tabs) #panel-ppf .heading .hIcon::before{content:"📊"}
 body:has(>.tabs) #panel-retirement .heading .hIcon{background:linear-gradient(145deg,#ffebd6 0%,#ffc18b 100%)!important}
 body:has(>.tabs) #panel-retirement .heading .hIcon::before{content:"🌅"}
 
+/* Replace monochrome text symbols with vivid, legible emoji icons. */
+body:has(>.tabs) .tabs .tab .ico{
+  font-size:0!important;
+}
+body:has(>.tabs) .tabs .tab .ico::before{
+  display:block!important;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
+  font-size:28px!important;
+  line-height:1!important;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.16))!important;
+}
+body:has(>.tabs) .tabs .tab[data-tool="sip"] .ico::before{content:"🌱"}
+body:has(>.tabs) .tabs .tab[data-tool="emi"] .ico::before{content:"🏠"}
+body:has(>.tabs) .tabs .tab[data-tool="lumpsum"] .ico::before{content:"💰"}
+body:has(>.tabs) .tabs .tab[data-tool="cagr"] .ico::before{content:"📈"}
+body:has(>.tabs) .tabs .tab[data-tool="fd"] .ico::before{content:"🏦"}
+body:has(>.tabs) .tabs .tab[data-tool="rd"] .ico::before{content:"🪙"}
+body:has(>.tabs) .tabs .tab[data-tool="ppf"] .ico::before{content:"📊"}
+body:has(>.tabs) .tabs .tab[data-tool="retirement"] .ico::before{content:"🌅"}
 /* Give calculator tab icons their own bright, rounded badge while
    keeping each glyph fully inside the tab card. */
-body:has(>.tabs) main>.tabs .tab .ico{
+body:has(>.tabs) .tabs .tab .ico{
   width:44px!important;
   height:44px!important;
   min-height:44px!important;
@@ -1690,13 +1709,13 @@ body:has(>.tabs) main>.tabs .tab .ico{
   overflow:hidden!important;
 }
 @media(max-width:700px){
-  body:has(>.tabs) main>.panel .heading .hIcon{
+  body:has(>.tabs) .panel .heading .hIcon{
     width:64px!important;height:64px!important;
     min-width:64px!important;min-height:64px!important;
     flex-basis:64px!important;border-radius:18px!important;
   }
-  body:has(>.tabs) main>.panel .heading .hIcon::before{font-size:34px!important}
-  body:has(>.tabs) main>.tabs .tab .ico{
+  body:has(>.tabs) .panel .heading .hIcon::before{font-size:34px!important}
+  body:has(>.tabs) .tabs .tab .ico{
     width:38px!important;height:38px!important;
     min-height:38px!important;flex-basis:38px!important;
     font-size:25px!important;border-radius:11px!important;
