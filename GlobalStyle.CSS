@@ -1416,3 +1416,34 @@ body main > section.cta > .container > .cta-box{
   box-shadow:none!important;
   box-sizing:border-box!important;
 }
+
+
+/* ===== FINAL CTA SINGLE-CARD NORMALIZATION =====
+   The CTA section and its layout wrappers are transparent.
+   Only the visible CTA card (home .cta-box or AI .cta-card)
+   receives the green rounded boundary.
+*/
+body main section.cta,
+body main section.cta::before,
+body main section.cta::after,
+body main section.cta > .container,
+body main section.cta > .container::before,
+body main section.cta > .container::after{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+body main section.cta > .container > :is(.cta-box,.cta-card){
+  border:2px solid var(--wa-green)!important;
+  border-radius:22px!important;
+  outline:0!important;
+  box-shadow:none!important;
+  box-sizing:border-box!important;
+}
+body main section.cta > .container > :is(.cta-box,.cta-card)::before,
+body main section.cta > .container > :is(.cta-box,.cta-card)::after{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
