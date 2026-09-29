@@ -1933,8 +1933,11 @@ body .feature-card .feature-icon{
   border-radius:17px!important;
   box-sizing:border-box!important;
   overflow:hidden!important;
+  /* Hide the legacy HTML glyph; render only the replacement icon. */
   font-size:0!important;
-  line-height:1!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  line-height:0!important;
   box-shadow:0 8px 20px rgba(16,38,31,.12),inset 0 1px 0 rgba(255,255,255,.8)!important;
 }
 body .feature-card:nth-child(1) .feature-icon{
@@ -1954,6 +1957,9 @@ body .feature-card:nth-child(4) .feature-icon{
   color:#a85c08!important;
 }
 body .feature-card .feature-icon::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -1962,6 +1968,8 @@ body .feature-card .feature-icon::before{
   font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
   font-size:31px!important;
   line-height:1!important;
+  color:initial!important;
+  -webkit-text-fill-color:initial!important;
   text-align:center!important;
   filter:drop-shadow(0 2px 2px rgba(16,38,31,.12))!important;
 }
