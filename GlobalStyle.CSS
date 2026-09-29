@@ -1914,6 +1914,29 @@ body:has(.tabs) .tabs .tab .ico::before{
   }
 }
 
+/* ===== HOME HERO RUPEE ICON REFRESH =====
+   Replace the legacy plain rupee glyph with a centered coin icon.
+*/
+body .hero-art .coin.c1{
+  display:grid!important;
+  place-items:center!important;
+  font-size:0!important;
+  line-height:0!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  text-align:center!important;
+}
+body .hero-art .coin.c1::before{
+  content:"🪙"!important;
+  display:block!important;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
+  font-size:27px!important;
+  line-height:1!important;
+  color:initial!important;
+  -webkit-text-fill-color:initial!important;
+  text-align:center!important;
+}
+
 /* ===== HOME FEATURE ICON REFRESH =====
    Replace legacy monochrome symbols with colorful, centered icons.
    The original glyphs are visually hidden; card text and layout stay intact.
