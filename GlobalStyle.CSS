@@ -1485,3 +1485,19 @@ body main section.cta > .container > .cta-box:not(.site-header *):not(.footer *)
   outline:0!important;
   box-shadow:none!important;
 }
+
+/* ===== LEARN PAGE: REDUCE MOBILE GAP BELOW CTA =====
+   Keep a comfortable gap after the CTA card without excess blank space.
+   Scoped to the Learn page so other page layouts remain unchanged.
+*/
+@media(max-width:700px){
+  body:has(main > section.topics) main > section.cta{
+    padding-top:20px!important;
+    padding-bottom:12px!important;
+    margin-bottom:0!important;
+  }
+  body:has(main > section.topics) main > section.cta > .container{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+}
