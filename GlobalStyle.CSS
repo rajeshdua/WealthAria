@@ -1913,3 +1913,68 @@ body:has(.tabs) .tabs .tab .ico::before{
     transform:none!important;
   }
 }
+
+/* ===== HOME FEATURE ICON REFRESH =====
+   Replace legacy monochrome symbols with colorful, centered icons.
+   The original glyphs are visually hidden; card text and layout stay intact.
+*/
+body .feature-card .feature-icon{
+  display:grid!important;
+  place-items:center!important;
+  position:relative!important;
+  width:60px!important;
+  height:60px!important;
+  min-width:60px!important;
+  min-height:60px!important;
+  flex:0 0 60px!important;
+  margin:0 0 17px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.9)!important;
+  border-radius:17px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  font-size:0!important;
+  line-height:1!important;
+  box-shadow:0 8px 20px rgba(16,38,31,.12),inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+body .feature-card:nth-child(1) .feature-icon{
+  background:linear-gradient(145deg,#d9fff0 0%,#7ce8b8 100%)!important;
+  color:#087b50!important;
+}
+body .feature-card:nth-child(2) .feature-icon{
+  background:linear-gradient(145deg,#dceeff 0%,#83c4ff 100%)!important;
+  color:#175db5!important;
+}
+body .feature-card:nth-child(3) .feature-icon{
+  background:linear-gradient(145deg,#f0e4ff 0%,#c2a1ff 100%)!important;
+  color:#7040c8!important;
+}
+body .feature-card:nth-child(4) .feature-icon{
+  background:linear-gradient(145deg,#fff0d7 0%,#ffc477 100%)!important;
+  color:#a85c08!important;
+}
+body .feature-card .feature-icon::before{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:100%!important;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
+  font-size:31px!important;
+  line-height:1!important;
+  text-align:center!important;
+  filter:drop-shadow(0 2px 2px rgba(16,38,31,.12))!important;
+}
+body .feature-card:nth-child(1) .feature-icon::before{content:"📘"!important}
+body .feature-card:nth-child(2) .feature-icon::before{content:"🧮"!important}
+body .feature-card:nth-child(3) .feature-icon::before{content:"✨"!important}
+body .feature-card:nth-child(4) .feature-icon::before{content:"📰"!important}
+@media(max-width:700px){
+  body .feature-card .feature-icon{
+    width:60px!important;height:60px!important;
+    min-width:60px!important;min-height:60px!important;
+    flex-basis:60px!important;border-radius:17px!important;
+    margin-bottom:17px!important;
+  }
+  body .feature-card .feature-icon::before{font-size:31px!important}
+}
