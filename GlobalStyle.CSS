@@ -2216,19 +2216,25 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
 }
 
 
-/* ===== HOME DESTINATION CARDS — COMPACT MOBILE SPACING =====
-   Tighten Learn, Calculators, AI Tools and Blog cards while retaining
-   their green rounded card borders and the borderless icons.
+/* ===== HOME DESTINATION CARDS — TOP-ALIGNED MOBILE CONTENT =====
+   Keep the four card borders; move each icon and its text group close
+   to the card's top edge.
 */
 @media(max-width:700px){
   html body main > section.features > .container.feature-grid > a.feature-card{
-    padding:10px 14px 12px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    padding:8px 14px 12px!important;
     min-height:0!important;
     height:auto!important;
     gap:0!important;
   }
   html body main > section.features > .container.feature-grid > a.feature-card .feature-icon{
+    flex:0 0 auto!important;
     margin:0 0 5px!important;
+    align-self:flex-start!important;
   }
   html body main > section.features > .container.feature-grid > a.feature-card h3{
     margin:0 0 3px!important;
@@ -2236,6 +2242,7 @@ html body main > section.features > .container.feature-grid > a.feature-card .fe
   }
   html body main > section.features > .container.feature-grid > a.feature-card p{
     margin:0 0 5px!important;
+    min-height:0!important;
     line-height:1.35!important;
   }
   html body main > section.features > .container.feature-grid > a.feature-card > span:last-child{
