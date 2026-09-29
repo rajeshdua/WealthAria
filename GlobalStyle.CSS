@@ -2353,3 +2353,14 @@ html body main .topic-icon.topic-icon{
   box-shadow:none!important;
   border-radius:0!important;
 }
+
+/* ===== LEARN PAGE TOPIC ICONS: REMOVE GREEN TILE ===== */
+html body main .topic-title > .icon{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
