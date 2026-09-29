@@ -1736,3 +1736,51 @@ body:has(>.tabs) .tabs .tab .ico::before{
     font-size:0!important;border-radius:11px!important;
   }
 }
+
+/* ===== COMPACT CALCULATOR TAB CARDS =====
+   Reduce oversized green tiles on phones without changing other page cards.
+*/
+@media(max-width:700px){
+  body:has(>.tabs) .tabs{
+    padding:8px 3.5% 6px!important;
+  }
+  body:has(>.tabs) .tabs .tabGrid{
+    gap:8px!important;
+    align-items:stretch!important;
+  }
+  body:has(>.tabs) .tabs .tab{
+    height:auto!important;
+    min-height:0!important;
+    padding:8px 4px 6px!important;
+    border-radius:15px!important;
+    transform:none!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:3px!important;
+    box-sizing:border-box!important;
+  }
+  body:has(>.tabs) .tabs .tab .ico{
+    width:34px!important;
+    height:34px!important;
+    min-height:34px!important;
+    flex:0 0 34px!important;
+    margin:0 auto 2px!important;
+    border-radius:10px!important;
+  }
+  body:has(>.tabs) .tabs .tab .ico::before{
+    font-size:23px!important;
+  }
+  body:has(>.tabs) .tabs .tab small{
+    font-size:11px!important;
+    line-height:1.2!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+    text-align:center!important;
+  }
+  body:has(>.tabs) .tabs .tab .triangle{
+    margin:3px auto 0!important;
+  }
+}
+
