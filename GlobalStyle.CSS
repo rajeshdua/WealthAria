@@ -1501,3 +1501,95 @@ body main section.cta > .container > .cta-box:not(.site-header *):not(.footer *)
     padding-bottom:0!important;
   }
 }
+
+/* ===== SITE-WIDE ICON ENHANCEMENT =====
+   Enlarge shared content icons, add brighter accent colors, and keep
+   each icon fixed inside its own tile/card without changing page markup.
+   Header and footer branding are intentionally excluded.
+*/
+body :where(
+  .feature-icon,
+  .info-card .icon,
+  .topic-title .icon,
+  .benefit .icon,
+  .info-icon,
+  .policy-icon,
+  .panel-icon,
+  .hIcon
+):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+  width:56px!important;
+  height:56px!important;
+  min-width:56px!important;
+  min-height:56px!important;
+  max-width:100%!important;
+  flex:0 0 56px!important;
+  display:grid!important;
+  place-items:center!important;
+  box-sizing:border-box!important;
+  padding:0!important;
+  font-size:29px!important;
+  line-height:1!important;
+  overflow:hidden!important;
+  text-align:center!important;
+  border-radius:15px!important;
+  color:var(--wa-green)!important;
+}
+
+/* Keep the Learn-page benefit icons round, with the larger glyph contained. */
+body .benefit .icon:not(.site-header *):not(.footer *){
+  border-radius:50%!important;
+  background:#d8f5e7!important;
+  color:#159b65!important;
+}
+
+/* Preserve distinct, vivid accent treatments for the Home feature tiles. */
+body .feature-icon.green{background:#d9f5e7!important;color:#078d59!important}
+body .feature-icon.blue{background:#dceaff!important;color:#1769d2!important}
+body .feature-icon.purple{background:#e9e0ff!important;color:#7048d8!important}
+body .feature-icon.orange{background:#ffebd0!important;color:#c87513!important}
+
+/* The calculator tabs use a compact horizontal icon, not a square tile. */
+body .tab .ico:not(.site-header *):not(.footer *){
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  height:36px!important;
+  min-height:36px!important;
+  flex:0 1 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:29px!important;
+  line-height:1!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+body .tab .cagrIcon i{max-width:7px!important}
+
+/* On narrow screens, icons remain within their cards and never force overflow. */
+@media(max-width:700px){
+  body :where(
+    .feature-icon,
+    .info-card .icon,
+    .topic-title .icon,
+    .benefit .icon,
+    .info-icon,
+    .policy-icon,
+    .panel-icon,
+    .hIcon
+  ):not(.site-header *):not(.footer *):not(.site-header):not(.footer){
+    width:56px!important;
+    height:56px!important;
+    min-width:56px!important;
+    min-height:56px!important;
+    flex:0 0 56px!important;
+    font-size:30px!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+  body .tab .ico:not(.site-header *):not(.footer *){
+    height:34px!important;
+    min-height:34px!important;
+    font-size:27px!important;
+  }
+}
